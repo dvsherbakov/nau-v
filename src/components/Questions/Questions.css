@@ -1,0 +1,120 @@
+.MathJax:focus {
+  outline: none;
+}
+
+.quiz {
+  max-width: 1050;
+  padding: 2em;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quest__input,
+.quest__button {
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.quest__label {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  z-index: -1;
+  color: #9e9e9e;
+  transition: 0.3s;
+}
+
+.quest {
+  max-width: 1150px;
+  min-width: 500px;
+  padding: 32px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px #ccc;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  text-align: start;
+}
+
+.quest__input {
+  width: 100%;
+  padding-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: transparent;
+  outline: none;
+  transition: 0.3s;
+}
+
+.quest__group {
+  position: relative;
+  padding-bottom: 32px;
+}
+
+.quest__body {
+  text-align: justify;
+  margin-bottom: 32px;
+  font-weight: normal;
+}
+
+.quest__body ol {
+  padding: 15px 50px;
+}
+
+.quest__body li {
+  display: list-item;
+  text-align: left;
+}
+
+.quest__ans__group {
+  display: flex;
+  justify-content: space-around;
+  align-content: stretch;
+}
+
+.quest__vgroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+}
+
+.quest__input:focus ~ .quest__label,
+.quest__input:not(:placeholder-shown) ~ .quest__label {
+  top: -20px;
+  font-size: 15px;
+  color: #d0d0d0;
+}
+
+.quest button {
+  margin: 3px;
+  padding: 8px;
+  outline: none;
+  color: #9e9e9e;
+  border: none;
+  border-radius: 5px;
+}
+
+.quest button:hover {
+  color: #000000;
+}
+
+.quest .selected {
+  color: #071599;
+  border: 1px solid #a9add4;
+  box-shadow: 0 4px 16px #ccc;
+}
+
+.quest__group__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.quest__ans__group img:hover {
+  transform: scale(2);
+}
