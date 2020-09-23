@@ -15,6 +15,7 @@
     "start": "react-scripts start",
     "build": "REACT_APP_PORT=$PORT react-scripts build",
     "test": "react-scripts test",
+    "heroku-postbuild": "npm run build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
