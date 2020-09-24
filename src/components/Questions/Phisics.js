@@ -8,6 +8,7 @@ import {
   ImgF001010,
   ImgF001011,
   ImgF001012,
+  ImgF001013,
 } from './PhisicsImages'
 
 export const Phisics = [
@@ -486,33 +487,38 @@ export const Phisics = [
       }
       return (
         <div className="quest">
-          <div className="quest__body">
-            <MathJax math="Протон p влетает в зазор между полюсами электромагнита с горизонтальной скоростью  `\vec{v}` лежащей в плоскости рисунка. Вектор индукции `\vec{B}`  магнитного поля направлен вертикально. Куда направлена действующая на протон сила Лоренца?" />
-          </div>
           <div className="quest__ans__group">
-            <div className="quest__vgroup">
-              <MathJax math="`\otimes`" />
-              <button onClick={answerSelect} ref={b1}>
-                от наблюдателя за плоскость рисунка
-              </button>
-            </div>
-            <div className="quest__vgroup">
-              <MathJax math="`\odot`" />
-              <button onClick={answerSelect} ref={b2}>
-                к наблюдателю из-за плоскости рисунка
-              </button>
-            </div>
-            <div className="quest__vgroup">
-              <MathJax math="`\rightarrow`" />
-              <button onClick={answerSelect} ref={b3}>
-                горизонтально вправо в плоскости рисунка
-              </button>
-            </div>
-            <div className="quest__vgroup">
-              <MathJax math="`\leftarrow`" />
-              <button onClick={answerSelect} ref={b4}>
-                горизонтально влево в плоскости рисунка
-              </button>
+            {ImgF001013}
+            <div className="quest__group__wrapper">
+              <div className="quest__body">
+                <MathJax math="Протон p влетает в зазор между полюсами электромагнита с горизонтальной скоростью  `\vec{v}` лежащей в плоскости рисунка. Вектор индукции `\vec{B}`  магнитного поля направлен вертикально. Куда направлена действующая на протон сила Лоренца?" />
+              </div>
+              <div className="quest__ans__group">
+                <div className="quest__vgroup">
+                  <MathJax math="`\otimes`" />
+                  <button onClick={answerSelect} ref={b1}>
+                    от наблюдателя за плоскость рисунка
+                  </button>
+                </div>
+                <div className="quest__vgroup">
+                  <MathJax math="`\odot`" />
+                  <button onClick={answerSelect} ref={b2}>
+                    к наблюдателю из-за плоскости рисунка
+                  </button>
+                </div>
+                <div className="quest__vgroup">
+                  <MathJax math="`\rightarrow`" />
+                  <button onClick={answerSelect} ref={b3}>
+                    горизонтально вправо в плоскости рисунка
+                  </button>
+                </div>
+                <div className="quest__vgroup">
+                  <MathJax math="`\leftarrow`" />
+                  <button onClick={answerSelect} ref={b4}>
+                    горизонтально влево в плоскости рисунка
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
