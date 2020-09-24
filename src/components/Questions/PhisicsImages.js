@@ -1,5 +1,108 @@
 import React from 'react'
 
+export const ImgF001001 = `<svg xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" width="1000" height="1000">
+    <style>
+      .mal { font: italic 48px sans-serif; }  
+      .ln { font: italic 48px serif; fill: green}
+      .pb { font: italic 48px serif; fill: blue}
+    </style>
+    <path d="M100 900 H 950" stroke="black" fill="transparent" stroke-width="2" />
+    <path d="M100 50 V 900" stroke="black" fill="transparent" stroke-width="2"/>
+    <path d="M200 100 V 900" stroke="black" fill="transparent" stroke-width="1"/>
+    <path d="M300 100 V 900" stroke="black" fill="transparent" stroke-width="1"/>
+    <path d="M400 100 V 900" stroke="black" fill="transparent" stroke-width="1"/>
+    <path d="M500 100 V 900" stroke="black" fill="transparent" stroke-width="1"/>
+    <path d="M600 100 V 900" stroke="black" fill="transparent" stroke-width="1"/>
+    <path d="M700 100 V 900" stroke="black" fill="transparent" stroke-width="1"/>
+    <path d="M800 100 V 900" stroke="black" fill="transparent" stroke-width="1"/>
+    <path d="M900 100 V 900" stroke="black" fill="transparent" stroke-width="1"/>
+    <path d="M100 800 H 900" stroke="black" fill="transparent" stroke-width="1" />
+    <path d="M100 700 H 900" stroke="black" fill="transparent" stroke-width="1" />
+    <path d="M100 600 H 900" stroke="black" fill="transparent" stroke-width="1" />
+    <path d="M100 500 H 900" stroke="black" fill="transparent" stroke-width="1" />
+    <path d="M100 400 H 900" stroke="black" fill="transparent" stroke-width="1" />
+    <path d="M100 300 H 900" stroke="black" fill="transparent" stroke-width="1" />
+    <path d="M100 200 H 900" stroke="black" fill="transparent" stroke-width="1" />
+    <path d="M100 100 H 900" stroke="black" fill="transparent" stroke-width="1" />
+    <path d="M100 600 L 600 100" stroke="green" fill="transparent" stroke-width="6" />
+    <path d="M100 900 C400 -30, 600 -30, 900 900" stroke="blue" fill="transparent" stroke-width="6" />
+    <text x="950" y="950" class="mal">t</text>
+    <text x="100" y="950" class="mal">0</text>
+    <text x="290" y="950" class="mal">4</text>
+    <text x="490" y="950" class="mal">8</text>
+    <text x="670" y="950" class="mal">12</text>
+    <text x="860" y="950" class="mal">16</text>
+    <text x="50" y="50" class="mal">x</text>
+    <text x="130" y="480" class="ln">1</text>
+    <text x="220" y="680" class="pb">2</text>
+    </svg>`
+
+export const ImgF001004 = `<svg xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" width="1000" height="500">
+    <path d="M100 100 H 900" style="stroke:black;stroke-width:2" />
+    <path d="M100 140 H 900" style="stroke:black;stroke-width:2" />
+    <rect x="100" y="100" width="40" height="40" style="fill:black;stroke:black;stroke-width:1" />
+    <rect x="860" y="100" width="40" height="40" style="fill:black;stroke:black;stroke-width:1" />
+    <circle cx="263" cy="120" r="20" style="fill:red;stroke:black;stroke-width:1" />
+    <circle cx="426" cy="120" r="20" style="fill:red;stroke:black;stroke-width:1" />
+    <circle cx="590" cy="120" r="20" style="fill:red;stroke:black;stroke-width:1" />
+    <circle cx="754" cy="120" r="20" style="fill:red;stroke:black;stroke-width:1" />
+    <polygon points="263,140 326,240 200,240" style="fill:lime;stroke:black;stroke-width:4" />
+    <path d="M120 140 V 300" style="stroke:black;stroke-width:2" />
+    <rect x="50" y="300" width="140" height="80" style="fill:transparent;stroke:black;stroke-width:3" />
+    <path d="M880 140 V 300" style="stroke:blue;stroke-width:2;stroke-opacity:0.6" />
+    <rect x="810" y="300" width="140" height="80" style="fill:transparent;stroke:blue;stroke-width:3;stroke-opacity:0.4" />
+    <text x="75" y="355" style="font: italic 48px sans-serif">3 кг</text>
+    </svg>`
+
+export const ImgF001005 = `<svg xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" width="1500" height="500">
+      <line x1="50" y1="100" x2="700" y2="200" style="stroke:black;stroke-width:4" />
+      <path d="M50 100 V 200" style="stroke:black;stroke-width:4"/>
+      <circle cx="50" cy="220" r="20" style="fill:transparent;stroke:black;stroke-width:4" />
+      <text x="80" y="230" style="font: italic 36px sans-serif">m</text>
+      <polygon points="190,127 170,160 210,160" style="fill:lime;stroke:black;stroke-width:4" />
+      <path d="M190 120 H 450" style="stroke:black;stroke-width:2;stroke-dasharray:19 10"/>
+      <text x="400" y="100" style="font: italic 36px sans-serif">α</text>
+      <path d="M400 120 Q 420 138 400 155" style="fill:transparent;stroke:black;stroke-width:2"/>
+      <path d="M700 200 V 420" style="stroke:black;stroke-width:4"/>
+      <polygon points="700,440 690,420 710,420" style="fill:black;stroke:black;stroke-width:1" />
+      <text x="655" y="430" style="font: italic 36px sans-serif">F</text>
+      <text x="655" y="405" style="font: italic 36px sans-serif">→</text>
+      <path d="M850 50 V 430" style="stroke:black;stroke-width:4"/>
+      <text x="810" y="460" style="font: italic 36px sans-serif">0</text>
+      <polygon points="850,25 840,50 860,50" style="fill:black;stroke:black;stroke-width:1" />
+      <text x="710" y="60" style="font: italic 36px sans-serif">M, Н*м</text>
+      <path d="M850 430 H 1430" style="stroke:black;stroke-width:4"/>
+      <polygon points="1460,430 1430,420 1430,440" style="fill:black;stroke:black;stroke-width:1" />
+      <text x="1360" y="470" style="font: italic 36px sans-serif">α, рад</text>
+      <path d="M850 120 Q 1000 120 1220 430" style="fill:transparent;stroke:black;stroke-width:4"/>
+      <text x="1200" y="470" style="font: italic 36px sans-serif">π/2</text>
+      <text x="810" y="135" style="font: italic 36px sans-serif">1</text>
+    </svg>`
+
+export const ImgF001008 = `<svg xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" width="700" height="700">
+      <path d="M100 600 H 650" style="stroke:black;stroke-width:2"/>
+      <polygon points="670,600 650,590 650,610" style="fill:black;stroke:black;stroke-width:1" />
+      <text x="620" y="630" style="font: italic 36px sans-serif">p</text>
+      <text x="70" y="630" style="font: italic 36px sans-serif">0</text>
+      <path d="M100 500 H 600" style="stroke:black;stroke-width:1"/>
+      <path d="M100 400 H 600" style="stroke:black;stroke-width:1"/>
+      <path d="M100 300 H 600" style="stroke:black;stroke-width:1"/>
+      <path d="M100 200 H 600" style="stroke:black;stroke-width:1"/>
+      <path d="M100 100 H 600" style="stroke:black;stroke-width:1"/>
+      <path d="M100 50 V 600" style="stroke:black;stroke-width:2"/>
+      <polygon points="100,30 90,50 110,50" style="fill:black;stroke:black;stroke-width:1" />
+      <text x="60" y="60" style="font: italic 36px sans-serif">T</text>
+      <path d="M200 100 V 600" style="stroke:black;stroke-width:1"/>
+      <path d="M300 100 V 600" style="stroke:black;stroke-width:1"/>
+      <path d="M400 100 V 600" style="stroke:black;stroke-width:1"/>
+      <path d="M500 100 V 600" style="stroke:black;stroke-width:1"/>
+      <path d="M600 100 V 600" style="stroke:black;stroke-width:1"/>
+      <circle cx="300" cy="500" r="5" style="fill:red;stroke:black;stroke-width:1" />
+      <text x="270" y="480" style="font: italic 36px sans-serif">2</text>
+      <circle cx="600" cy="100" r="5" style="fill:red;stroke:black;stroke-width:1" />
+      <text x="570" y="90" style="font: italic 36px sans-serif">1</text>
+    </svg>`
+
 export const ImgF001010 = (
   <svg width="750" height="250">
     <path d="M150 210 H 650" stroke="black" strokeWidth="2" />
@@ -158,13 +261,13 @@ export const ImgF001011 = (
       strokeDasharray="9 3"
     />
     <path
-      d="M80 160 V 210"
+      d="M80 162 V 210"
       stroke="gray"
       strokeWidth="1"
       strokeDasharray="9 3"
     />
     <path
-      d="M190 160 V 210"
+      d="M190 162 V 210"
       stroke="gray"
       strokeWidth="1"
       strokeDasharray="9 3"

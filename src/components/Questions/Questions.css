@@ -117,11 +117,20 @@
 
 .quest__ans__group{
   display:flex;
+  transition: 2s;
 }
 
 .quest__ans__group svg{
   flex-shrink: 0;
   margin:15px;
+  transition: 2s;
+}
+.quest__ans__group svg:hover{
+  transform: scale(2);
+}
+
+.quest__ans__group img{
+  transition: 2s;
 }
 
 .quest__ans__group img:hover {
