@@ -7,6 +7,7 @@ import {
   ImgF001008,
   ImgF001010,
   ImgF001011,
+  ImgF001012,
 } from './PhisicsImages'
 
 export const Phisics = [
@@ -435,32 +436,37 @@ export const Phisics = [
     Body: function () {
       return (
         <div className="quest">
-          <div className="quest__body">
-            Идеальный одноатомный газ переходит из состояния 1 в состояние 2
-            (см. диаграмму). Масса газа не меняется. Как меняются в ходе
-            указанного на диаграмме процесса давление газа, его объем и
-            внутренняя энергия? Для каждой величины определите соответствующий
-            характер изменения:
-            <ol>
-              <li>увеличивается;</li>
-              <li>уменьшается;</li>
-              <li>не меняется.</li>
-            </ol>
-            Запишите выбранные цифры для каждой физической величины. Цифры в
-            ответе могут повторяться.
-          </div>
           <div className="quest__ans__group">
-            <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
-              <label className="quest__label">Давление</label>
-            </div>
-            <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
-              <label className="quest__label">Объем</label>
-            </div>
-            <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
-              <label className="quest__label">Внутренняя энергия</label>
+            {ImgF001012}
+            <div className="quest__group__wrapper">
+              <div className="quest__body">
+                Идеальный одноатомный газ переходит из состояния 1 в состояние 2
+                (см. диаграмму). Масса газа не меняется. Как меняются в ходе
+                указанного на диаграмме процесса давление газа, его объем и
+                внутренняя энергия? Для каждой величины определите
+                соответствующий характер изменения:
+                <ol>
+                  <li>увеличивается;</li>
+                  <li>уменьшается;</li>
+                  <li>не меняется.</li>
+                </ol>
+                Запишите выбранные цифры для каждой физической величины. Цифры в
+                ответе могут повторяться.
+              </div>
+              <div className="quest__ans__group">
+                <div className="quest__group">
+                  <input className="quest__input" type="text" placeholder=" " />
+                  <label className="quest__label">Давление</label>
+                </div>
+                <div className="quest__group">
+                  <input className="quest__input" type="text" placeholder=" " />
+                  <label className="quest__label">Объем</label>
+                </div>
+                <div className="quest__group">
+                  <input className="quest__input" type="text" placeholder=" " />
+                  <label className="quest__label">Внутренняя энергия</label>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -292,3 +292,114 @@ export const ImgF001011 = (
     </text>
   </svg>
 )
+
+export const ImgF001012 = (
+  <svg width="250" height="250">
+    <defs>
+      <marker
+        id="MarkerArrow"
+        viewBox="0 0 10 10"
+        refX="13"
+        refY="5"
+        markerUnits="userSpaceOnUse"
+        orient="auto"
+        markerWidth="10"
+        markerHeight="10"
+      >
+        <polyline id="markerPoly1" points="0,0 10,5 0,10 0,5" fill="blue" />
+      </marker>
+    </defs>
+    <polyline
+      points="30,30 30,220 240,220"
+      fill="transparent"
+      stroke="black"
+      strokeWidth="2"
+    />
+    <polygon
+      points="250,220 240,215 240,225"
+      fill="black"
+      stroke="black"
+      strokeWidth="1"
+    />
+    <text x="210" y="245" style={{ font: 'italic 18px sans-serif' }}>
+      T
+    </text>
+    <polygon
+      points="30,15 25,30 35,30"
+      fill="black"
+      stroke="black"
+      strokeWidth="1"
+    />
+    <text x="0" y="15" style={{ font: 'italic 18px sans-serif' }}>
+      p
+    </text>
+    <path d="M30 100 H 230" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
+    <path d="M30 120 H 230" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
+    <path d="M30 140 H 230" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
+    <path d="M30 160 H 230" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
+    <path d="M30 180 H 230" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
+    <path d="M30 200 H 230" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
+    <path d="M50 100 V 220" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
+    <path d="M70 100 V 220" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
+    <path d="M90 100 V 220" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
+    <path
+      d="M110 100 V 220"
+      stroke="gray"
+      strokeWidth="1"
+      strokeOpacity="0.2"
+    />
+    <path
+      d="M130 100 V 220"
+      stroke="gray"
+      strokeWidth="1"
+      strokeOpacity="0.2"
+    />
+    <path
+      d="M150 100 V 220"
+      stroke="gray"
+      strokeWidth="1"
+      strokeOpacity="0.2"
+    />
+    <path
+      d="M170 100 V 220"
+      stroke="gray"
+      strokeWidth="1"
+      strokeOpacity="0.2"
+    />
+    <path
+      d="M190 100 V 220"
+      stroke="gray"
+      strokeWidth="1"
+      strokeOpacity="0.2"
+    />
+    <path
+      d="M210 100 V 220"
+      stroke="gray"
+      strokeWidth="1"
+      strokeOpacity="0.2"
+    />
+    <path
+      d="M230 100 V 220"
+      stroke="gray"
+      strokeWidth="1"
+      strokeOpacity="0.2"
+    />
+    <line
+      x1="150"
+      y1="140"
+      x2="90"
+      y2="180"
+      strokeWidth="2"
+      stroke="blue"
+      style={{ markerEnd: 'url(#MarkerArrow)' }}
+    />
+    <circle cx="150" cy="140" r="4" stroke="red" strokeWidth="1" fill="red" />
+    <text x="155" y="135" style={{ font: 'italic 14px sans-serif' }}>
+      1
+    </text>
+    <circle cx="90" cy="180" r="4" stroke="red" strokeWidth="1" fill="red" />
+    <text x="75" y="195" style={{ font: 'italic 14px sans-serif' }}>
+      2
+    </text>
+  </svg>
+)
