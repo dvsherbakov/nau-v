@@ -115,6 +115,15 @@
   justify-content: space-around;
 }
 
+.quest__ans__group{
+  display:flex;
+}
+
+.quest__ans__group svg{
+  flex-shrink: 0;
+  margin:15px;
+}
+
 .quest__ans__group img:hover {
   transform: scale(2);
 }

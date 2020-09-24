@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import MathJax from 'react-mathjax-preview'
-import { ImgF001010 } from './PhisicsImages'
+import { ImgF001010, ImgF001011 } from './PhisicsImages'
 
 export const Phisics = [
   {
@@ -488,29 +488,37 @@ export const Phisics = [
     Body: function () {
       return (
         <div className="quest">
-          <div className="quest__body">
-            Два моля одноатомного идеального газа участвуют в циклическом
-            процессе, график которого изображён на UV-диаграмме (U — внутренняя
-            энергия газа, V — его объём). Выберите два верных утверждения на
-            основании анализа представленного графика.
-            <ol>
-              <li>В процессе 1–2 газ адиабатно нагревается.</li>
-              <li>В процессе 2–3 температура газа не изменяется.</li>
-              <li>В процессе 3–4 газ получает некоторое количество теплоты.</li>
-              <li>В процессе 4–1 работа газа равна нулю.</li>
-              <li>
-                В процессе 1–2 газ получает количество теплоты, равное 200 Дж.
-              </li>
-            </ol>
-          </div>
           <div className="quest__ans__group">
-            <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
-              <label className="quest__label">Утверждение 1</label>
-            </div>
-            <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
-              <label className="quest__label">Утверждение 2</label>
+            {ImgF001011}
+            <div className="quest__group__wrapper">
+              <div className="quest__body">
+                Два моля одноатомного идеального газа участвуют в циклическом
+                процессе, график которого изображён на UV-диаграмме (U —
+                внутренняя энергия газа, V — его объём). Выберите два верных
+                утверждения на основании анализа представленного графика.
+                <ol>
+                  <li>В процессе 1–2 газ адиабатно нагревается.</li>
+                  <li>В процессе 2–3 температура газа не изменяется.</li>
+                  <li>
+                    В процессе 3–4 газ получает некоторое количество теплоты.
+                  </li>
+                  <li>В процессе 4–1 работа газа равна нулю.</li>
+                  <li>
+                    В процессе 1–2 газ получает количество теплоты, равное 200
+                    Дж.
+                  </li>
+                </ol>
+              </div>
+              <div className="quest__ans__group">
+                <div className="quest__group">
+                  <input className="quest__input" type="text" placeholder=" " />
+                  <label className="quest__label">Утверждение 1</label>
+                </div>
+                <div className="quest__group">
+                  <input className="quest__input" type="text" placeholder=" " />
+                  <label className="quest__label">Утверждение 2</label>
+                </div>
+              </div>
             </div>
           </div>
         </div>
