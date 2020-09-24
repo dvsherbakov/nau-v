@@ -118,3 +118,8 @@
 .quest__ans__group img:hover {
   transform: scale(2);
 }
+
+.quest__vertical__wrapper {
+  display: flex;
+  justify-content: center;
+}

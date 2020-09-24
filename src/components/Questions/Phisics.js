@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
-import MathJax from "react-mathjax-preview";
+import React, { useRef } from 'react'
+import MathJax from 'react-mathjax-preview'
+import { ImgF001010 } from './PhisicsImages'
 
 export const Phisics = [
   {
-    key: "f_001_001",
+    key: 'f_001_001',
     Body: function () {
       const svgImage = `<svg xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" width="1000" height="1000">
     <style>
@@ -40,12 +41,12 @@ export const Phisics = [
     <text x="50" y="50" class="mal">x</text>
     <text x="130" y="480" class="ln">1</text>
     <text x="220" y="680" class="pb">2</text>
-    </svg>`;
+    </svg>`
       const imageSvg = {
-        width: "250px",
-        height: "250px",
-        transition: "5s",
-      };
+        width: '250px',
+        height: '250px',
+        transition: '5s',
+      }
       return (
         <div className="quest">
           <div className="quest__ans__group">
@@ -68,11 +69,11 @@ export const Phisics = [
             </div>
           </div>
         </div>
-      );
+      )
     },
   },
   {
-    key: "f_001_002",
+    key: 'f_001_002',
     Body: function () {
       return (
         <div className="quest">
@@ -92,11 +93,11 @@ export const Phisics = [
             <label className="quest__label">Ответ</label>
           </div>
         </div>
-      );
+      )
     },
   },
   {
-    key: "f_001_003",
+    key: 'f_001_003',
     Body: function () {
       return (
         <div className="quest">
@@ -113,11 +114,11 @@ export const Phisics = [
             <label className="quest__label">Ответ</label>
           </div>
         </div>
-      );
+      )
     },
   },
   {
-    key: "f_001_004",
+    key: 'f_001_004',
     Body: function () {
       const svgImage = `<svg xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" width="1000" height="500">
     <path d="M100 100 H 900" style="stroke:black;stroke-width:2" />
@@ -134,15 +135,15 @@ export const Phisics = [
     <path d="M880 140 V 300" style="stroke:blue;stroke-width:2;stroke-opacity:0.6" />
     <rect x="810" y="300" width="140" height="80" style="fill:transparent;stroke:blue;stroke-width:3;stroke-opacity:0.4" />
     <text x="75" y="355" style="font: italic 48px sans-serif">3 кг</text>
-    </svg>`;
+    </svg>`
       const imageSvg = {
-        width: "400px",
-        height: "200px",
-        transition: "5s",
-      };
+        width: '400px',
+        height: '200px',
+        transition: '5s',
+      }
       return (
         <div className="quest">
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
             <img
               style={imageSvg}
               alt="sdfg"
@@ -162,11 +163,11 @@ export const Phisics = [
             <label className="quest__label">Ответ</label>
           </div>
         </div>
-      );
+      )
     },
   },
   {
-    key: "f_001_005",
+    key: 'f_001_005',
     Body: function () {
       const svgImage = `<svg xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" width="1500" height="500">
       <line x1="50" y1="100" x2="700" y2="200" style="stroke:black;stroke-width:4" />
@@ -191,14 +192,14 @@ export const Phisics = [
       <path d="M850 120 Q 1000 120 1220 430" style="fill:transparent;stroke:black;stroke-width:4"/>
       <text x="1200" y="470" style="font: italic 36px sans-serif">π/2</text>
       <text x="810" y="135" style="font: italic 36px sans-serif">1</text>
-    </svg>`;
+    </svg>`
       const imageSvg = {
-        width: "750px",
-        height: "250px",
-      };
+        width: '750px',
+        height: '250px',
+      }
       return (
         <div className="quest">
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          <div className="quest__vertical__wrapper">
             <img
               style={imageSvg}
               alt="sdfg"
@@ -247,11 +248,11 @@ export const Phisics = [
             </div>
           </div>
         </div>
-      );
+      )
     },
   },
   {
-    key: "f_001_006",
+    key: 'f_001_006',
     Body: function () {
       return (
         <div className="quest">
@@ -311,11 +312,11 @@ export const Phisics = [
             </div>
           </div>
         </div>
-      );
+      )
     },
   },
   {
-    key: "f_001_007",
+    key: 'f_001_007',
     Body: function () {
       return (
         <div className="quest">
@@ -383,11 +384,11 @@ export const Phisics = [
             </div>
           </div>
         </div>
-      );
+      )
     },
   },
   {
-    key: "f_001_008",
+    key: 'f_001_008',
     Body: function () {
       const svgImage = `<svg xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" width="700" height="700">
       <path d="M100 600 H 650" style="stroke:black;stroke-width:2"/>
@@ -411,12 +412,12 @@ export const Phisics = [
       <text x="270" y="480" style="font: italic 36px sans-serif">2</text>
       <circle cx="600" cy="100" r="5" style="fill:red;stroke:black;stroke-width:1" />
       <text x="570" y="90" style="font: italic 36px sans-serif">1</text>
-    </svg>`;
+    </svg>`
       const imageSvg = {
-        width: "250px",
-        height: "250px",
-        transition: "5s",
-      };
+        width: '250px',
+        height: '250px',
+        transition: '5s',
+      }
       return (
         <div className="quest">
           <div className="quest__ans__group">
@@ -440,11 +441,11 @@ export const Phisics = [
             </div>
           </div>
         </div>
-      );
+      )
     },
   },
   {
-    key: "f_001_009",
+    key: 'f_001_009',
     Body: function () {
       return (
         <div className="quest">
@@ -458,14 +459,15 @@ export const Phisics = [
             <label className="quest__label">Ответ</label>
           </div>
         </div>
-      );
+      )
     },
   },
   {
-    key: "f_001_010",
+    key: 'f_001_010',
     Body: function () {
       return (
         <div className="quest">
+          <div className="quest__vertical__wrapper">{ImgF001010}</div>
           <div className="quest__body">
             На рисунке показан график изменения температуры вещества по мере
             поглощения им количества теплоты. Вещество находится в сосуде под
@@ -478,11 +480,11 @@ export const Phisics = [
             <label className="quest__label">Ответ</label>
           </div>
         </div>
-      );
+      )
     },
   },
   {
-    key: "f_001_011",
+    key: 'f_001_011',
     Body: function () {
       return (
         <div className="quest">
@@ -512,11 +514,11 @@ export const Phisics = [
             </div>
           </div>
         </div>
-      );
+      )
     },
   },
   {
-    key: "f_001_012",
+    key: 'f_001_012',
     Body: function () {
       return (
         <div className="quest">
@@ -549,20 +551,20 @@ export const Phisics = [
             </div>
           </div>
         </div>
-      );
+      )
     },
   },
   {
-    key: "f_001_013",
+    key: 'f_001_013',
     Body: function () {
-      const b1 = useRef(null);
-      const b2 = useRef(null);
-      const b3 = useRef(null);
-      const b4 = useRef(null);
+      const b1 = useRef(null)
+      const b2 = useRef(null)
+      const b3 = useRef(null)
+      const b4 = useRef(null)
       const answerSelect = (e) => {
-        [b1, b2, b3, b4].forEach((btn) => (btn.current.className = ""));
-        e.target.className = "selected";
-      };
+        ;[b1, b2, b3, b4].forEach((btn) => (btn.current.className = ''))
+        e.target.className = 'selected'
+      }
       return (
         <div className="quest">
           <div className="quest__body">
@@ -595,7 +597,7 @@ export const Phisics = [
             </div>
           </div>
         </div>
-      );
+      )
     },
   },
-];
+]
