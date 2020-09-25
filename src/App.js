@@ -1,14 +1,19 @@
-import React from "react";
-import TestQuiz from "./components/Questions/Quiz";
+import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+
+import { useRoutes } from './routes'
+import { Navbar } from './components/Navbar'
 
 function App() {
+  const routes = useRoutes()
   return (
-    <div className="App">
-      <TestQuiz />
-    </div>
-  );
+    <Router>
+      <Navbar />
+      <div>{routes}</div>
+    </Router>
+  )
 }
 
-export default App;
+export default App
 
 //https://usehooks.com/ - Кастомные хуки
