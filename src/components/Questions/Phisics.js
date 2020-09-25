@@ -10,6 +10,8 @@ import {
   ImgF001012,
   ImgF001013,
   ImgF001014,
+  ImgF001015,
+  ImgF001016,
 } from './PhisicsImages'
 
 export const Phisics = [
@@ -546,6 +548,80 @@ export const Phisics = [
                 <input className="quest__input" type="text" placeholder=" " />
                 <label className="quest__label">Ответ</label>
               </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+  },
+  {
+    key: 'f_001_015',
+    Body: function () {
+      return (
+        <div className="quest">
+          <div className="quest__ans__group">
+            {ImgF001015}
+            <div className="quest__group__wrapper">
+              <div className="quest__body">
+                На рисунке изображены оптическая ось OO' тонкой собирающей
+                линзы, луч света 1, падающий на эту линзу, и луч света 2,
+                прошедший через эту линзу. На рисунке размер одной клеточки
+                соответствует 1 см. Каково фокусное расстояние линзы? (Ответ
+                дать в сантиметрах.)
+              </div>
+
+              <div className="quest__group">
+                <input className="quest__input" type="text" placeholder=" " />
+                <label className="quest__label">Ответ</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+  },
+  {
+    key: 'f_001_011',
+    Body: function () {
+      return (
+        <div className="quest">
+          <div className="quest__vertical__wrapper">{ImgF001016}</div>
+          <div className="quest__body">
+            <MathJax
+              math="Плоский воздушный конденсатор, электроёмкость которого равна 17,7 пФ, заряжают до напряжения 5 В и отключают от источника напряжения. 
+                Затем одну пластину начинают медленно удалять от другой. Зависимость расстояния d между пластинами от времени t изображена на рисунке.
+                (Электрическая постоянная равна `ε_{0} = 8,85 · 10^{−12}` Ф/м.)"
+            />
+            На основании заданных параметров и приведённого графика, выберите
+            два верных утверждения.
+            <ol>
+              <li>Площадь пластины конденсатора равна 20 см2.</li>
+              <li>
+                Заряд на обкладках конденсатора увеличивается прямо
+                пропорционально времени.
+              </li>
+              <li>
+                Электроёмкость конденсатора не изменяется с течением времени и
+                равна 17,7 пФ.
+              </li>
+              <li>
+                В момент времени t = 10 с модуль напряжённости электрического
+                поля в конденсаторе равен 5 В/м.
+              </li>
+              <li>
+                В момент времени t = 20 с напряжение между пластинами
+                конденсатора равно 7 В.
+              </li>
+            </ol>
+          </div>
+          <div className="quest__ans__group">
+            <div className="quest__group">
+              <input className="quest__input" type="text" placeholder=" " />
+              <label className="quest__label">Утверждение 1</label>
+            </div>
+            <div className="quest__group">
+              <input className="quest__input" type="text" placeholder=" " />
+              <label className="quest__label">Утверждение 2</label>
             </div>
           </div>
         </div>

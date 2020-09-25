@@ -531,3 +531,210 @@ export const ImgF001014 = (
     </text>
   </svg>
 )
+
+export const ImgF001015 = (
+  <svg width="250" height="250">
+    <defs>
+      <marker
+        id="MarkGreen"
+        viewBox="0 0 10 10"
+        refX="10"
+        refY="5"
+        markerUnits="userSpaceOnUse"
+        orient="auto"
+        markerWidth="10"
+        markerHeight="10"
+      >
+        <polyline id="markerPoly1" points="0,0 10,5 0,10 0,5" fill="green" />
+      </marker>
+    </defs>
+    <path
+      d="M30 50 H 210 M30 70 H210 M30 90 H210 M30 110 H210 M30 130 H210 M30 150 H210 M30 170 H210"
+      stroke="black"
+      strokeWidth="1"
+      strokeOpacity="0.5"
+    />
+    <path
+      d="M 30 50 V170 M50 50 V170 M70 50 V170 M90 50 V170 M110 50 V170 M130 50 V170 M150 50 V170 M170 50 V170 M190 50 V170 M210 50 V170"
+      stroke="black"
+      strokeWidth="1"
+      strokeOpacity="0.5"
+    />
+    <path d="M 20 110 H 220" stroke="blue" strokeWidth="2" />
+    <text
+      x="5"
+      y="130"
+      style={{ font: 'italic 18px sans-serif', fill: 'blue' }}
+    >
+      O
+    </text>
+    <text
+      x="220"
+      y="130"
+      style={{ font: 'italic 18px sans-serif', fill: 'blue' }}
+    >
+      O'
+    </text>
+    <line
+      x1="50"
+      y1="110"
+      x2="90"
+      y2="70"
+      style={{ markerEnd: 'url(#MarkGreen)' }}
+      stroke="green"
+      strokeWidth="2"
+    />
+    <text
+      x="55"
+      y="85"
+      style={{ font: 'italic 18px sans-serif', fill: 'green' }}
+    >
+      1
+    </text>
+    <line
+      x1="176"
+      y1="116"
+      x2="190"
+      y2="170"
+      style={{ markerEnd: 'url(#MarkGreen)' }}
+      stroke="green"
+      strokeWidth="2"
+    />
+    <text
+      x="155"
+      y="145"
+      style={{ font: 'italic 18px sans-serif', fill: 'green' }}
+    >
+      2
+    </text>
+  </svg>
+)
+
+export const ImgF001016 = (
+  <svg width="601" height="481" style={{ margin: '10px' }}>
+    <defs>
+      <pattern
+        id="smallGrid"
+        width="10"
+        height="10"
+        patternUnits="userSpaceOnUse"
+      >
+        <path
+          d="M 10 0 L 0 0 0 10"
+          fill="none"
+          stroke="gray"
+          stroke-width="0.5"
+        />
+      </pattern>
+      <pattern id="grid" width="100" height="80" patternUnits="userSpaceOnUse">
+        <rect width="100" height="80" fill="url(#smallGrid)" />
+        <path
+          d="M 100 0 L 0 0 0 80"
+          fill="none"
+          stroke="gray"
+          stroke-width="1"
+        />
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#grid)" />
+    <path
+      d="M 100 15 V 400 H 585"
+      stroke="black"
+      strokeWidth="2"
+      fill="transparent"
+    />
+    <polygon points="100, 5 95,15 105,15" />
+    <polygon points="595 400 585,395 585 405" />
+    <text
+      x="55"
+      y="328"
+      style={{ font: 'italic 24px sans-serif', fill: 'black' }}
+    >
+      0,4
+    </text>
+    <text
+      x="55"
+      y="248"
+      style={{ font: 'italic 24px sans-serif', fill: 'black' }}
+    >
+      0,8
+    </text>
+    <text
+      x="55"
+      y="168"
+      style={{ font: 'italic 24px sans-serif', fill: 'black' }}
+    >
+      1,2
+    </text>
+    <text
+      x="55"
+      y="88"
+      style={{ font: 'italic 24px sans-serif', fill: 'black' }}
+    >
+      1.6
+    </text>
+    <text
+      x="25"
+      y="30"
+      style={{ font: 'italic 24px sans-serif', fill: 'black' }}
+    >
+      d, мм
+    </text>
+    <text
+      x="75"
+      y="420"
+      style={{ font: 'italic 24px sans-serif', fill: 'black' }}
+    >
+      0
+    </text>
+    <text
+      x="185"
+      y="430"
+      style={{ font: 'italic 24px sans-serif', fill: 'black' }}
+    >
+      10
+    </text>
+    <text
+      x="285"
+      y="430"
+      style={{ font: 'italic 24px sans-serif', fill: 'black' }}
+    >
+      20
+    </text>
+    <text
+      x="385"
+      y="430"
+      style={{ font: 'italic 24px sans-serif', fill: 'black' }}
+    >
+      30
+    </text>
+    <text
+      x="485"
+      y="430"
+      style={{ font: 'italic 24px sans-serif', fill: 'black' }}
+    >
+      40
+    </text>
+    <text
+      x="560"
+      y="430"
+      style={{ font: 'italic 24px sans-serif', fill: 'black' }}
+    >
+      t, c
+    </text>
+    <line
+      x1="100"
+      y1="200"
+      x2="580"
+      y2="10"
+      stroke="blue"
+      strokeWidth="3"
+      strokeDasharray="10 5"
+    />
+    <circle cx="100" cy="200" r="5" fill="red" />
+    <circle cx="200" cy="160" r="5" fill="red" />
+    <circle cx="300" cy="120" r="5" fill="red" />
+    <circle cx="400" cy="80" r="5" fill="red" />
+    <circle cx="500" cy="40" r="5" fill="red" />
+  </svg>
+)
