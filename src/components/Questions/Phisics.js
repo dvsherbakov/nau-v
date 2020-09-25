@@ -581,7 +581,7 @@ export const Phisics = [
     },
   },
   {
-    key: 'f_001_011',
+    key: 'f_001_016',
     Body: function () {
       return (
         <div className="quest">
@@ -622,6 +622,60 @@ export const Phisics = [
             <div className="quest__group">
               <input className="quest__input" type="text" placeholder=" " />
               <label className="quest__label">Утверждение 2</label>
+            </div>
+          </div>
+        </div>
+      )
+    },
+  },
+  {
+    key: 'f_001_017',
+    Body: function () {
+      return (
+        <div className="quest">
+          <div className="quest__body">
+            Установите соответствие между разновидностями тонкой линзы и
+            результатами преломления в ней параллельных лучей. К каждой позиции
+            первого столбца подберите нужную позицию второго и запишите в
+            таблицу выбранные цифры под соответствующими буквами.
+            <div className="quest__ans__group">
+              <div>
+                <ol type="A">
+                  <li>Собирающая</li>
+                  <li>Рассеивающая</li>
+                </ol>
+              </div>
+              <div>
+                <ol>
+                  <li>
+                    Лучи, параллельные главной оптической оси линзы, пройдя
+                    через нее, пройдут затем через ее дальний фокус
+                  </li>
+                  <li>
+                    Лучи, параллельные главной оптической оси линзы, пройдя
+                    через нее, пересекутся затем в ее ближнем фокусе
+                  </li>
+                  <li>
+                    Лучи, параллельные главной оптической оси линзы, пройдя
+                    через нее, будут казаться расходящимися из ее ближнего
+                    фокуса
+                  </li>
+                  <li>
+                    Лучи, параллельные главной оптической оси линзы, пройдя
+                    через нее, соберутся в ее дальнем фокусе
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div className="quest__ans__group">
+            <div className="quest__group">
+              <input className="quest__input" type="text" placeholder=" " />
+              <label className="quest__label">A</label>
+            </div>
+            <div className="quest__group">
+              <input className="quest__input" type="text" placeholder=" " />
+              <label className="quest__label">B</label>
             </div>
           </div>
         </div>
