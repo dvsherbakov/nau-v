@@ -9,6 +9,7 @@ import {
   ImgF001011,
   ImgF001012,
   ImgF001013,
+  ImgF001014,
 } from './PhisicsImages'
 
 export const Phisics = [
@@ -518,6 +519,32 @@ export const Phisics = [
                     горизонтально влево в плоскости рисунка
                   </button>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+  },
+  {
+    key: 'f_001_014',
+    Body: function () {
+      return (
+        <div className="quest">
+          <div className="quest__ans__group">
+            {ImgF001014}
+            <div className="quest__group__wrapper">
+              <div className="quest__body">
+                На сколько изменится сопротивление участка цепи АВ,
+                изображенного на рисунке, если ключ К разомкнуть? Сопротивление
+                каждого резистора равно 4 Ом. (Ответ дайте в омах. Если
+                сопротивление увеличится, изменение считайте положительным, если
+                уменьшится — отрицательным.)
+              </div>
+
+              <div className="quest__group">
+                <input className="quest__input" type="text" placeholder=" " />
+                <label className="quest__label">Ответ</label>
               </div>
             </div>
           </div>

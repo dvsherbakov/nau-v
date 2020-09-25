@@ -449,3 +449,85 @@ export const ImgF001013 = (
     </text>
   </svg>
 )
+
+export const ImgF001014 = (
+  <svg width="250" height="250">
+    <circle cx="20" cy="50" r="5" stroke="black" fill="transparent" />
+    <circle cx="20" cy="200" r="5" stroke="black" fill="transparent" />
+    <path
+      d="M25 50 H60 M 100 50 H220 V100 M 220 140 V200 H25 M130 50 V100 M130 140 V200 M220 50 190 100 M166 140 130 200 M166 140 170 95 A50,50 0 0 1 190,100"
+      stroke="black"
+      strokeWidth="2"
+      fill="transparent"
+    />
+    <rect
+      x="60"
+      y="40"
+      width="40"
+      height="20"
+      stroke="black"
+      fill="transparent"
+      strokeWidth="2"
+    />
+    <rect
+      x="120"
+      y="100"
+      width="20"
+      height="40"
+      stroke="black"
+      fill="transparent"
+      strokeWidth="2"
+    />
+    <rect
+      x="210"
+      y="100"
+      width="20"
+      height="40"
+      stroke="black"
+      fill="transparent"
+      strokeWidth="2"
+    />
+    <text
+      x="10"
+      y="40"
+      style={{ font: 'italic 18px sans-serif', fill: 'black' }}
+    >
+      A
+    </text>
+    <text
+      x="10"
+      y="190"
+      style={{ font: 'italic 18px sans-serif', fill: 'black' }}
+    >
+      B
+    </text>
+    <text
+      x="72"
+      y="57"
+      style={{ font: 'italic 18px sans-serif', fill: 'black' }}
+    >
+      R
+    </text>
+    <text
+      x="123"
+      y="125"
+      style={{ font: 'italic 18px sans-serif', fill: 'black' }}
+    >
+      R
+    </text>
+    <text
+      x="213"
+      y="125"
+      style={{ font: 'italic 18px sans-serif', fill: 'black' }}
+    >
+      R
+    </text>
+    <text
+      x="173"
+      y="90"
+      style={{ font: 'italic 18px sans-serif', fill: 'black' }}
+    >
+      K
+    </text>
+  </svg>
+)
