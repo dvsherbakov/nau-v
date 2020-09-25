@@ -1,0 +1,20 @@
+
+.menu li{
+  display: inline-block;
+}
+
+.menu a{
+  line-height: 36px;
+  color: #323232;
+  font-size: 16px;
+  border: 1px solid transparent;
+  padding: 0px 16px;
+  transition: all .5s;
+}
+.menu a:hover{
+  border-color: #ffc222;
+}
+
+.menu li+li{
+  padding-left: 10px;
+}

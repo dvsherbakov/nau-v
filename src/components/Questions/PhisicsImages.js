@@ -623,7 +623,7 @@ export const ImgF001016 = (
           d="M 10 0 L 0 0 0 10"
           fill="none"
           stroke="gray"
-          stroke-width="0.5"
+          strokeWidth="0.5"
         />
       </pattern>
       <pattern id="grid" width="100" height="80" patternUnits="userSpaceOnUse">
@@ -632,7 +632,7 @@ export const ImgF001016 = (
           d="M 100 0 L 0 0 0 80"
           fill="none"
           stroke="gray"
-          stroke-width="1"
+          strokeWidth="1"
         />
       </pattern>
     </defs>

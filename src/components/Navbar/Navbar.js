@@ -1,9 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
+import './Navbar.css'
+
 export const Navbar = () => {
   return (
-    <nav>
+    <nav className="menu">
       <ul id="nav-mobile" className="right hide-on-med-and-down">
         <li>
           <NavLink to="/test">Пройти тест</NavLink>
