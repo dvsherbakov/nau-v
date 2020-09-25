@@ -292,3 +292,216 @@ export const ImgF001011 = (
     </text>
   </svg>
 )
+
+export const ImgF001012 = (
+  <svg width="250" height="250">
+    <defs>
+      <marker
+        id="MarkerArrow"
+        viewBox="0 0 10 10"
+        refX="13"
+        refY="5"
+        markerUnits="userSpaceOnUse"
+        orient="auto"
+        markerWidth="10"
+        markerHeight="10"
+      >
+        <polyline id="markerPoly1" points="0,0 10,5 0,10 0,5" fill="blue" />
+      </marker>
+    </defs>
+    <polyline
+      points="30,30 30,220 240,220"
+      fill="transparent"
+      stroke="black"
+      strokeWidth="2"
+    />
+    <polygon
+      points="250,220 240,215 240,225"
+      fill="black"
+      stroke="black"
+      strokeWidth="1"
+    />
+    <text x="210" y="245" style={{ font: 'italic 18px sans-serif' }}>
+      T
+    </text>
+    <polygon
+      points="30,15 25,30 35,30"
+      fill="black"
+      stroke="black"
+      strokeWidth="1"
+    />
+    <text x="0" y="15" style={{ font: 'italic 18px sans-serif' }}>
+      p
+    </text>
+    <path d="M30 100 H 230" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
+    <path d="M30 120 H 230" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
+    <path d="M30 140 H 230" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
+    <path d="M30 160 H 230" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
+    <path d="M30 180 H 230" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
+    <path d="M30 200 H 230" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
+    <path d="M50 100 V 220" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
+    <path d="M70 100 V 220" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
+    <path d="M90 100 V 220" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
+    <path
+      d="M110 100 V 220"
+      stroke="gray"
+      strokeWidth="1"
+      strokeOpacity="0.2"
+    />
+    <path
+      d="M130 100 V 220"
+      stroke="gray"
+      strokeWidth="1"
+      strokeOpacity="0.2"
+    />
+    <path
+      d="M150 100 V 220"
+      stroke="gray"
+      strokeWidth="1"
+      strokeOpacity="0.2"
+    />
+    <path
+      d="M170 100 V 220"
+      stroke="gray"
+      strokeWidth="1"
+      strokeOpacity="0.2"
+    />
+    <path
+      d="M190 100 V 220"
+      stroke="gray"
+      strokeWidth="1"
+      strokeOpacity="0.2"
+    />
+    <path
+      d="M210 100 V 220"
+      stroke="gray"
+      strokeWidth="1"
+      strokeOpacity="0.2"
+    />
+    <path
+      d="M230 100 V 220"
+      stroke="gray"
+      strokeWidth="1"
+      strokeOpacity="0.2"
+    />
+    <line
+      x1="150"
+      y1="140"
+      x2="90"
+      y2="180"
+      strokeWidth="2"
+      stroke="blue"
+      style={{ markerEnd: 'url(#MarkerArrow)' }}
+    />
+    <circle cx="150" cy="140" r="4" stroke="red" strokeWidth="1" fill="red" />
+    <text x="155" y="135" style={{ font: 'italic 14px sans-serif' }}>
+      1
+    </text>
+    <circle cx="90" cy="180" r="4" stroke="red" strokeWidth="1" fill="red" />
+    <text x="75" y="195" style={{ font: 'italic 14px sans-serif' }}>
+      2
+    </text>
+  </svg>
+)
+export const ImgF001013 = (
+  <svg width="150" height="250">
+    <defs>
+      <marker
+        id="MarkArr"
+        viewBox="0 0 10 10"
+        refX="10"
+        refY="5"
+        markerUnits="userSpaceOnUse"
+        orient="auto"
+        markerWidth="10"
+        markerHeight="10"
+      >
+        <polyline id="markerPoly1" points="0,0 10,5 0,10 0,5" fill="grey" />
+      </marker>
+    </defs>
+    <path
+      d="M10 10 V90 H90 V10 Q 75 0 50 20 Q 25 35 10 10"
+      fill="blue"
+      fillOpacity="0.1"
+      stroke="blue"
+      strokeWidth="2"
+    />
+    <text
+      x="40"
+      y="65"
+      style={{ font: 'italic 32px sans-serif', fill: 'blue' }}
+    >
+      N
+    </text>
+    <path
+      d="M10 240 V160 H90 V240 Q 75 220 50 230 Q 25 250 10 240"
+      fill="red"
+      fillOpacity="0.1"
+      stroke="red"
+      strokeWidth="2"
+    />
+    <text
+      x="40"
+      y="205"
+      style={{ font: 'italic 32px sans-serif', fill: 'red' }}
+    >
+      S
+    </text>
+    <path
+      d="M 80 90 V 160"
+      stroke="gray"
+      style={{ markerEnd: 'url(#MarkArr)' }}
+    />
+    <path
+      d="M 20 90 V 160"
+      stroke="gray"
+      style={{ markerEnd: 'url(#MarkArr)' }}
+    />
+    <path
+      d="M 50 90 V 160"
+      stroke="gray"
+      style={{ markerEnd: 'url(#MarkArr)' }}
+    />
+    <text
+      x="2"
+      y="150"
+      style={{ font: 'italic 16px sans-serif', fill: 'black' }}
+    >
+      B
+    </text>
+    <text
+      x="0"
+      y="137"
+      style={{ font: 'italic 16px sans-serif', fill: 'black' }}
+    >
+      →
+    </text>
+    <path
+      d="M 35 120 H 95"
+      stroke="gray"
+      style={{ markerEnd: 'url(#MarkArr)' }}
+    />
+    <text
+      x="90"
+      y="110"
+      style={{ font: 'italic 16px sans-serif', fill: 'black' }}
+    >
+      v
+    </text>
+    <text
+      x="88"
+      y="100"
+      style={{ font: 'italic 16px sans-serif', fill: 'black' }}
+    >
+      →
+    </text>
+    <circle cx="35" cy="120" r="4" stroke="black" strokeWidth="1" fill="gray" />
+    <text
+      x="28"
+      y="110"
+      style={{ font: 'italic 16px sans-serif', fill: 'black' }}
+    >
+      p
+    </text>
+  </svg>
+)
