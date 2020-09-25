@@ -141,29 +141,12 @@ export const ImgF001010 = (
       strokeDasharray="15 5"
     />
     <path
-      d="M290 100 V 210"
+      d="M290 100 V 210 M360 100 V 210 M430 100 V 210 M500 50 V 210"
       stroke="black"
       strokeWidth="1"
-      strokeDasharray="15 5"
+      strokeDasharray="12 3"
     />
-    <path
-      d="M360 100 V 210"
-      stroke="black"
-      strokeWidth="1"
-      strokeDasharray="15 5"
-    />
-    <path
-      d="M430 100 V 210"
-      stroke="black"
-      strokeWidth="1"
-      strokeDasharray="15 5"
-    />
-    <path
-      d="M500 50 V 210"
-      stroke="black"
-      strokeWidth="1"
-      strokeDasharray="11 4"
-    />
+
     <polyline
       points="150,150 220,100 430,100 530,30"
       stroke="blue"
@@ -333,56 +316,17 @@ export const ImgF001012 = (
     <text x="0" y="15" style={{ font: 'italic 18px sans-serif' }}>
       p
     </text>
-    <path d="M30 100 H 230" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
-    <path d="M30 120 H 230" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
-    <path d="M30 140 H 230" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
-    <path d="M30 160 H 230" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
-    <path d="M30 180 H 230" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
-    <path d="M30 200 H 230" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
-    <path d="M50 100 V 220" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
-    <path d="M70 100 V 220" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
-    <path d="M90 100 V 220" stroke="gray" strokeWidth="1" strokeOpacity="0.2" />
     <path
-      d="M110 100 V 220"
+      d="M30 100 H 230 M30 120 H 230 M30 140 H 230 M30 160 H 230 M30 180 H 230"
       stroke="gray"
       strokeWidth="1"
-      strokeOpacity="0.2"
+      strokeOpacity="0.5"
     />
     <path
-      d="M130 100 V 220"
+      d="M30 200 H 230 M50 100 V 220 M70 100 V 220 M90 100 V 220 M110 100 V 220 M130 100 V 220 M150 100 V 220 M170 100 V 220 M190 100 V 220 M210 100 V 220 M230 100 V 220"
       stroke="gray"
       strokeWidth="1"
-      strokeOpacity="0.2"
-    />
-    <path
-      d="M150 100 V 220"
-      stroke="gray"
-      strokeWidth="1"
-      strokeOpacity="0.2"
-    />
-    <path
-      d="M170 100 V 220"
-      stroke="gray"
-      strokeWidth="1"
-      strokeOpacity="0.2"
-    />
-    <path
-      d="M190 100 V 220"
-      stroke="gray"
-      strokeWidth="1"
-      strokeOpacity="0.2"
-    />
-    <path
-      d="M210 100 V 220"
-      stroke="gray"
-      strokeWidth="1"
-      strokeOpacity="0.2"
-    />
-    <path
-      d="M230 100 V 220"
-      stroke="gray"
-      strokeWidth="1"
-      strokeOpacity="0.2"
+      strokeOpacity="0.5"
     />
     <line
       x1="150"
@@ -486,7 +430,7 @@ export const ImgF001013 = (
       y="110"
       style={{ font: 'italic 16px sans-serif', fill: 'black' }}
     >
-      v
+      ʋ
     </text>
     <text
       x="88"
