@@ -1,5 +1,9 @@
 import React from 'react'
 
 export const CheckPage = () => {
-  return <h1>Проверочные вопросы</h1>
+  return (
+    <div className="container">
+      <h1>Проверочные вопросы</h1>
+    </div>
+  )
 }
