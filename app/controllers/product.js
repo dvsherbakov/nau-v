@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const Product = require('../models/product.js')
 
 const getAll = (req, res) => {
+  console.log('getAll')
   Product.find()
     .exec()
     .then((products) => res.json(products))

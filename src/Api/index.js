@@ -17,6 +17,7 @@ export default class Api {
           ...config,
         }
         newConfig.headers.Autorization = `Bearer ${this.token}`
+        console.log('newConf', newConfig)
         return newConfig
       },
       (e) => Promise.reject(e)
@@ -32,7 +33,7 @@ export default class Api {
           throw error
         }
         if (!this.refreshRequest) {
-          this.refreshRequest = await this.client.post('/auth/refresh', {
+          this.refreshRequest = await this.client.post(`/api/refresh-tokens`, {
             refreshtoken: this.refreshToken,
           })
         }
@@ -46,9 +47,21 @@ export default class Api {
   }
 
   async login({ login, password }) {
-    const { data } = await this.client.post('/auth/login', { login, password })
-    this.token = data.token
+    const { data } = await this.client.post('/api/auth', {
+      login,
+      password,
+    })
+    console.log('Data', data)
+    this.token = data.accessToken
     this.refreshToken = data.refreshToken
+  }
+
+  async register({ login, password }) {
+    const { data } = await this.client.post('/api/register', {
+      login,
+      password,
+    })
+    return data
   }
 
   logout() {
@@ -57,6 +70,6 @@ export default class Api {
   }
 
   getProducts() {
-    return this.client('/products').then(({ data }) => data)
+    return this.client('/api/products').then(({ data }) => data)
   }
 }

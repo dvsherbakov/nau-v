@@ -15,7 +15,7 @@ const app = express()
 const conf = require('./config')
 
 conf.express(app)
-//conf.routes(app)
+conf.routes(app)
 
 const dev = app.get('env') !== 'production'
 
@@ -54,9 +54,8 @@ if (!dev) {
 
 if (dev) {
   console.log('DEV')
-  app.get('/api', (req, res) => res.send('jhkjhkjhkj'))
-  app.get('/', (req, res) => res.send('We are on main page'))
-  app.use(morgan('dev'))
+  app.get('/about', (req, res) => res.send('We are on main page'))
+  //app.use(morgan('dev'))
 }
 
 start()
