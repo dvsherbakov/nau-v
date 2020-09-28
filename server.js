@@ -46,8 +46,7 @@ if (!dev) {
   app.use(morgan('common'))
 
   app.use(express.static(path.resolve(__dirname, 'build')))
-
-  //console.log(path.resolve(__dirname, 'build', 'index.html'))
+  app.get('/api/probe', (req, res) => res.send('We are on TEST page'))
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
   })
@@ -55,6 +54,7 @@ if (!dev) {
 
 if (dev) {
   console.log('DEV')
+  app.get('/api', (req, res) => res.send('jhkjhkjhkj'))
   app.get('/', (req, res) => res.send('We are on main page'))
   app.use(morgan('dev'))
 }
