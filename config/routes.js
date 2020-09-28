@@ -4,7 +4,7 @@ const authMiddleware = require('../app/middleware/auth')
 
 module.exports = (app) => {
   //test
-  app.get('/probe', (req, res) => res.send('We are on TEST page'))
+  //app.get('/probe', (req, res) => res.send('We are on TEST page'))
   //products
   app.get('/products', authMiddleware, products.getAll)
 

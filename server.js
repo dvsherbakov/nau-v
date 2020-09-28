@@ -15,7 +15,7 @@ const app = express()
 const conf = require('./config')
 
 conf.express(app)
-conf.routes(app)
+//conf.routes(app)
 
 const dev = app.get('env') !== 'production'
 
