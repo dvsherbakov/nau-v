@@ -2,17 +2,20 @@ import React from 'react'
 
 export default function Header() {
   return (
-    <header class="header">
-      <div class="header__top">
-        <div class="container">
-          <div class="header__contacts">
-            <a class="header__phone" href="tel:+79129221234">
+    <header className="header">
+      <div className="header__top">
+        <div className="container">
+          <div className="header__contacts">
+            <a className="header__phone" href="tel:+79129221234">
               +7 912 922 12 34
             </a>
-            <a class="header__email" href="email:vacheslavnaumenko@mail.com">
+            <a
+              className="header__email"
+              href="email:vacheslavnaumenko@mail.com"
+            >
               vacheslavnaumenko@mail.com
             </a>
-            <a class="header__btn" href="#">
+            <a className="header__btn" href="https://www.google.com/">
               Школа №58
             </a>
           </div>
