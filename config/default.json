@@ -1,8 +1,8 @@
 {
     "port": 5050,
     "jwtSecret": "$2b$10$ZVQNwaBFAYZHiMXuMaPtHO",
-    "mongoUri": "mongodb://localhost:27017/online-store",
-    "mongoUri2": "mongodb+srv://ds:gzaktpf6@cluster0-vhkxj.azure.mongodb.net/app?retryWrites=true&w=majority",
+    "mongoUri2": "mongodb://localhost:27017/online-store",
+    "mongoUri": "mongodb+srv://ds:gzaktpf6@cluster0-vhkxj.azure.mongodb.net/app?retryWrites=true&w=majority",
     "jwt": {
         "secret": "$2b$10$ZVQNwaBFAYZHiMXuMaPtHO",
         "token": {
