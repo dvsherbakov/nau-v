@@ -6,7 +6,7 @@ import './Navbar.css'
 export const Navbar = () => {
   return (
     <nav className="menu container">
-      <ul id="nav-mobile" className="right hide-on-med-and-down">
+      <ul id="nav-mobile" className="menu">
         <li>
           <NavLink to="/test">Пройти тест</NavLink>
         </li>
@@ -14,7 +14,13 @@ export const Navbar = () => {
           <NavLink to="/check">Проверочные вопросы</NavLink>
         </li>
         <li>
-          <NavLink to="/">Выйти</NavLink>
+          <NavLink to="/">Главная</NavLink>
+        </li>
+        <li>
+          <NavLink to="/auth">Login</NavLink>
+        </li>
+        <li>
+          <NavLink to="/register">Регистрация</NavLink>
         </li>
       </ul>
     </nav>

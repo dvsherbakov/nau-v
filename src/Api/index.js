@@ -4,12 +4,12 @@ export default class Api {
   constructor(options = {}) {
     this.client = options.client || axios.create()
     this.token = options.token || null
+    this.userId = options.userId || null
     this.refreshToken = options.refreshToken || null
     this.refreshRequest = null
 
     this.client.interceptors.request.use(
       (config) => {
-        console.log('intersept use')
         if (!config) {
           return config
         }
@@ -18,7 +18,7 @@ export default class Api {
           ...config,
         }
         newConfig.headers.Autorization = `Bearer ${this.token}`
-        console.log('newConf', newConfig)
+
         return newConfig
       },
       (e) => Promise.reject(e)
@@ -48,18 +48,23 @@ export default class Api {
   }
 
   async login({ login, password }) {
-    const { data } = await this.client.post('/api/auth', {
+    const responce = await this.client.post('/api/auth', {
       login,
       password,
     })
+    const { data } = responce
     this.token = data.accessToken
     this.refreshToken = data.refreshToken
+    this.userId = data.userId
+    return responce.status
   }
 
-  async register({ login, password }) {
+  async register({ login, password, firstName, lastName }) {
     const { data } = await this.client.post('/api/register', {
       login,
       password,
+      firstName,
+      lastName,
     })
     return data
   }

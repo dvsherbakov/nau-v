@@ -7,13 +7,12 @@ const config = require('config')
 const secret = config.get('jwt').secret
 const authHelper = require('../helpers/authHelper')
 
-const updateToken = (userId) => {
+const updateToken = async (userId) => {
   const accessToken = authHelper.generateAccessToken(userId)
   const refreshToken = authHelper.generateRefreshToken()
 
-  return authHelper
-    .replaceDbRefreshToken(refreshToken.id, userId)
-    .then(() => ({ accessToken, refreshToken: refreshToken.token }))
+  await authHelper.replaceDbRefreshToken(refreshToken.id, userId)
+  return { accessToken, refreshToken: refreshToken.token, userId }
 }
 
 const signIn = (req, res) => {
@@ -37,7 +36,7 @@ const signIn = (req, res) => {
 const register = async (req, res) => {
   console.log('register request')
   try {
-    const { email, password } = req.body
+    const { email, password, firstName, lastName } = req.body
 
     const candidate = await User.findOne({ email })
     if (candidate) {
@@ -46,7 +45,12 @@ const register = async (req, res) => {
     }
 
     const hashedPassword = await bCrypt.hash(password, 12)
-    const user = new User({ email, password: hashedPassword })
+    const user = new User({
+      email,
+      password: hashedPassword,
+      firstName,
+      lastName,
+    })
 
     await user.save()
 
