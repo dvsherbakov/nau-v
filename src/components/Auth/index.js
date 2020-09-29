@@ -6,7 +6,7 @@ import './auth.css'
 export const AuthForm = () => {
   const [loginPressed, setPressed] = useState(false)
 
-  const [login, setLogin] = useState('')
+  const [email, setLogin] = useState('')
   const [password, setPasswd] = useState('')
   const { jwtApi, setToken } = useContext(AuthContext)
 
@@ -19,8 +19,8 @@ export const AuthForm = () => {
 
   const lohinHandler = async () => {
     try {
-      const data = await jwtApi.login({ login, password })
-      console.log(data)
+      const data = await jwtApi.login({ email, password })
+      console.log(data, jwtApi.token)
       if (data === 200) {
         setToken(jwtApi.token)
       }

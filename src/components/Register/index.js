@@ -7,7 +7,7 @@ export const RegisterForm = () => {
   const [registerPressed, setPressed] = useState(false)
   const [firstName, setFName] = useState('')
   const [lastName, setLName] = useState('')
-  const [login, setLogin] = useState('')
+  const [email, setLogin] = useState('')
   const [password, setPasswd] = useState('')
   const { jwtApi, setToken } = useContext(AuthContext)
 
@@ -21,7 +21,7 @@ export const RegisterForm = () => {
   const lohinHandler = async () => {
     try {
       const data = await jwtApi.register({
-        login,
+        email,
         password,
         firstName,
         lastName,

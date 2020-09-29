@@ -47,9 +47,9 @@ export default class Api {
     )
   }
 
-  async login({ login, password }) {
+  async login({ email, password }) {
     const { data, status } = await this.client.post('/api/auth', {
-      login,
+      email,
       password,
     })
     this.token = data.accessToken
@@ -58,9 +58,9 @@ export default class Api {
     return status
   }
 
-  async register({ login, password, firstName, lastName }) {
+  async register({ email, password, firstName, lastName }) {
     const { data } = await this.client.post('/api/register', {
-      login,
+      email,
       password,
       firstName,
       lastName,

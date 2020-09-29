@@ -17,6 +17,7 @@ const updateToken = async (userId) => {
 
 const signIn = (req, res) => {
   const { email, password } = req.body
+  console.log({ email, password })
   User.findOne({ email })
     .exec()
     .then((user) => {
@@ -37,7 +38,7 @@ const register = async (req, res) => {
   console.log('register request')
   try {
     const { email, password, firstName, lastName } = req.body
-
+    console.log({ email, firstName, lastName })
     const candidate = await User.findOne({ email })
     if (candidate) {
       res.status(400).json({ message: 'Такой пользователь уже существует' })
