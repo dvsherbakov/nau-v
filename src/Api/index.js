@@ -48,15 +48,14 @@ export default class Api {
   }
 
   async login({ login, password }) {
-    const responce = await this.client.post('/api/auth', {
+    const { data, status } = await this.client.post('/api/auth', {
       login,
       password,
     })
-    const { data } = responce
     this.token = data.accessToken
     this.refreshToken = data.refreshToken
     this.userId = data.userId
-    return responce.status
+    return status
   }
 
   async register({ login, password, firstName, lastName }) {
