@@ -4,7 +4,7 @@ import Api from '../Api'
 export const Check = () => {
   async function getProducts() {
     //jwtApi.register({ email: 'ds.tura.ru', password: 'gzaktpf6' })
-    await jwtApi.login({ email: 'ds.tura.ru', password: 'gzaktpf6' })
+    await jwtApi.login({ login: 'ds.tura.ru', password: 'gzaktpf6' })
     console.log(jwtApi.token)
     const res = await jwtApi.getProducts()
     console.log(res)

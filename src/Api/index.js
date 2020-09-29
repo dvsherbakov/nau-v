@@ -9,7 +9,8 @@ export default class Api {
 
     this.client.interceptors.request.use(
       (config) => {
-        if (!this.config) {
+        console.log('intersept use')
+        if (!config) {
           return config
         }
         const newConfig = {
@@ -51,7 +52,6 @@ export default class Api {
       login,
       password,
     })
-    console.log('Data', data)
     this.token = data.accessToken
     this.refreshToken = data.refreshToken
   }
