@@ -52,7 +52,6 @@ export default class Api {
       email,
       password,
     })
-    console.log(data)
     this.token = data.accessToken
     this.refreshToken = data.refreshToken
     this.userId = data.userId
@@ -76,5 +75,14 @@ export default class Api {
 
   getProducts() {
     return this.client('/api/products').then(({ data }) => data)
+  }
+
+  async checkTest(answers) {
+    const { data, status } = await this.client.post('/api/checktest', {
+      userId: this.userId,
+      answers,
+    })
+    console.log(data, status)
+    return data
   }
 }

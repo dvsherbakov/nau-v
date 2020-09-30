@@ -20,7 +20,6 @@ export const AuthForm = () => {
   async function loginHandler() {
     try {
       const data = await jwtApi.login({ email, password })
-      console.log(data, jwtApi.token)
       if (data === 200) {
         setError(false)
         setToken(jwtApi.token)

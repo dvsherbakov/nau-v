@@ -16,12 +16,6 @@ export const useRoutes = (isAuth) => {
         <Route path="/check" exact>
           <CheckPage />
         </Route>
-        <Route path="/auth" exact>
-          <AuthPage />
-        </Route>
-        <Route path="/register" exact>
-          <RegisterPage />
-        </Route>
         <Route path="/">
           <MainPage />
         </Route>

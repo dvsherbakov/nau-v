@@ -17,10 +17,13 @@ import {
 export const Phisics = [
   {
     key: 'f_001_001',
-    Body: function () {
+    Body: function (SetAnswer) {
       const imageSvg = {
         width: '250px',
         height: '250px',
+      }
+      const answHandler = (e) => {
+        SetAnswer('f_001_001', [e.target.value])
       }
       return (
         <div className="quest">
@@ -38,7 +41,12 @@ export const Phisics = [
                 одинаковыми? Ответ укажите с точностью до целого.
               </div>
               <div className="quest__group">
-                <input className="quest__input" type="text" placeholder=" " />
+                <input
+                  className="quest__input"
+                  type="text"
+                  placeholder=" "
+                  onChange={answHandler}
+                />
                 <label className="quest__label">Ответ</label>
               </div>
             </div>
@@ -49,7 +57,10 @@ export const Phisics = [
   },
   {
     key: 'f_001_002',
-    Body: function () {
+    Body: function (SetAnswer) {
+      const answHandler = (e) => {
+        SetAnswer('f_001_002', [e.target.value])
+      }
       return (
         <div className="quest">
           <div className="quest__body">
@@ -64,7 +75,12 @@ export const Phisics = [
             />
           </div>
           <div className="quest__group">
-            <input className="quest__input" type="text" placeholder=" " />
+            <input
+              className="quest__input"
+              type="text"
+              placeholder=" "
+              onChange={answHandler}
+            />
             <label className="quest__label">Ответ</label>
           </div>
         </div>
@@ -73,7 +89,10 @@ export const Phisics = [
   },
   {
     key: 'f_001_003',
-    Body: function () {
+    Body: function (SetAnswer) {
+      const answHandler = (e) => {
+        SetAnswer('f_001_003', [e.target.value])
+      }
       return (
         <div className="quest">
           <div className="quest__body">
@@ -85,7 +104,12 @@ export const Phisics = [
             начального импульса тела.
           </div>
           <div className="quest__group">
-            <input className="quest__input" type="text" placeholder=" " />
+            <input
+              className="quest__input"
+              type="text"
+              placeholder=" "
+              onChange={answHandler}
+            />
             <label className="quest__label">Ответ</label>
           </div>
         </div>
@@ -94,7 +118,10 @@ export const Phisics = [
   },
   {
     key: 'f_001_004',
-    Body: function () {
+    Body: function (SetAnswer) {
+      const answHandler = (e) => {
+        SetAnswer('f_001_003', [e.target.value])
+      }
       const imageSvg = {
         width: '400px',
         height: '200px',
@@ -117,7 +144,12 @@ export const Phisics = [
           </div>
 
           <div className="quest__group">
-            <input className="quest__input" type="text" placeholder=" " />
+            <input
+              className="quest__input"
+              type="text"
+              placeholder=" "
+              onChange={answHandler}
+            />
             <label className="quest__label">Ответ</label>
           </div>
         </div>
