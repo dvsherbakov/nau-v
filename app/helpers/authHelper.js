@@ -31,7 +31,6 @@ const replaceDbRefreshToken = (tokenId, userId) => {
   return Token.findOneAndRemove({ userId })
     .exec()
     .then(() => {
-      console.log('create token')
       Token.create({ tokenId, userId })
     })
 }

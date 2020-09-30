@@ -5,7 +5,7 @@ import './auth.css'
 
 export const AuthForm = () => {
   const [loginPressed, setPressed] = useState(false)
-
+  const [errorState, setError] = useState(false)
   const [email, setLogin] = useState('')
   const [password, setPasswd] = useState('')
   const { jwtApi, setToken } = useContext(AuthContext)
@@ -17,15 +17,23 @@ export const AuthForm = () => {
     setPressed(false)
   }
 
-  const lohinHandler = async () => {
+  async function loginHandler() {
     try {
       const data = await jwtApi.login({ email, password })
       console.log(data, jwtApi.token)
       if (data === 200) {
+        setError(false)
         setToken(jwtApi.token)
       }
     } catch (e) {
-      console.log(e)
+      setError(true)
+      console.log(e.message)
+    }
+  }
+
+  const pressHandler = async (event) => {
+    if (event.key === 'Enter') {
+      loginHandler()
     }
   }
 
@@ -33,8 +41,10 @@ export const AuthForm = () => {
     ? 'auth__button auth__pressed'
     : 'auth__button'
 
+  const errorClass = errorState ? 'auth auth__error' : 'auth'
+
   return (
-    <div className="auth">
+    <div className={errorClass}>
       <h2>Авторизуйтесь пожалуйста:</h2>
 
       <div className="auth__group">
@@ -54,6 +64,7 @@ export const AuthForm = () => {
           className="auth__input"
           type="password"
           placeholder=" "
+          onKeyPress={pressHandler}
           onChange={(e) => {
             setPasswd(e.target.value)
           }}
@@ -63,7 +74,7 @@ export const AuthForm = () => {
 
       <button
         className={btPressedClass}
-        onClick={lohinHandler}
+        onClick={loginHandler}
         onMouseDown={onPress}
         onMouseUp={onUnPress}
       >

@@ -52,6 +52,7 @@ export default class Api {
       email,
       password,
     })
+    console.log(data)
     this.token = data.accessToken
     this.refreshToken = data.refreshToken
     this.userId = data.userId

@@ -19,6 +19,10 @@
   transition: 0.5s;
 }
 
+.auth__error{
+  box-shadow: 0 4px 16px rgb(245, 70, 70);
+}
+
 .auth h2{
     padding-bottom: 35px;
 }

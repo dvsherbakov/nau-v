@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react'
+import { Redirect } from 'react-router-dom'
 import { AuthContext } from '../AuthContext'
 
 import './register.css'
@@ -9,6 +10,7 @@ export const RegisterForm = () => {
   const [lastName, setLName] = useState('')
   const [email, setLogin] = useState('')
   const [password, setPasswd] = useState('')
+  const [isRedirect, setRedirect] = useState(false)
   const { jwtApi, setToken } = useContext(AuthContext)
 
   const onPress = (e) => {
@@ -27,6 +29,7 @@ export const RegisterForm = () => {
         lastName,
       })
       console.log(data)
+      setRedirect(true)
       if (data === 200) {
         setToken(jwtApi.token)
       }
@@ -39,7 +42,9 @@ export const RegisterForm = () => {
     ? 'register__button register__pressed'
     : 'register__button'
 
-  return (
+  return isRedirect ? (
+    <Redirect to="/login" />
+  ) : (
     <div className="register">
       <h2>Зарегистрируйтесь пожалуйста:</h2>
 

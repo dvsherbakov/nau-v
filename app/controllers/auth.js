@@ -17,7 +17,6 @@ const updateToken = async (userId) => {
 
 const signIn = (req, res) => {
   const { email, password } = req.body
-  console.log({ email, password })
   User.findOne({ email })
     .exec()
     .then((user) => {
@@ -35,10 +34,8 @@ const signIn = (req, res) => {
 }
 
 const register = async (req, res) => {
-  console.log('register request')
   try {
     const { email, password, firstName, lastName } = req.body
-    console.log({ email, firstName, lastName })
     const candidate = await User.findOne({ email })
     if (candidate) {
       res.status(400).json({ message: 'Такой пользователь уже существует' })
@@ -69,18 +66,18 @@ const refreshTokens = (req, res) => {
   let payload
   try {
     payload = jwt.verify(refreshToken, secret)
-    console.log(payload)
+
     if (payload.type !== 'refresh') {
       res.status(400).json({ message: 'Invalid token!' })
       return
     }
   } catch (e) {
     if (e instanceof jwt.TokenExpiredError) {
-      console.log('token expired!')
+      //console.log('token expired!')
       res.status(400).json({ message: 'Token expired!' })
       return
     } else if (e instanceof jwt.JsonWebTokenError) {
-      console.log('invalid token')
+      //console.log('invalid token')
       res.status(400).json({ message: 'Invalid token!' })
       return
     }
