@@ -120,7 +120,7 @@ export const Phisics = [
     key: 'f_001_004',
     Body: function (SetAnswer) {
       const answHandler = (e) => {
-        SetAnswer('f_001_003', [e.target.value])
+        SetAnswer('f_001_004', [e.target.value])
       }
       const imageSvg = {
         width: '400px',
@@ -158,10 +158,15 @@ export const Phisics = [
   },
   {
     key: 'f_001_005',
-    Body: function () {
+    Body: function (SetAnswer) {
       const imageSvg = {
         width: '750px',
         height: '250px',
+      }
+      const conv1 = useRef(null)
+      const conv2 = useRef(null)
+      const answHandler = () => {
+        SetAnswer('f_001_005', [conv1.current.value, conv2.current.value])
       }
       return (
         <div className="quest">
@@ -205,11 +210,23 @@ export const Phisics = [
           </div>
           <div className="quest__ans__group">
             <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
+              <input
+                className="quest__input"
+                type="text"
+                placeholder=" "
+                onChange={answHandler}
+                ref={conv1}
+              />
               <label className="quest__label">Утверждение 1</label>
             </div>
             <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
+              <input
+                className="quest__input"
+                type="text"
+                placeholder=" "
+                onChange={answHandler}
+                ref={conv2}
+              />
               <label className="quest__label">Утверждение 2</label>
             </div>
           </div>
@@ -219,7 +236,22 @@ export const Phisics = [
   },
   {
     key: 'f_001_006',
-    Body: function () {
+    Body: function (SetAnswer) {
+      const convA = useRef(null)
+      const convB = useRef(null)
+      const convC = useRef(null)
+      const convD = useRef(null)
+      const convE = useRef(null)
+
+      const answHandler = () => {
+        SetAnswer('f_001_006', [
+          convA.current.value,
+          convB.current.value,
+          convC.current.value,
+          convD.current.value,
+          convE.current.value,
+        ])
+      }
       return (
         <div className="quest">
           <div className="quest__body">
@@ -257,23 +289,53 @@ export const Phisics = [
           </div>
           <div className="quest__ans__group">
             <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
+              <input
+                className="quest__input"
+                type="text"
+                placeholder=" "
+                ref={convA}
+                onChange={answHandler}
+              />
               <label className="quest__label">A</label>
             </div>
             <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
+              <input
+                className="quest__input"
+                type="text"
+                placeholder=" "
+                ref={convB}
+                onChange={answHandler}
+              />
               <label className="quest__label">B</label>
             </div>
             <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
+              <input
+                className="quest__input"
+                type="text"
+                placeholder=" "
+                ref={convC}
+                onChange={answHandler}
+              />
               <label className="quest__label">C</label>
             </div>
             <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
+              <input
+                className="quest__input"
+                type="text"
+                placeholder=" "
+                ref={convD}
+                onChange={answHandler}
+              />
               <label className="quest__label">D</label>
             </div>
             <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
+              <input
+                className="quest__input"
+                type="text"
+                placeholder=" "
+                ref={convE}
+                onChange={answHandler}
+              />
               <label className="quest__label">E</label>
             </div>
           </div>
@@ -283,7 +345,20 @@ export const Phisics = [
   },
   {
     key: 'f_001_007',
-    Body: function () {
+    Body: function (SetAnswer) {
+      const convA = useRef(null)
+      const convB = useRef(null)
+      const convC = useRef(null)
+      const convD = useRef(null)
+
+      const answHandler = () => {
+        SetAnswer('f_001_007', [
+          convA.current.value,
+          convB.current.value,
+          convC.current.value,
+          convD.current.value,
+        ])
+      }
       return (
         <div className="quest">
           <div className="quest__body">
@@ -333,19 +408,43 @@ export const Phisics = [
           </div>
           <div className="quest__ans__group">
             <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
+              <input
+                className="quest__input"
+                type="text"
+                placeholder=" "
+                ref={convA}
+                onChange={answHandler}
+              />
               <label className="quest__label">A</label>
             </div>
             <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
+              <input
+                className="quest__input"
+                type="text"
+                placeholder=" "
+                ref={convB}
+                onChange={answHandler}
+              />
               <label className="quest__label">B</label>
             </div>
             <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
+              <input
+                className="quest__input"
+                type="text"
+                placeholder=" "
+                ref={convC}
+                onChange={answHandler}
+              />
               <label className="quest__label">C</label>
             </div>
             <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
+              <input
+                className="quest__input"
+                type="text"
+                placeholder=" "
+                ref={convD}
+                onChange={answHandler}
+              />
               <label className="quest__label">D</label>
             </div>
           </div>
@@ -355,10 +454,13 @@ export const Phisics = [
   },
   {
     key: 'f_001_008',
-    Body: function () {
+    Body: function (SetAnswer) {
       const imageSvg = {
         width: '250px',
         height: '250px',
+      }
+      const answHandler = (e) => {
+        SetAnswer('f_001_008', [e.target.value])
       }
       return (
         <div className="quest">
@@ -377,7 +479,12 @@ export const Phisics = [
                 />
               </div>
               <div className="quest__group">
-                <input className="quest__input" type="text" placeholder=" " />
+                <input
+                  className="quest__input"
+                  type="text"
+                  placeholder=" "
+                  onChange={answHandler}
+                />
                 <label className="quest__label">Ответ</label>
               </div>
             </div>
@@ -388,7 +495,10 @@ export const Phisics = [
   },
   {
     key: 'f_001_009',
-    Body: function () {
+    Body: function (SetAnswer) {
+      const answHandler = (e) => {
+        SetAnswer('f_001_009', [e.target.value])
+      }
       return (
         <div className="quest">
           <div className="quest__body">
@@ -397,7 +507,12 @@ export const Phisics = [
             возможный КПД машины? (Ответ дайте в процентах, округлив до целых.)
           </div>
           <div className="quest__group">
-            <input className="quest__input" type="text" placeholder=" " />
+            <input
+              className="quest__input"
+              type="text"
+              placeholder=" "
+              onChange={answHandler}
+            />
             <label className="quest__label">Ответ</label>
           </div>
         </div>
@@ -406,7 +521,10 @@ export const Phisics = [
   },
   {
     key: 'f_001_010',
-    Body: function () {
+    Body: function (SetAnswer) {
+      const answHandler = (e) => {
+        SetAnswer('f_001_010', [e.target.value])
+      }
       return (
         <div className="quest">
           <div className="quest__vertical__wrapper">{ImgF001010}</div>
@@ -418,7 +536,12 @@ export const Phisics = [
             Ответ дайте в кДж/кг.
           </div>
           <div className="quest__group">
-            <input className="quest__input" type="text" placeholder=" " />
+            <input
+              className="quest__input"
+              type="text"
+              placeholder=" "
+              onChange={answHandler}
+            />
             <label className="quest__label">Ответ</label>
           </div>
         </div>
@@ -427,7 +550,12 @@ export const Phisics = [
   },
   {
     key: 'f_001_011',
-    Body: function () {
+    Body: function (SetAnswer) {
+      const conv1 = useRef(null)
+      const conv2 = useRef(null)
+      const answHandler = () => {
+        SetAnswer('f_001_011', [conv1.current.value, conv2.current.value])
+      }
       return (
         <div className="quest">
           <div className="quest__ans__group">
@@ -453,11 +581,23 @@ export const Phisics = [
               </div>
               <div className="quest__ans__group">
                 <div className="quest__group">
-                  <input className="quest__input" type="text" placeholder=" " />
+                  <input
+                    className="quest__input"
+                    type="text"
+                    placeholder=" "
+                    ref={conv1}
+                    onChange={answHandler}
+                  />
                   <label className="quest__label">Утверждение 1</label>
                 </div>
                 <div className="quest__group">
-                  <input className="quest__input" type="text" placeholder=" " />
+                  <input
+                    className="quest__input"
+                    type="text"
+                    placeholder=" "
+                    ref={conv1}
+                    onChange={answHandler}
+                  />
                   <label className="quest__label">Утверждение 2</label>
                 </div>
               </div>

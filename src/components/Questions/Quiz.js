@@ -11,7 +11,6 @@ export default function TestQuiz() {
     const obj = {}
     obj[id] = res
     answers.current = { ...answers.current, ...obj }
-    console.log(answers.current)
   }
   const clickHandler = () => {
     jwtApi.checkTest(answers.current)
