@@ -22,13 +22,16 @@ const compareArray = (id, dest_obj) => {
 }
 
 const checkTest = (req, res) => {
-  //const result = {}
-
-  Object.keys(req.body.answers).forEach((e) => {
-    const res = compareArray(e, req.body.answers[e])
-    console.log(res)
-  })
-  res.status(200).json({ message: 'Принят запрос проверки всего теста' })
+  const result = {}
+  try {
+    Object.keys(req.body.answers).forEach((e) => {
+      const res = compareArray(e, req.body.answers[e])
+      result[e] = res
+    })
+    res.status(200).json(result)
+  } catch (e) {
+    res.status(500).json(e.message)
+  }
 }
 
 const checkOne = (req, res) => {

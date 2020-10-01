@@ -141,3 +141,15 @@
   display: flex;
   justify-content: center;
 }
+
+.quest__container__green{
+  box-shadow: 0 4px 16px rgb(149, 245, 165);
+}
+
+.quest__container__red{
+  box-shadow: 0 4px 16px rgb(247, 142, 124);
+}
+
+.quest__container__yellow{
+  box-shadow: 0 4px 16px rgb(248, 250, 123);
+}
