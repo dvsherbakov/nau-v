@@ -10,6 +10,21 @@ const Answers = {
   f_001_009: { ans: [33], srt: false },
   f_001_010: { ans: [30], srt: false },
   f_001_011: { ans: [2, 5], srt: true },
+  f_001_012: { ans: [2, 3, 2], srt: false },
+  f_001_013: { ans: [1], srt: false },
+  f_001_014: { ans: [2], srt: false },
+  f_001_015: { ans: [1], srt: false },
+  f_001_016: { ans: [1, 5], srt: true },
+  f_001_017: { ans: [1, 3], srt: false },
+  f_001_018: { ans: [3, 4], srt: false },
+  f_001_019: { ans: [50, 69], srt: false },
+  f_001_020: { ans: [50], srt: false },
+  f_001_021: { ans: [2, 2], srt: false },
+  f_001_022: { ans: [1.26, 0.1], srt: false },
+  f_001_023: { ans: [5, 1], srt: false },
+  f_001_024: { ans: [2, 4], srt: true },
+  f_001_025: { ans: [1], srt: false },
+  f_001_026: { ans: [1.25], srt: false },
 }
 
 module.exports = Answers
