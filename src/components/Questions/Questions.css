@@ -153,3 +153,12 @@
 .quest__container__yellow{
   box-shadow: 0 4px 16px rgb(248, 250, 123);
 }
+
+.btn-wrapper {
+    width: 100%;
+    
+    overflow: hidden;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

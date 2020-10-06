@@ -36,7 +36,13 @@ export default function TestQuiz() {
   return (
     <>
       <div className="quiz">{quests}</div>
-      <button onClick={clickHandler}>Проверить</button>
+
+      <div class="btn-wrapper">
+        <div class="wave-btn" onClick={clickHandler}>
+          <span class="wave-btn__text">Проверить</span>
+          <span class="wave-btn__waves"></span>
+        </div>
+      </div>
     </>
   )
 }
