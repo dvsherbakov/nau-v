@@ -738,3 +738,83 @@ export const ImgF001016 = (
     <circle cx="500" cy="40" r="5" fill="red" />
   </svg>
 )
+
+export const ImgF001018_1 = (
+  <svg width="200" height="300">
+    <defs>
+      <marker
+        id="MarkBlack"
+        viewBox="0 0 10 10"
+        refX="10"
+        refY="5"
+        markerUnits="userSpaceOnUse"
+        orient="auto"
+        markerWidth="10"
+        markerHeight="10"
+      >
+        <polyline id="markerPoly1" points="0,0 10,5 0,10 0,5" fill="black" />
+      </marker>
+    </defs>
+    <circle cx="90" cy="15" r="3" stroke="red" fill="transparent" />
+    <circle cx="110" cy="15" r="3" stroke="blue" fill="transparent" />
+    <circle cx="143" cy="110" r="3" stroke="black" fill="transparent" />
+    <circle cx="180" cy="85" r="3" stroke="black" fill="transparent" />
+    <circle cx="180" cy="135" r="3" stroke="black" fill="transparent" />
+    <path
+      d="M 87 15 H 20 V 220 H50 A10,30 0 1 1 65,250 A10,32 0 1 1 78,250 A10,32 0 1 1 91,250 A10,31 0 1 1 103,250 A10,31 0 1 1 115,250 A10,32 0 1 1 128,250 A10,33 0 1 1 145,220"
+      stroke="black"
+      strokeWidth="2"
+      fill="transparent"
+    />
+    <path
+      d="M 113,15 H180 V83 M180,138 V220 H145 M 20,110 H60 M 60,95 V125 M70,95 V125 M70,110 H 140 M 146,108 L 177, 87"
+      stroke="black"
+      strokeWidth="2"
+      fill="transparent"
+    />
+    <path
+      d="M 150,75 A30,30 0 0 1 175,115"
+      stroke="black"
+      strokeWidth="1"
+      fill="transparent"
+      style={{ markerEnd: 'url(#MarkBlack)' }}
+    />
+    <text x="70" y="40" style={{ font: 'italic 32px sans-serif', fill: 'red' }}>
+      +
+    </text>
+    <text
+      x="110"
+      y="40"
+      style={{ font: 'italic 32px sans-serif', fill: 'blue' }}
+    >
+      -
+    </text>
+    <text
+      x="70"
+      y="88"
+      style={{ font: 'italic 24px sans-serif', fill: 'black' }}
+    >
+      C
+    </text>
+    <text
+      x="125"
+      y="88"
+      style={{ font: 'italic 24px sans-serif', fill: 'black' }}
+    >
+      K
+    </text>
+    <text
+      x="90"
+      y="175"
+      style={{ font: 'italic 24px sans-serif', fill: 'black' }}
+    >
+      K
+    </text>
+    <text x="188" y="90" style={{ font: '24px sans-serif', fill: 'black' }}>
+      1
+    </text>
+    <text x="188" y="140" style={{ font: '24px sans-serif', fill: 'black' }}>
+      2
+    </text>
+  </svg>
+)

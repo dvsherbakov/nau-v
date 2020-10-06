@@ -595,7 +595,7 @@ export const Phisics = [
                     className="quest__input"
                     type="text"
                     placeholder=" "
-                    ref={conv1}
+                    ref={conv2}
                     onChange={answHandler}
                   />
                   <label className="quest__label">Утверждение 2</label>
@@ -609,7 +609,17 @@ export const Phisics = [
   },
   {
     key: 'f_001_012',
-    Body: function () {
+    Body: function (SetAnswer) {
+      const pressure = useRef(null)
+      const volume = useRef(null)
+      const energy = useRef(null)
+      const answHandler = () => {
+        SetAnswer('f_001_012', [
+          pressure.current.value,
+          volume.current.value,
+          energy.current.value,
+        ])
+      }
       return (
         <div className="quest">
           <div className="quest__ans__group">
@@ -631,15 +641,33 @@ export const Phisics = [
               </div>
               <div className="quest__ans__group">
                 <div className="quest__group">
-                  <input className="quest__input" type="text" placeholder=" " />
+                  <input
+                    className="quest__input"
+                    type="text"
+                    placeholder=" "
+                    ref={pressure}
+                    onChange={answHandler}
+                  />
                   <label className="quest__label">Давление</label>
                 </div>
                 <div className="quest__group">
-                  <input className="quest__input" type="text" placeholder=" " />
+                  <input
+                    className="quest__input"
+                    type="text"
+                    placeholder=" "
+                    ref={volume}
+                    onChange={answHandler}
+                  />
                   <label className="quest__label">Объем</label>
                 </div>
                 <div className="quest__group">
-                  <input className="quest__input" type="text" placeholder=" " />
+                  <input
+                    className="quest__input"
+                    type="text"
+                    placeholder=" "
+                    ref={energy}
+                    onChange={answHandler}
+                  />
                   <label className="quest__label">Внутренняя энергия</label>
                 </div>
               </div>
@@ -651,7 +679,7 @@ export const Phisics = [
   },
   {
     key: 'f_001_013',
-    Body: function () {
+    Body: function (SetAnswer) {
       const b1 = useRef(null)
       const b2 = useRef(null)
       const b3 = useRef(null)
@@ -659,6 +687,7 @@ export const Phisics = [
       const answerSelect = (e) => {
         ;[b1, b2, b3, b4].forEach((btn) => (btn.current.className = ''))
         e.target.className = 'selected'
+        if (e.target.id) SetAnswer('f_001_013', [e.target.id])
       }
       return (
         <div className="quest">
@@ -671,25 +700,25 @@ export const Phisics = [
               <div className="quest__ans__group">
                 <div className="quest__vgroup">
                   <MathJax math="`\otimes`" />
-                  <button onClick={answerSelect} ref={b1}>
+                  <button id="1" onClick={answerSelect} ref={b1}>
                     от наблюдателя за плоскость рисунка
                   </button>
                 </div>
                 <div className="quest__vgroup">
                   <MathJax math="`\odot`" />
-                  <button onClick={answerSelect} ref={b2}>
+                  <button id="2" onClick={answerSelect} ref={b2}>
                     к наблюдателю из-за плоскости рисунка
                   </button>
                 </div>
                 <div className="quest__vgroup">
                   <MathJax math="`\rightarrow`" />
-                  <button onClick={answerSelect} ref={b3}>
+                  <button id="3" onClick={answerSelect} ref={b3}>
                     горизонтально вправо в плоскости рисунка
                   </button>
                 </div>
                 <div className="quest__vgroup">
                   <MathJax math="`\leftarrow`" />
-                  <button onClick={answerSelect} ref={b4}>
+                  <button id="4" onClick={answerSelect} ref={b4}>
                     горизонтально влево в плоскости рисунка
                   </button>
                 </div>
@@ -702,7 +731,10 @@ export const Phisics = [
   },
   {
     key: 'f_001_014',
-    Body: function () {
+    Body: function (SetAnswer) {
+      const answHandler = (e) => {
+        SetAnswer('f_001_014', [e.target.value])
+      }
       return (
         <div className="quest">
           <div className="quest__ans__group">
@@ -717,7 +749,12 @@ export const Phisics = [
               </div>
 
               <div className="quest__group">
-                <input className="quest__input" type="text" placeholder=" " />
+                <input
+                  className="quest__input"
+                  type="text"
+                  placeholder=" "
+                  onChange={answHandler}
+                />
                 <label className="quest__label">Ответ</label>
               </div>
             </div>
@@ -728,7 +765,10 @@ export const Phisics = [
   },
   {
     key: 'f_001_015',
-    Body: function () {
+    Body: function (SetAnswer) {
+      const answHandler = (e) => {
+        SetAnswer('f_001_015', [e.target.value])
+      }
       return (
         <div className="quest">
           <div className="quest__ans__group">
@@ -743,7 +783,12 @@ export const Phisics = [
               </div>
 
               <div className="quest__group">
-                <input className="quest__input" type="text" placeholder=" " />
+                <input
+                  className="quest__input"
+                  type="text"
+                  placeholder=" "
+                  onChange={answHandler}
+                />
                 <label className="quest__label">Ответ</label>
               </div>
             </div>
@@ -754,7 +799,12 @@ export const Phisics = [
   },
   {
     key: 'f_001_016',
-    Body: function () {
+    Body: function (SetAnswer) {
+      const conv1 = useRef(null)
+      const conv2 = useRef(null)
+      const answHandler = (e) => {
+        SetAnswer('f_001_016', [conv1.current.value, conv2.current.value])
+      }
       return (
         <div className="quest">
           <div className="quest__vertical__wrapper">{ImgF001016}</div>
@@ -788,11 +838,23 @@ export const Phisics = [
           </div>
           <div className="quest__ans__group">
             <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
+              <input
+                className="quest__input"
+                type="text"
+                placeholder=" "
+                ref={conv1}
+                onChange={answHandler}
+              />
               <label className="quest__label">Утверждение 1</label>
             </div>
             <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
+              <input
+                className="quest__input"
+                type="text"
+                placeholder=" "
+                ref={conv2}
+                onChange={answHandler}
+              />
               <label className="quest__label">Утверждение 2</label>
             </div>
           </div>
@@ -802,7 +864,12 @@ export const Phisics = [
   },
   {
     key: 'f_001_017',
-    Body: function () {
+    Body: function (SetAnswer) {
+      const convA = useRef(null)
+      const convB = useRef(null)
+      const answHandler = (e) => {
+        SetAnswer('f_001_017', [convA.current.value, convB.current.value])
+      }
       return (
         <div className="quest">
           <div className="quest__body">
@@ -842,11 +909,23 @@ export const Phisics = [
           </div>
           <div className="quest__ans__group">
             <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
+              <input
+                className="quest__input"
+                type="text"
+                placeholder=" "
+                ref={convA}
+                onChange={answHandler}
+              />
               <label className="quest__label">A</label>
             </div>
             <div className="quest__group">
-              <input className="quest__input" type="text" placeholder=" " />
+              <input
+                className="quest__input"
+                type="text"
+                placeholder=" "
+                ref={convB}
+                onChange={answHandler}
+              />
               <label className="quest__label">B</label>
             </div>
           </div>

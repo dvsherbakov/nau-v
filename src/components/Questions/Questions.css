@@ -143,14 +143,17 @@
 }
 
 .quest__container__green{
+  border-radius: 10px;
   box-shadow: 0 4px 16px rgb(149, 245, 165);
 }
 
 .quest__container__red{
+  border-radius: 10px;
   box-shadow: 0 4px 16px rgb(247, 142, 124);
 }
 
 .quest__container__yellow{
+  border-radius: 10px;
   box-shadow: 0 4px 16px rgb(248, 250, 123);
 }
 
