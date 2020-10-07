@@ -64,21 +64,23 @@ const register = async (req, res) => {
 const refreshTokens = (req, res) => {
   const { refreshToken } = req.body
   let payload
+  console.log('refresh:', refreshToken)
   try {
     payload = jwt.verify(refreshToken, secret)
 
     if (payload.type !== 'refresh') {
-      res.status(400).json({ message: 'Invalid token!' })
+      res.status(400).json({ message: 'Invalid token!', payload })
       return
     }
   } catch (e) {
+    console.log(e)
     if (e instanceof jwt.TokenExpiredError) {
-      //console.log('token expired!')
-      res.status(400).json({ message: 'Token expired!' })
+      console.log('token expired!')
+      res.status(400).json({ message: 'Token expired!', addition: '1' })
       return
     } else if (e instanceof jwt.JsonWebTokenError) {
-      //console.log('invalid token')
-      res.status(400).json({ message: 'Invalid token!' })
+      console.log('invalid token')
+      res.status(400).json({ message: 'Invalid token!', addition: '2' })
       return
     }
   }

@@ -26,6 +26,7 @@ export default class Api {
     this.client.interceptors.response.use(
       (r) => r,
       async (error) => {
+        console.log('refresherror:', error)
         if (
           !this.refreshToken ||
           error.response.status !== 401 ||
@@ -35,7 +36,7 @@ export default class Api {
         }
         if (!this.refreshRequest) {
           this.refreshRequest = await this.client.post(`/api/refresh-tokens`, {
-            refreshtoken: this.refreshToken,
+            refreshToken: this.refreshToken,
           })
         }
         const { data } = await this.refreshRequest

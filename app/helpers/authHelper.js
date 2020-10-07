@@ -16,6 +16,7 @@ const generateAccessToken = (userId) => {
 }
 
 const generateRefreshToken = () => {
+  console.log('generate')
   const payload = {
     id: uuidv4(),
     type: tokens.refresh.type,
@@ -28,6 +29,7 @@ const generateRefreshToken = () => {
 }
 
 const replaceDbRefreshToken = (tokenId, userId) => {
+  console.log('replace')
   return Token.findOneAndRemove({ userId })
     .exec()
     .then(() => {
