@@ -4,7 +4,7 @@ const config = require('config')
 const secret = config.get('jwt').secret
 
 module.exports = (req, res, next) => {
-  const authHeader = req.get('Autorization')
+  const authHeader = req.get('Authorization')
   if (!authHeader) {
     res.status(401).json({ message: 'Token not provided!' })
     return
@@ -13,7 +13,7 @@ module.exports = (req, res, next) => {
   try {
     const payload = jwt.verify(token, secret)
     if (payload.type !== 'access') {
-      res.status(401).json({ message: 'Invalid token!' })
+      res.status(401).json({ message: 'Invalid token!', addon: 'not access' })
       return
     }
   } catch (e) {
@@ -22,7 +22,10 @@ module.exports = (req, res, next) => {
       return
     }
     if (e instanceof jwt.JsonWebTokenError) {
-      res.status(401).json({ message: 'Invalid token!' })
+      console.log(req)
+      res
+        .status(401)
+        .json({ message: 'Invalid token!', addon: 'webtokenerror' })
     }
   }
   next()

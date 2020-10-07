@@ -10,15 +10,17 @@ export default class Api {
 
     this.client.interceptors.request.use(
       (config) => {
-        if (!config) {
+        if (!this.token) {
           return config
         }
+
         const newConfig = {
           headers: {},
           ...config,
         }
-        newConfig.headers.Autorization = `Bearer ${this.token}`
-
+        newConfig.headers.Authorization = `Bearer ${this.token}`
+        console.log(newConfig.headers.Authorization)
+        console.log('this.token curr', this.token)
         return newConfig
       },
       (e) => Promise.reject(e)
@@ -26,7 +28,6 @@ export default class Api {
     this.client.interceptors.response.use(
       (r) => r,
       async (error) => {
-        console.log('refresherror:', error)
         if (
           !this.refreshToken ||
           error.response.status !== 401 ||
@@ -39,10 +40,14 @@ export default class Api {
             refreshToken: this.refreshToken,
           })
         }
+
         const { data } = await this.refreshRequest
-        this.token = data.token
+        console.log('new data', data)
+        this.token = data.accessToken
         this.refreshToken = data.refreshToken
+        console.log('this.token ref', this.token)
         const newRequest = { ...error.config, retry: true }
+        this.refreshRequest = null
         return this.client(newRequest)
       }
     )

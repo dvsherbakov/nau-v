@@ -64,7 +64,7 @@ const register = async (req, res) => {
 const refreshTokens = (req, res) => {
   const { refreshToken } = req.body
   let payload
-  console.log('refresh:', refreshToken)
+
   try {
     payload = jwt.verify(refreshToken, secret)
 
@@ -73,7 +73,6 @@ const refreshTokens = (req, res) => {
       return
     }
   } catch (e) {
-    console.log(e)
     if (e instanceof jwt.TokenExpiredError) {
       console.log('token expired!')
       res.status(400).json({ message: 'Token expired!', addition: '1' })
@@ -88,15 +87,19 @@ const refreshTokens = (req, res) => {
   Token.findOne({ tokenId: payload.id })
     .exec()
     .then((token) => {
-      console.log(token)
       if (token === null) {
         throw new Error('Invalid token!')
       }
-
+      console.log('Токен успешно обновлен')
       return updateToken(token.userId)
     })
-    .then((tokens) => res.json(tokens))
-    .catch((err) => res.status(400).json({ message: res.message }))
+    .then((tokens) => {
+      console.log('tokens:', tokens)
+      res.json(tokens)
+    })
+    .catch((err) =>
+      res.status(400).json({ message: 'Ошибка обновления токена' })
+    )
 }
 
 module.exports = { signIn, refreshTokens, register }
