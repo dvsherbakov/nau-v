@@ -47,6 +47,10 @@ export default class Api {
     )
   }
 
+  isAuthenticated() {
+    return !!this.token
+  }
+
   async login({ email, password }) {
     const { data, status } = await this.client.post('/api/auth', {
       email,
