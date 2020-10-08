@@ -64,6 +64,14 @@ export default class Api {
     return status
   }
 
+  logout() {
+    console.log('logout')
+    this.token = null
+    this.userId = null
+    this.refreshToken = null
+    this.refreshRequest = null
+  }
+
   async register({ email, password, firstName, lastName }) {
     const { data } = await this.client.post('/api/register', {
       email,
@@ -72,11 +80,6 @@ export default class Api {
       lastName,
     })
     return data
-  }
-
-  logout() {
-    this.token = null
-    this.refreshToken = null
   }
 
   getProducts() {
@@ -88,6 +91,7 @@ export default class Api {
       userId: this.userId,
       answers,
     })
-    return data
+    if (status === 200) return data
+    else return {}
   }
 }

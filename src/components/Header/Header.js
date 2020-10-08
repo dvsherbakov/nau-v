@@ -15,9 +15,6 @@ export default function Header() {
             >
               vacheslavnaumenko@mail.com
             </a>
-            <a className="header__btn" href="https://www.google.com/">
-              Школа №58
-            </a>
           </div>
         </div>
       </div>

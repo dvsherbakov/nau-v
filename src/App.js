@@ -5,6 +5,7 @@ import { AuthContext } from './components/AuthContext'
 import { useRoutes } from './routes'
 import { Navbar } from './components/Navbar/Navbar'
 import Api from './Api'
+import { UserInfo } from './components/UserInfo'
 
 const jwtApi = new Api()
 
@@ -17,6 +18,7 @@ function App() {
       <Router>
         <Header />
         <Navbar />
+        <UserInfo />
         <div>{routes}</div>
       </Router>
     </AuthContext.Provider>
