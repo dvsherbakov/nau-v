@@ -10,9 +10,9 @@ export const UserInfo = () => {
     return (
       <div className="user-info">
         <div className="user-info__main">
-          <div id="username" className="user-info__item">
+          <span id="username" className="user-info__item">
             Имя Фамилия
-          </div>
+          </span>
           <div id="email" className="user-info__item">
             email
           </div>
