@@ -19,8 +19,6 @@ export default class Api {
           ...config,
         }
         newConfig.headers.Authorization = `Bearer ${this.token}`
-        console.log(newConfig.headers.Authorization)
-        console.log('this.token curr', this.token)
         return newConfig
       },
       (e) => Promise.reject(e)
@@ -42,10 +40,8 @@ export default class Api {
         }
 
         const { data } = await this.refreshRequest
-        console.log('new data', data)
         this.token = data.accessToken
         this.refreshToken = data.refreshToken
-        console.log('this.token ref', this.token)
         const newRequest = { ...error.config, retry: true }
         this.refreshRequest = null
         return this.client(newRequest)
@@ -92,7 +88,6 @@ export default class Api {
       userId: this.userId,
       answers,
     })
-    console.log(data, status)
     return data
   }
 }

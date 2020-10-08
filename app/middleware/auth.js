@@ -22,10 +22,10 @@ module.exports = (req, res, next) => {
       return
     }
     if (e instanceof jwt.JsonWebTokenError) {
-      console.log(req)
-      res
-        .status(401)
-        .json({ message: 'Invalid token!', addon: 'webtokenerror' })
+      res.status(401).json({
+        message: 'Invalid token!',
+        addon: 'instanceof jwt.JsonWebTokenError',
+      })
     }
   }
   next()

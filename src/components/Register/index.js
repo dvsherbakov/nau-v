@@ -20,7 +20,7 @@ export const RegisterForm = () => {
     setPressed(false)
   }
 
-  const lohinHandler = async () => {
+  const loginHandler = async () => {
     try {
       const data = await jwtApi.register({
         email,
@@ -34,7 +34,7 @@ export const RegisterForm = () => {
         setToken(jwtApi.token)
       }
     } catch (e) {
-      console.log(e)
+      console.log(e.message)
     }
   }
 
@@ -98,7 +98,7 @@ export const RegisterForm = () => {
 
       <button
         className={btPressedClass}
-        onClick={lohinHandler}
+        onClick={loginHandler}
         onMouseDown={onPress}
         onMouseUp={onUnPress}
       >

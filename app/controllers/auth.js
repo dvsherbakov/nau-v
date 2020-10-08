@@ -74,12 +74,16 @@ const refreshTokens = (req, res) => {
     }
   } catch (e) {
     if (e instanceof jwt.TokenExpiredError) {
-      console.log('token expired!')
-      res.status(400).json({ message: 'Token expired!', addition: '1' })
+      res.status(400).json({
+        message: 'Token expired!',
+        addition: 'instanceof jwt.TokenExpiredError',
+      })
       return
     } else if (e instanceof jwt.JsonWebTokenError) {
-      console.log('invalid token')
-      res.status(400).json({ message: 'Invalid token!', addition: '2' })
+      res.status(400).json({
+        message: 'Invalid token!',
+        addition: 'instanceof jwt.JsonWebTokenError',
+      })
       return
     }
   }
@@ -90,11 +94,9 @@ const refreshTokens = (req, res) => {
       if (token === null) {
         throw new Error('Invalid token!')
       }
-      console.log('Токен успешно обновлен')
       return updateToken(token.userId)
     })
     .then((tokens) => {
-      console.log('tokens:', tokens)
       res.json(tokens)
     })
     .catch((err) =>
