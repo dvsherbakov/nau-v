@@ -15,21 +15,19 @@
     height: 92px;
 }
 
-.user-info #username:before{
-    position:absolute;
-    left:10px;
-    color:#ffc222;
-    font-family: 'icomoon';
-    font-size: 20px;
-    content: "\e975";
-}
-
+.user-info #username:before,
 .user-info #email::before{
     position:absolute;
     left:10px;
     color:#ffc222;
     font-family: 'icomoon';
     font-size: 20px;
+}
+.user-info #username:before{
+    content: "\e975";
+}
+
+.user-info #email::before{
     content: "\ea86";
 }
 
