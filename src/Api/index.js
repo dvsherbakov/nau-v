@@ -61,6 +61,7 @@ export default class Api {
     this.token = data.accessToken
     this.refreshToken = data.refreshToken
     this.userId = data.userId
+    this.getUserInfo(data.userId)
     return status
   }
 
@@ -93,5 +94,10 @@ export default class Api {
     })
     if (status === 200) return data
     else return {}
+  }
+
+  async getUserInfo(userId) {
+    const { data, status } = await this.client.post(`/api/users/${userId}`)
+    console.log(data, status)
   }
 }

@@ -18,7 +18,8 @@ module.exports = (app) => {
   app.delete('/api/products/:id', authMiddleware, products.remove)
 
   //users
-  app.get('/api/users/:id', authMiddleware, users.getById)
+  app.get('/api/users/', authMiddleware, users.getUsers)
+  app.post('/api/users/:id', authMiddleware, users.getById)
   //auth
   app.post('/api/auth', auth.signIn)
   app.post('/api/register', auth.register)
