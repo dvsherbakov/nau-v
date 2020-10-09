@@ -5,6 +5,7 @@ export default class Api {
     this.client = options.client || axios.create()
     this.token = options.token || null
     this.userId = options.userId || null
+    this.getUserInfo = {}
     this.refreshToken = options.refreshToken || null
     this.refreshRequest = null
 
@@ -61,7 +62,7 @@ export default class Api {
     this.token = data.accessToken
     this.refreshToken = data.refreshToken
     this.userId = data.userId
-    this.getUserInfo(data.userId)
+    this.userInfo = this.getUserInfo(data.userId)
     return status
   }
 
@@ -98,6 +99,10 @@ export default class Api {
 
   async getUserInfo(userId) {
     const { data, status } = await this.client.post(`/api/users/${userId}`)
-    console.log(data, status)
+    if (status === 200) {
+      return data
+    } else {
+      return {}
+    }
   }
 }
