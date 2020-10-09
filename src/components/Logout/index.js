@@ -7,6 +7,7 @@ export const Logout = (props) => {
   const [isRedirect, setRedirect] = useState(false)
   const clickHandler = () => {
     console.log('click handler logout')
+    localStorage.removeItem('userData')
     props.jwt.logout()
     props.SetToken('')
     setRedirect(true)

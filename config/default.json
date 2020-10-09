@@ -9,12 +9,13 @@
         "token": {
             "access": {
                 "type": "access",
-                "expiresIn": "59s"
+                "expiresIn": "59m"
             },
             "refresh": {
                 "type": "refresh",
                 "expiresIn": "10h"
             }
         }
-    }
+    }, 
+    "storageName":"userData"
 }
