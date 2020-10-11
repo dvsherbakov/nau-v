@@ -7,6 +7,9 @@ export default class Api {
     this.userId = options.userId || null
     this.refreshToken = options.refreshToken || null
     this.refreshRequest = null
+    this.firstName = 'Ошибка'
+    this.lastName = 'Ошибка'
+    this.email = 'abs@mail.com'
 
     this.client.interceptors.request.use(
       (config) => {
@@ -98,6 +101,12 @@ export default class Api {
 
   async getUserInfo(userId) {
     const { data, status } = await this.client.post(`/api/users/${userId}`)
-    console.log(data, status)
+    if (status === 200) {
+      console.log(data)
+      this.firstName = data.firstName
+      this.lastName = data.lastName
+      this.email = data.email
+      return data
+    } else return false
   }
 }
