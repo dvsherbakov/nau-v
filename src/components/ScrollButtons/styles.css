@@ -1,6 +1,6 @@
 .scroll-buttons__container{
     position: fixed;
-    right: 50px;
+    right: 4%;
     bottom: 50px;
     display: flex;
     flex-direction: column;
