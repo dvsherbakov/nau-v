@@ -5,12 +5,13 @@ export default class Api {
     this.client = options.client || axios.create()
     this.token = options.token || null
     this.userId = options.userId || null
-    this.getUserInfo = {}
     this.refreshToken = options.refreshToken || null
     this.refreshRequest = null
     this.firstName = 'Ошибка'
     this.lastName = 'Ошибка'
     this.email = 'abs@mail.com'
+
+    this.changeUserInfo = function (options) {}
 
     this.client.interceptors.request.use(
       (config) => {
@@ -70,7 +71,6 @@ export default class Api {
   }
 
   logout() {
-    console.log('logout')
     this.token = null
     this.userId = null
     this.refreshToken = null
@@ -103,10 +103,14 @@ export default class Api {
   async getUserInfo(userId) {
     const { data, status } = await this.client.post(`/api/users/${userId}`)
     if (status === 200) {
-      console.log(data)
       this.firstName = data.firstName
       this.lastName = data.lastName
       this.email = data.email
+      this.changeUserInfo({
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+      })
       return data
     } else return false
   }

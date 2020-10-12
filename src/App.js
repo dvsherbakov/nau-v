@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import Header from './components/Header/Header'
 import { AuthContext } from './components/AuthContext'
@@ -11,6 +11,16 @@ const jwtApi = new Api()
 
 function App() {
   const [token, setToken] = useState('')
+  const [userInfo, setUserInfo] = useState({
+    firstName: 'Ошибка',
+    lastName: 'Ошибка',
+    email: 'nomail@mail.com',
+  })
+
+  useEffect(() => {
+    jwtApi.changeUserInfo = setUserInfo
+  }, [])
+
   const routes = useRoutes(!!token)
 
   return (
@@ -18,7 +28,7 @@ function App() {
       <Router>
         <Header />
         <Navbar />
-        <UserInfo />
+        <UserInfo UserInfo={userInfo} />
         <div>{routes}</div>
       </Router>
     </AuthContext.Provider>

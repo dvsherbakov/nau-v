@@ -7,8 +7,6 @@ const getById = async (req, res) => {
   if (!user) {
     res.status(500).json({ message: 'User does not exists!' })
   }
-  console.log(user)
-  //res.status(200).json({ message: 'is ok' })
   res.status(200).json({
     email: user.email,
     firstName: user.firstName,

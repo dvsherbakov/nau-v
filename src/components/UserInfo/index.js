@@ -4,10 +4,10 @@ import { AuthContext } from '../AuthContext'
 
 import './styles.css'
 
-export const UserInfo = () => {
+export const UserInfo = (props) => {
   const { jwtApi, setToken } = useContext(AuthContext)
-  const { email, firstName, lastName } = jwtApi
-  console.log(jwtApi)
+  const { email, firstName, lastName } = props.UserInfo
+
   if (jwtApi.isAuthenticated())
     return (
       <div className="user-info">
