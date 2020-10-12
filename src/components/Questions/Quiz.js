@@ -1,5 +1,6 @@
 import React, { useState, useContext, useRef } from 'react'
 import { AuthContext } from '../AuthContext'
+import { ScrollButtons } from '../ScrollButtons'
 import { Phisics } from './Phisics'
 import './Questions.css'
 
@@ -43,6 +44,8 @@ export default function TestQuiz() {
           <span className="wave-btn__waves"></span>
         </div>
       </div>
+
+      <ScrollButtons />
     </>
   )
 }
