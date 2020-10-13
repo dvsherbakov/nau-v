@@ -1,0 +1,88 @@
+.links{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.links__chapter{
+    font-size: 24px;
+    line-height: 50px;
+    padding-left:60px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.links__chapter::before, 
+.links__chapter::after,
+.links__subchapter::before, 
+.links__subchapter::after{
+    content: "";
+    position: absolute;
+    display: table-cell;
+    border-radius: 48%;
+}
+
+.links__chapter::before, 
+.links__subchapter::before{
+    left:0;
+    width: 50px;
+    height: 50px;
+    background-color: #FFC222;
+}
+
+.links__chapter::after,
+.links__subchapter::after{
+    text-align: center;
+    left:3px;
+    top:3px;
+    width: 44px;
+    height: 44px;
+    color: #FFC222;
+    background-color:  #303030;
+    font-family: 'icomoon';
+    line-height: 44px;
+}
+
+#books.links__chapter::after{
+    content:"\e920"
+}
+
+.links__subchapter{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    position: relative;
+    line-height: 50px;
+    padding-left:60px;
+}
+
+#phisics.links__subchapter::after{
+    content:"\e9ab"
+}
+
+.links__subchapter-list{
+    padding:3px;
+}
+.links__subchapter-list ul{
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.links__subchapter-list li{
+    padding-left: 1em;
+    font-size: 20px;
+}
+
+.links__subchapter-list li::before{
+    font-family: 'icomoon';
+    content:"\e91f";
+    padding-right: 10px;
+    font-size: 18px;
+}
+
+.links__subchapter-list a{
+    color: #5E5E5E;
+    transition: all 1s;
+}
+
+.links__subchapter-list a:hover{
+    color: #303030;
+}

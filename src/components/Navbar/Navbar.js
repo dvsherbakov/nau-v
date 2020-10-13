@@ -18,6 +18,9 @@ export const Navbar = () => {
             <NavLink to="/check">Проверочные вопросы</NavLink>
           </li>
           <li>
+            <NavLink to="/links">Ссылки и справочники</NavLink>
+          </li>
+          <li>
             <NavLink to="/">Главная</NavLink>
           </li>
         </ul>
