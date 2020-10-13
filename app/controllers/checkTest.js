@@ -1,4 +1,4 @@
-//const TestItem = require('../models/testCheckItem.js')
+const TestResult = require('../models/testResult')
 const Answers = require('../models/initials/TestAnswers')
 
 const compareArray = (id, dest_obj) => {
@@ -23,15 +23,28 @@ const compareArray = (id, dest_obj) => {
 
 const checkTest = (req, res) => {
   const result = {}
+
   try {
+    const answersArr = []
     Object.keys(req.body.answers).forEach((e) => {
       const res = compareArray(e, req.body.answers[e])
       result[e] = res
+      answersArr.push({
+        questionId: e,
+        answers: req.body.answers[e].map((i) => +i),
+        quality: res,
+      })
     })
+    saveResult({ userId: req.body.userId, results: answersArr })
     res.status(200).json(result)
   } catch (e) {
     res.status(500).json(e.message)
   }
+}
+
+const saveResult = async (result) => {
+  const testRes = new TestResult(result)
+  await testRes.save()
 }
 
 const checkOne = (req, res) => {

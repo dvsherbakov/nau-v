@@ -1,8 +1,14 @@
 const mongoose = require('mongoose')
 
-const TestResultSchema = new mongoose.Mongoose.Schema({
-  userId: { type: String, required: true },
-  testId: { type: String, required: true },
+const TestResultItemSchema = new mongoose.Schema({
+  questionId: { type: String, required: true },
+  answers: [Number],
+  quality: Number,
 })
 
-module.exports = mongoose.model('TestResultSchema', TestResultSchema)
+const TestResultSchema = new mongoose.Schema({
+  userId: { type: String, required: true },
+  results: [TestResultItemSchema],
+})
+
+module.exports = mongoose.model('TestResults', TestResultSchema)
