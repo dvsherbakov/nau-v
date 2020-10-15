@@ -4,9 +4,16 @@ import { AuthContext } from '../AuthContext'
 
 import './Navbar.css'
 
-export const Navbar = () => {
+export const Navbar = (props) => {
   const { jwtApi } = useContext(AuthContext)
+  const { accepted } = props.UserInfo
 
+  const userNav =
+    accepted > 50 ? (
+      <li>
+        <NavLink to="/links">Управление пользователями</NavLink>
+      </li>
+    ) : null
   if (jwtApi.isAuthenticated())
     return (
       <nav className="menu container">
@@ -23,6 +30,7 @@ export const Navbar = () => {
           <li>
             <NavLink to="/">Главная</NavLink>
           </li>
+          {userNav}
         </ul>
       </nav>
     )

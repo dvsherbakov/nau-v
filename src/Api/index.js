@@ -10,6 +10,7 @@ export default class Api {
     this.firstName = 'Ошибка'
     this.lastName = 'Ошибка'
     this.email = 'abs@mail.com'
+    this.accepted = 0
 
     this.changeUserInfo = function (options) {}
 
@@ -106,10 +107,12 @@ export default class Api {
       this.firstName = data.firstName
       this.lastName = data.lastName
       this.email = data.email
+      this.accepted = data.accepted
       this.changeUserInfo({
         firstName: data.firstName,
         lastName: data.lastName,
         email: data.email,
+        accepted: data.accepted,
       })
       return data
     } else return false
