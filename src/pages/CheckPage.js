@@ -1,11 +1,10 @@
 import React from 'react'
-import { Check } from '../components/Check'
+import { Exersizes } from '../components/Exersizes'
 
 export const CheckPage = () => {
   return (
     <div className="container">
-      <h1>Проверочные вопросы</h1>
-      <Check />
+      <Exersizes />
     </div>
   )
 }
