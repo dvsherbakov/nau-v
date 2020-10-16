@@ -142,14 +142,29 @@
   justify-content: center;
 }
 
+.quest__horizontal__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.quest__horizontal__wrapper div{
+  padding: 10px;
+}
+
+.quest__svg-wrapper{
+  margin:15px;
+}
+
 .quest__container__green{
   border-radius: 10px;
-  box-shadow: 0 4px 16px rgb(149, 245, 165);
+  box-shadow: 0 4px 16px rgb(125, 254, 125);
 }
 
 .quest__container__red{
   border-radius: 10px;
-  box-shadow: 0 4px 16px rgb(247, 142, 124);
+  box-shadow: 0 4px 16px rgb(254, 142, 124);
 }
 
 .quest__container__yellow{

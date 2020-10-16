@@ -740,7 +740,7 @@ export const ImgF001016 = (
 )
 
 export const ImgF001018_1 = (
-  <svg width="200" height="300">
+  <svg width="200" height="250">
     <defs>
       <marker
         id="MarkBlack"
@@ -815,6 +815,140 @@ export const ImgF001018_1 = (
     </text>
     <text x="188" y="140" style={{ font: '24px sans-serif', fill: 'black' }}>
       2
+    </text>
+  </svg>
+)
+
+export const ImgF001018_2 = (
+  <svg width="200" height="110">
+    <defs>
+      <marker
+        id="MarkBlack"
+        viewBox="0 0 10 10"
+        refX="10"
+        refY="5"
+        markerUnits="userSpaceOnUse"
+        orient="auto"
+        markerWidth="10"
+        markerHeight="10"
+      >
+        <polyline id="markerPoly1" points="0,0 10,5 0,10 0,5" fill="black" />
+      </marker>
+    </defs>
+    <path
+      d="M10,95 V5"
+      stroke="black"
+      strokeWidth="1"
+      fill="transparent"
+      style={{ markerEnd: 'url(#MarkBlack)' }}
+    />
+    <path
+      d="M5,90 H190"
+      stroke="black"
+      strokeWidth="1"
+      fill="transparent"
+      style={{ markerEnd: 'url(#MarkBlack)' }}
+    />
+    <path
+      d="M10,20 Q20 20, 30 50 Q50 130, 70 50 Q85 -5, 100 50 Q120 130, 140 50 Q145 30, 155 20"
+      stroke="black"
+      strokeWidth="1"
+      fill="transparent"
+    />
+    <path
+      d="M155,20 V90"
+      stroke="black"
+      strokeWidth="1"
+      strokeDasharray="4 4"
+      fill="transparent"
+    />
+    <text
+      x="145"
+      y="109"
+      style={{ font: 'italic 16px sans-serif', fill: 'black' }}
+    >
+      T
+    </text>
+    <text
+      x="170"
+      y="105"
+      style={{ font: 'italic 14px sans-serif', fill: 'black' }}
+    >
+      t
+    </text>
+    <text
+      x="0"
+      y="109"
+      style={{ font: 'italic 16px sans-serif', fill: 'black' }}
+    >
+      0
+    </text>
+  </svg>
+)
+
+export const ImgF001018_3 = (
+  <svg width="200" height="110">
+    <defs>
+      <marker
+        id="MarkBlack"
+        viewBox="0 0 10 10"
+        refX="10"
+        refY="5"
+        markerUnits="userSpaceOnUse"
+        orient="auto"
+        markerWidth="10"
+        markerHeight="10"
+      >
+        <polyline id="markerPoly1" points="0,0 10,5 0,10 0,5" fill="black" />
+      </marker>
+    </defs>
+    <path
+      d="M10,105 V5"
+      stroke="black"
+      strokeWidth="1"
+      fill="transparent"
+      style={{ markerEnd: 'url(#MarkBlack)' }}
+    />
+    <path
+      d="M5,55 H190"
+      stroke="black"
+      strokeWidth="1"
+      fill="transparent"
+      style={{ markerEnd: 'url(#MarkBlack)' }}
+    />
+    <path
+      d="M10,20 Q30 20, 50 55 Q80 130, 110 55 Q130 20, 150,20"
+      stroke="black"
+      strokeWidth="1"
+      fill="transparent"
+    />
+    <path
+      d="M150,20 V55"
+      stroke="black"
+      strokeWidth="1"
+      strokeDasharray="4 4"
+      fill="transparent"
+    />
+    <text
+      x="145"
+      y="75"
+      style={{ font: 'italic 16px sans-serif', fill: 'black' }}
+    >
+      T
+    </text>
+    <text
+      x="170"
+      y="70"
+      style={{ font: 'italic 14px sans-serif', fill: 'black' }}
+    >
+      t
+    </text>
+    <text
+      x="0"
+      y="70"
+      style={{ font: 'italic 16px sans-serif', fill: 'black' }}
+    >
+      0
     </text>
   </svg>
 )

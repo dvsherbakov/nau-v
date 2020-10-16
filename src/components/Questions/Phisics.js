@@ -12,6 +12,9 @@ import {
   ImgF001014,
   ImgF001015,
   ImgF001016,
+  ImgF001018_1,
+  ImgF001018_2,
+  ImgF001018_3,
 } from './PhisicsImages'
 
 export const Phisics = [
@@ -925,6 +928,76 @@ export const Phisics = [
                 placeholder=" "
                 ref={convB}
                 onChange={answHandler}
+              />
+              <label className="quest__label">B</label>
+            </div>
+          </div>
+        </div>
+      )
+    },
+  },
+  {
+    key: 'f_001_018',
+    Body: function (SetAnswer) {
+      const conv1 = useRef(null)
+      const conv2 = useRef(null)
+      const answHandler = () => {
+        SetAnswer('f_001_018', [conv1.current.value, conv2.current.value])
+      }
+      return (
+        <div className="quest">
+          <div className="quest__body">
+            <div className="quest__horizontal__wrapper">
+              <div className="quest__svg-wrapper">{ImgF001018_1}</div>
+              <div>
+                Конденсатор идеального колебательного контура длительное время
+                подключён к источнику постоянного напряжения (см. рисунок). В
+                момент t = 0 переключатель К переводят из положения 1 в
+                положение 2. Графики А и Б отображают изменения физических
+                величин, характеризующих возникшие после этого колебания в
+                контуре (T — период колебаний). Установите соответствие между
+                графиками и физическими величинами, зависимости которых от
+                времени эти графики могут отображать. К каждой позиции первого
+                столбца подберите соответствующую позицию из второго столбца и
+                запишите в таблицу выбранные цифры под соответствующими буквами.
+                <div className="quest__horizontal__wrapper">
+                  <div className="quest__svg-wrapper">
+                    <ol type="A">
+                      <li>{ImgF001018_2} </li>
+                      <li>{ImgF001018_3}</li>
+                    </ol>
+                  </div>
+                  <div>
+                    <h3>Физические величины</h3>
+                    <ol>
+                      <li>сила тока в катушке</li>
+                      <li>энергия магнитного поля катушки</li>
+                      <li>энергия электрического поля конденсатора</li>
+                      <li>заряд левой обкладки конденсатора</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="quest__ans__group">
+            <div className="quest__group">
+              <input
+                className="quest__input"
+                type="text"
+                placeholder=" "
+                onChange={answHandler}
+                ref={conv1}
+              />
+              <label className="quest__label">A</label>
+            </div>
+            <div className="quest__group">
+              <input
+                className="quest__input"
+                type="text"
+                placeholder=" "
+                onChange={answHandler}
+                ref={conv2}
               />
               <label className="quest__label">B</label>
             </div>
