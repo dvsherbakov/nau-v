@@ -11,7 +11,7 @@ export const Navbar = (props) => {
   const userNav =
     accepted > 50 ? (
       <li>
-        <NavLink to="/links">Управление пользователями</NavLink>
+        <NavLink to="/users">Управление пользователями</NavLink>
       </li>
     ) : null
   if (jwtApi.isAuthenticated())
