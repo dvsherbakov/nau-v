@@ -1,0 +1,20 @@
+.exersizes__unit{
+    padding: 20px 10px;
+}
+
+.exersizes__header-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.exersizes__header-head{
+    display:flex;
+}
+
+.exersizes__header-item{
+    padding-right:10px;
+}
+
+.exersizes__body{
+    text-align: justify;
+}
