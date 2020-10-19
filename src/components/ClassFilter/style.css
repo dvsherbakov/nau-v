@@ -1,0 +1,35 @@
+.classfltr{
+    display: flex;
+    border: 1px solid #ccc;
+    justify-content: space-between;
+}
+
+.classfltr__cl-group, 
+.classfltr__tg-group{
+    display:flex;
+    padding: 0 1em;
+}
+
+.classfltr__item,
+.tagsfltr__item {
+    height:2em;
+    margin: 3px;
+    border: 3px solid #ffc222;
+    background-color: #303030;
+    color:#ffc222;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.classfltr__item{
+    width: 2em;
+    border-radius: 48%;
+    padding: 5px;
+}
+
+.tagsfltr__item{
+    border-radius: 0.9em;
+    padding: 5px 1em ;
+    
+}

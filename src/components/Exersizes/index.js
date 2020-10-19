@@ -1,10 +1,16 @@
 import React from 'react'
+import { ClassFilter } from '../ClassFilter'
 import { exersizes } from './exlist'
 import './styles.css'
 
 export const Exersizes = () => {
-  const classes = new Set(exersizes.map((e) => e.klass))
-  console.log(classes)
+  function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index
+  }
+
+  const classes = exersizes.map((e) => e.klass).filter(onlyUnique)
+  const tags = [].concat(...exersizes.map((e) => e.tags)).filter(onlyUnique)
+
   const resList = exersizes.map((e) => (
     <div key={e.id} className="exersizes__unit">
       <div className="exersizes__header-container">
@@ -20,6 +26,7 @@ export const Exersizes = () => {
   return (
     <div>
       <h1>Задачи и упражнения</h1>
+      <ClassFilter cl={classes} tg={tags} />
       <div>{resList}</div>
     </div>
   )
