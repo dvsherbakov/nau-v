@@ -27,14 +27,22 @@ export const Exersizes = () => {
   )
 
   const tagIsSelected = (tgs) => {
-    const filtered = tags.filter((el) => tgs.includes(el.tag))
-    console.log(filtered)
-    return filtered && filtered[0].isSelected
+    const filtered = tags
+      .filter((el) => tgs.includes(el.tag))
+      .filter((e) => e.isSelected)
+    return !!filtered.length
   }
 
   //ToDo add class filter
+  const classIsSelected = (cls) => {
+    const filtered = classes
+      .filter((el) => cls === el.klass)
+      .filter((e) => e.isSelected)
+    return !!filtered.length
+  }
 
   const resList = exersizes
+    .filter((e) => classIsSelected(e.klass))
     .filter((el) => tagIsSelected(el.tags))
     .map((e) => (
       <div key={e.id} className="exersizes__unit">
@@ -45,7 +53,9 @@ export const Exersizes = () => {
               Тэги: {e.tags.join(' ')}
             </div>
           </div>
-          <div>Шифр: {e.id}</div>
+          <div className="exersizes__code-div">
+            Шифр: <span className="exersizes__red-span">{e.id}</span>
+          </div>
         </div>
         <div className="exersizes__body">{e.text}</div>
       </div>

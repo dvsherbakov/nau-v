@@ -18,3 +18,14 @@
 .exersizes__body{
     text-align: justify;
 }
+
+.exersizes__code-div{
+    line-height: 1.6em;
+}
+
+.exersizes__red-span{
+    font-family: 'Roboto Condensed', serif;
+    font-size:18px;
+    text-decoration: underline;
+    color:red;
+}

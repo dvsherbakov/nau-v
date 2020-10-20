@@ -2,12 +2,15 @@
     display: flex;
     border: 1px solid #ccc;
     justify-content: space-between;
+    padding: 10px 0;
+    margin:3px;
 }
 
 .classfltr__cl-group, 
 .classfltr__tg-group{
     display:flex;
     padding: 0 1em;
+    flex-wrap: wrap;
 }
 
 .classfltr__item,
