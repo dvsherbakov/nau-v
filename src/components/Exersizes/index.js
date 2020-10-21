@@ -48,9 +48,12 @@ export const Exersizes = () => {
       <div key={e.id} className="exersizes__unit">
         <div className="exersizes__header-container">
           <div className="exersizes__header-head">
-            <div className="exersizes__header-item">{e.klass} класс</div>
             <div className="exersizes__header-item">
-              Тэги: {e.tags.join(' ')}
+              <span className="exersizes__green-span">{e.klass}</span> класс.
+            </div>
+            <div className="exersizes__header-item">
+              Тэги:{' '}
+              <span className="exersizes__green-span">{e.tags.join(', ')}</span>
             </div>
           </div>
           <div className="exersizes__code-div">
