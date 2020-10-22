@@ -22,12 +22,12 @@ export const Exersizes = () => {
   )
 
   const [tags, setTags] = useState(
-    []
-      .concat(...exersizes.map((e) => e.tags))
-      .filter(onlyUnique)
-      .map((el, id) => {
-        return { id, tag: el, isSelected: true }
-      })
+      ([] as string[])
+        .concat(...exersizes.map((e) => e.tags))
+        .filter(onlyUnique)
+        .map((el, id) => {
+          return { id, tag: el, isSelected: true }
+        })
   )
 
   const tagIsSelected = (tgs: Array<string>) => {
