@@ -1,4 +1,11 @@
-export const exersizes = [
+export type ExersizeItemType = {
+  tags: Array<string>,
+  klass: number,
+  id: string,
+  text: string,
+}
+
+export const exersizes: Array<ExersizeItemType> = [
   {
     tags: ['Законы сохранения', 'Фазовые переходы'],
     klass: 8,

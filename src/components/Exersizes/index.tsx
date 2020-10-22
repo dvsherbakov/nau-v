@@ -4,7 +4,11 @@ import { exersizes } from './exlist'
 import './styles.css'
 
 export const Exersizes = () => {
-  function onlyUnique(value, index, self) {
+  function onlyUnique(
+    value: number | string,
+    index: number,
+    self: Array<number | string>
+  ) {
     return self.indexOf(value) === index
   }
 
@@ -26,7 +30,7 @@ export const Exersizes = () => {
       })
   )
 
-  const tagIsSelected = (tgs) => {
+  const tagIsSelected = (tgs: Array<string>) => {
     const filtered = tags
       .filter((el) => tgs.includes(el.tag))
       .filter((e) => e.isSelected)
@@ -34,7 +38,7 @@ export const Exersizes = () => {
   }
 
   //ToDo add class filter
-  const classIsSelected = (cls) => {
+  const classIsSelected = (cls: number) => {
     const filtered = classes
       .filter((el) => cls === el.klass)
       .filter((e) => e.isSelected)

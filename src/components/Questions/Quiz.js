@@ -1,6 +1,6 @@
 import React, { useState, useContext, useRef } from 'react'
 import { AuthContext } from '../AuthContext'
-import { ScrollButtons } from '../ScrollButtons'
+import { ScrollButtons } from '../ScrollButtons/index.tsx'
 import { Phisics } from './Phisics'
 import './Questions.css'
 
