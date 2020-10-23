@@ -2,13 +2,31 @@ import React from 'react'
 
 import './style.css'
 
-export const ClassFilter = (props) => {
-  const ClassesClickHandler = (e) => {
-    const newValue = {
+interface FilterEventTarget extends EventTarget {
+  id: number;
+}
+
+interface FilterMouseEvent
+  extends React.MouseEvent<HTMLDivElement, MouseEvent> {
+  target: FilterEventTarget;
+}
+
+export type TagsType = { id: number, tag: string, isSelected: boolean }
+export type KlassType = { id: number, klass: number, isSelected: boolean }
+export type PropsClassFilterType = {
+  Classes: KlassType[],
+  SetClasses: React.Dispatch<React.SetStateAction<KlassType[]>>,
+  Tags: TagsType[],
+  SetTags: React.Dispatch<React.SetStateAction<TagsType[]>>,
+}
+
+export const ClassFilter = (props: PropsClassFilterType) => {
+  const ClassesClickHandler = (e: FilterMouseEvent) => {
+    const newValue: KlassType = {
       ...props.Classes[e.target.id],
       isSelected: !props.Classes[e.target.id].isSelected,
     }
-    const newArray = [
+    const newArray: KlassType[] = [
       ...props.Classes.slice(0, +e.target.id),
       newValue,
       ...props.Classes.slice(+e.target.id + 1),
@@ -16,12 +34,12 @@ export const ClassFilter = (props) => {
     props.SetClasses(newArray)
   }
 
-  const TagsClickHandler = (e) => {
-    const newValue = {
+  const TagsClickHandler = (e: FilterMouseEvent) => {
+    const newValue: TagsType = {
       ...props.Tags[e.target.id],
       isSelected: !props.Tags[e.target.id].isSelected,
     }
-    const newArray = [
+    const newArray: TagsType[] = [
       ...props.Tags.slice(0, +e.target.id),
       newValue,
       ...props.Tags.slice(+e.target.id + 1),
@@ -30,7 +48,7 @@ export const ClassFilter = (props) => {
   }
 
   const filtress = props.Classes
-    ? props.Classes.map((e, idx) => {
+    ? props.Classes.map((e: any, idx: number) => {
         return (
           <div
             id={e.id}
@@ -48,10 +66,10 @@ export const ClassFilter = (props) => {
       })
     : []
   const tags = props.Tags
-    ? props.Tags.map((e, idx) => {
+    ? props.Tags.map((e: TagsType, idx: number) => {
         return (
           <div
-            id={e.id}
+            id={e.id.toString()}
             key={idx}
             className={
               e.isSelected

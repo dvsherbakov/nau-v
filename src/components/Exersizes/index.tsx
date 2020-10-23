@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ClassFilter } from '../ClassFilter'
+import { ClassFilter } from '../ClassFilter/index'
 import { exersizes } from './exlist'
 import './styles.css'
 
