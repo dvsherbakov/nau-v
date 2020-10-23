@@ -1,14 +1,14 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
-import { QuizPage } from './pages/QuizPage.tsx'
-import { CheckPage } from './pages/CheckPage.tsx'
-import { AuthPage } from './pages/AuthPage.tsx'
-import { RegisterPage } from './pages/RegisterPage.tsx'
-import { MainPage } from './pages/MainPage.tsx'
-import { LinksPage } from './pages/LinksPage.tsx'
-import { UsersPage } from './pages/UsersPage.tsx'
+import { QuizPage } from './pages/QuizPage'
+import { CheckPage } from './pages/CheckPage'
+import { AuthPage } from './pages/AuthPage'
+import { RegisterPage } from './pages/RegisterPage'
+import { MainPage } from './pages/MainPage'
+import { LinksPage } from './pages/LinksPage'
+import { UsersPage } from './pages/UsersPage'
 
-export const useRoutes = (isAuth) => {
+export const useRoutes = (isAuth: boolean) => {
   if (isAuth) {
     return (
       <Switch>
