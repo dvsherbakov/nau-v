@@ -1,4 +1,8 @@
 const User = require('../models/user')
+const config = require('config')
+const jwt = require('jsonwebtoken')
+
+const secret = config.get('jwt').secret
 
 const getById = async (req, res) => {
   const userId = req.params.id
@@ -16,6 +20,10 @@ const getById = async (req, res) => {
 }
 
 const getUsers = async (req, res) => {
+  const token = req.headers.authorization.replace('Bearer ', '')
+  console.log(token)
+  payload = jwt.verify(token, secret)
+  console.log(payload)
   const users = await User.find()
   if (!users) {
     res.status(500).json({ message: 'Users does not exists!' })
