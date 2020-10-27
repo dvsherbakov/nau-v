@@ -5,6 +5,7 @@ import { CheckPage } from './pages/CheckPage'
 import { AuthPage } from './pages/AuthPage'
 import { RegisterPage } from './pages/RegisterPage'
 import { MainPage } from './pages/MainPage'
+import { HomePage } from './pages/HomePage'
 import { LinksPage } from './pages/LinksPage'
 import { UsersPage } from './pages/UsersPage'
 
@@ -23,6 +24,9 @@ export const useRoutes = (isAuth: boolean) => {
         </Route>
         <Route path="/users" exact>
           <UsersPage />
+        </Route>
+        <Route path="/home">
+          <HomePage />
         </Route>
         <Route path="/">
           <MainPage />
