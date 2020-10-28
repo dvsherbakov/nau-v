@@ -24,8 +24,10 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-mathjax-preview": "^2.1.3",
+    "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.4",
+    "redux": "^4.0.5",
     "typescript": "^4.0.3"
   },
   "scripts": {

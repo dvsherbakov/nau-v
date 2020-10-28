@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import Header from './components/Header/Header'
-import { AuthContext } from './components/AuthContext'
-import { useRoutes } from './routes.tsx'
-import { Navbar } from './components/Navbar/Navbar'
-import Api from './Api'
-import { UserInfo } from './components/UserInfo'
+import Header from '../Header/Header'
+import { AuthContext } from '../AuthContext'
+import { useRoutes } from '../../routes.tsx'
+import { Navbar } from '../Navbar/Navbar'
+import Api from '../../Api'
+import { UserInfo } from '../UserInfo'
 
 const jwtApi = new Api()
 
-function App() {
+function App(props) {
   const [token, setToken] = useState('')
   const [userInfo, setUserInfo] = useState({
     firstName: 'Ошибка',
