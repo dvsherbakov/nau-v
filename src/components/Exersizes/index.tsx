@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { ClassFilter } from '../ClassFilter/index'
+import {ScrollButtons} from '../ScrollButtons/index'
 import { exersizes } from './exlist'
 import './styles.css'
 
@@ -77,6 +78,7 @@ export const Exersizes = () => {
         SetTags={setTags}
       />
       <div>{resList}</div>
+      <ScrollButtons />
     </div>
   )
 }
