@@ -19,14 +19,20 @@ export const UsersStat = () => {
   }, [setUsers, jwtApi])
 
   const usersElement = users ? (
-    users.map((user, index) => (
-      <div key={index}>
-        <div className="users-list__list-elemen">
-          <span>{user.firstName}</span> <span>{user.lastName} </span>{' '}
-          <span>{user.email}</span>
+    users.map((user, index) => {
+      const rowClassName =
+        user.accepted > 20
+          ? 'users-list__list-element users-list__bold'
+          : 'users-list__list-element'
+
+      return (
+        <div key={index} className={rowClassName}>
+          <span className="users-list__f-name">{user.firstName}</span>{' '}
+          <span className="users-list__l-name">{user.lastName} </span>{' '}
+          <span className="users-list__email">{user.email}</span>
         </div>
-      </div>
-    ))
+      )
+    })
   ) : (
     <></>
   )
@@ -34,7 +40,7 @@ export const UsersStat = () => {
   return (
     <div className="users-list">
       <h1>Пользователи</h1>
-      {usersElement}
+      <div className="user-list__table">{usersElement}</div>
     </div>
   )
 }

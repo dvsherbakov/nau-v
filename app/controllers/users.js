@@ -42,6 +42,7 @@ const getUsers = async (req, res) => {
       email: user.email,
       firstName: user.firstName,
       lastName: user.lastName,
+      accepted: user.accepted,
       tResult: testRes.filter((r) => r.userId === user._id.toString()),
     }
   })

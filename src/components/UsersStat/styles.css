@@ -1,8 +1,44 @@
 .users-list{
-    border: 1px solid #C0C0C0;
+    
     padding: 1em;   
 }
 
-.users-list__list-elemen{
+.user-list__table{
     display:flex;
+    flex-direction: column;
+    width:100%
+}
+
+.users-list__list-element{
+    display:table-row;
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 25px;
+    width: 100%;
+}
+
+.users-list__list-element+span{
+    display: table-cell;
+}
+
+.users-list__f-name,
+.users-list__l-name,
+.users-list__l-email{
+    float:left;
+    padding: 0 20px;
+}
+
+.users-list__f-name{
+    width:30%;
+}
+
+.users-list__l-name{
+    width:30%;
+}
+
+.users-list__email{
+    width:30%;
+}
+
+.users-list__bold{
+    font-weight: 600;     
 }
