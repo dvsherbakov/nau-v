@@ -5,11 +5,12 @@ import { AuthContext } from '../AuthContext'
 import { useRoutes } from '../../routes.tsx'
 import { Navbar } from '../Navbar/Navbar'
 import Api from '../../Api'
+
 import { UserInfo } from '../UserInfo'
 
 const jwtApi = new Api()
 
-function App(props) {
+function App() {
   const [token, setToken] = useState('')
   const [userInfo, setUserInfo] = useState({
     firstName: 'Ошибка',
