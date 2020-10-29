@@ -3,6 +3,16 @@ import { AuthContext } from '../AuthContext'
 
 import './styles.css'
 
+const TestStat = (props) => {
+  console.log(props)
+  if (!props || !props.result.length) return null
+  return (
+    <span className="test-stat__wrapper">
+      <div className="test-stat"></div>
+    </span>
+  )
+}
+
 export const UsersStat = () => {
   const { jwtApi } = useContext(AuthContext)
   const [users, setUsers] = useState([])
@@ -20,16 +30,22 @@ export const UsersStat = () => {
 
   const usersElement = users ? (
     users.map((user, index) => {
+      const oddColor = index % 2 === 0 ? '' : ' users-list__odd-color'
       const rowClassName =
         user.accepted > 20
-          ? 'users-list__list-element users-list__bold'
-          : 'users-list__list-element'
+          ? `users-list__list-element users-list__bold`
+          : `users-list__list-element`
 
       return (
         <div key={index} className={rowClassName}>
-          <span className="users-list__f-name">{user.firstName}</span>{' '}
-          <span className="users-list__l-name">{user.lastName} </span>{' '}
-          <span className="users-list__email">{user.email}</span>
+          <span className={`users-list__f-name${oddColor}`}>
+            {user.firstName}
+          </span>{' '}
+          <span className={`users-list__l-name${oddColor}`}>
+            {user.lastName}{' '}
+          </span>{' '}
+          <span className={`users-list__email${oddColor}`}>{user.email}</span>
+          <TestStat result={user.tResult} />
         </div>
       )
     })
@@ -40,6 +56,11 @@ export const UsersStat = () => {
   return (
     <div className="users-list">
       <h1>Пользователи</h1>
+      <div className="user-list__table-header">
+        <span className="users-list__f-name">Имя</span>{' '}
+        <span className="users-list__l-name">Фамилия</span>{' '}
+        <span className="users-list__email">email</span>
+      </div>
       <div className="user-list__table">{usersElement}</div>
     </div>
   )

@@ -12,17 +12,19 @@
 .users-list__list-element{
     display:table-row;
     font-family: 'Roboto Condensed', sans-serif;
-    line-height: 25px;
+    line-height: 30px;
     width: 100%;
 }
 
-.users-list__list-element+span{
+.users-list__list-element span{
     display: table-cell;
+    margin: 0 1px;
+    border-radius: 5px;
 }
 
 .users-list__f-name,
 .users-list__l-name,
-.users-list__l-email{
+.users-list__email{
     float:left;
     padding: 0 20px;
 }
@@ -41,4 +43,56 @@
 
 .users-list__bold{
     font-weight: 600;     
+}
+
+.user-list__table-header{
+    line-height: 32px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.user-list__table-header span{
+    margin: 0 1px;
+    background-color:  #ffce31;
+    border-radius: 5px;
+    color: #2a1800;
+    font-weight: 500;
+    letter-spacing:1px;
+}
+
+.users-list__odd-color{
+    background-color: #7b7672;
+    color: #ffce31;
+}
+
+.test-stat__wrapper{
+    position:relative;
+}
+
+.test-stat {
+    position:relative;
+    margin: 0 5px;
+    width: 30px;
+    height: 30px;
+    background-color: #FFC222;
+    border-radius: 48%;
+    cursor: pointer;
+}
+
+.test-stat::after{
+    display: block;
+    position:relative;
+    top:3px;
+    left:3px;
+    width: 24px;
+    height: 24px;
+    font-family: 'icomoon';
+    font-size: 16px;
+    line-height: 24px;
+    content: "\f128";
+    text-align: center;   
+    border-radius: 48%;
+    
+    color: #FFC222;
+    background-color: #303030;
+    
 }
