@@ -1,5 +1,5 @@
 import React from 'react'
-import { Exersizes } from '../components/Exersizes/index'
+import { Exersizes } from '../components/Exersizes'
 
 export const CheckPage = () => {
   return (

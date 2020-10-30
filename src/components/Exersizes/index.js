@@ -1,15 +1,11 @@
 import React, { useState } from 'react'
 import { ClassFilter } from '../ClassFilter/index'
-import {ScrollButtons} from '../ScrollButtons/index'
+import { ScrollButtons } from '../ScrollButtons/index'
 import { exersizes } from './exlist'
 import './styles.css'
 
 export const Exersizes = () => {
-  function onlyUnique(
-    value: number | string,
-    index: number,
-    self: Array<number | string>
-  ) {
+  function onlyUnique(value, index, self) {
     return self.indexOf(value) === index
   }
 
@@ -23,15 +19,15 @@ export const Exersizes = () => {
   )
 
   const [tags, setTags] = useState(
-      ([] as string[])
-        .concat(...exersizes.map((e) => e.tags))
-        .filter(onlyUnique)
-        .map((el, id) => {
-          return { id, tag: el, isSelected: true }
-        })
+    []
+      .concat(...exersizes.map((e) => e.tags))
+      .filter(onlyUnique)
+      .map((el, id) => {
+        return { id, tag: el, isSelected: true }
+      })
   )
 
-  const tagIsSelected = (tgs: Array<string>) => {
+  const tagIsSelected = (tgs) => {
     const filtered = tags
       .filter((el) => tgs.includes(el.tag))
       .filter((e) => e.isSelected)
@@ -39,7 +35,7 @@ export const Exersizes = () => {
   }
 
   //ToDo add class filter
-  const classIsSelected = (cls: number) => {
+  const classIsSelected = (cls) => {
     const filtered = classes
       .filter((el) => cls === el.klass)
       .filter((e) => e.isSelected)
@@ -65,7 +61,7 @@ export const Exersizes = () => {
             Шифр: <span className="exersizes__red-span">{e.id}</span>
           </div>
         </div>
-        <div className="exersizes__body">{e.text}</div>
+        <div className="exersizes__body">{e.element ? e.element : e.text}</div>
       </div>
     ))
   return (
