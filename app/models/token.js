@@ -1,4 +1,4 @@
-const { Schema, model, Types } = require('mongoose')
+const { Schema, model } = require('mongoose')
 
 const TokenSchema = new Schema({
   tokenId: String,
