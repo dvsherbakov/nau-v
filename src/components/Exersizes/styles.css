@@ -1,5 +1,9 @@
 .exersizes__unit{
-    padding: 20px 10px;
+    padding: 15px 5px 20px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    border-bottom: 1px solid  rgba(123, 118, 114, 0.3);
+    box-shadow: 0 10px 30px 5px rgba(123, 118, 114, 0.2);
 }
 
 .exersizes__header-container{
@@ -17,6 +21,7 @@
 
 .exersizes__body {
     text-align: justify;
+    padding: 15px 0 25px 0;
 }
 
 .exersizes__code-div {
