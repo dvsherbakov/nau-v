@@ -1,17 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../AuthContext'
-
+import { UserTestStat } from '../UserTestStat/UserTestStat'
 import './styles.css'
-
-const TestStat = (props) => {
-  console.log(props)
-  if (!props || !props.result.length) return null
-  return (
-    <span className="test-stat__wrapper">
-      <div className="test-stat"></div>
-    </span>
-  )
-}
 
 export const UsersStat = () => {
   const { jwtApi } = useContext(AuthContext)
@@ -30,6 +20,7 @@ export const UsersStat = () => {
 
   const usersElement = users ? (
     users.map((user, index) => {
+      console.log(user, index)
       const oddColor = index % 2 === 0 ? '' : ' users-list__odd-color'
       const rowClassName =
         user.accepted > 20
@@ -39,13 +30,15 @@ export const UsersStat = () => {
       return (
         <div key={index} className={rowClassName}>
           <span className={`users-list__f-name${oddColor}`}>
-            {user.firstName}
+            {user.firstName || 'John'}
           </span>{' '}
           <span className={`users-list__l-name${oddColor}`}>
-            {user.lastName}{' '}
+            {user.lastName || 'Doe'}{' '}
           </span>{' '}
-          <span className={`users-list__email${oddColor}`}>{user.email}</span>
-          <TestStat result={user.tResult} />
+          <span className={`users-list__email${oddColor}`}>
+            {user.email || 'nomail@nomail.au'}
+          </span>
+          <UserTestStat result={user.tResult} />
         </div>
       )
     })
