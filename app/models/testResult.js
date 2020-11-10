@@ -9,6 +9,8 @@ const TestResultItemSchema = new mongoose.Schema({
 const TestResultSchema = new mongoose.Schema({
   userId: { type: String, required: true },
   results: [TestResultItemSchema],
+  testAt: Date,
+  count: Number,
 })
 
 module.exports = mongoose.model('TestResults', TestResultSchema)

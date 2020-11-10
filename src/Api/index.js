@@ -92,10 +92,11 @@ export default class Api {
     return this.client('/api/products').then(({ data }) => data)
   }
 
-  async checkTest(answers) {
+  async checkTest(answers, count) {
     const { data, status } = await this.client.post('/api/checktest', {
       userId: this.userId,
       answers,
+      count,
     })
     if (status === 200) return data
     else return {}

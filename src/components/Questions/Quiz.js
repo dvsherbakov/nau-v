@@ -15,10 +15,6 @@ export default function TestQuiz() {
     answers.current = { ...answers.current, ...obj }
   }
 
-  const clickHandler = () => {
-    jwtApi.checkTest(answers.current).then((res) => setqRes(res))
-  }
-
   const quests = Phisics.map((item) => {
     let style = ''
     if (qRes && item.key in qRes) {
@@ -33,6 +29,10 @@ export default function TestQuiz() {
       </div>
     )
   })
+
+  const clickHandler = () => {
+    jwtApi.checkTest(answers.current, quests.length).then((res) => setqRes(res))
+  }
 
   return (
     <>

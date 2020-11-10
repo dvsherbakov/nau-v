@@ -35,7 +35,12 @@ const checkTest = (req, res) => {
         quality: res,
       })
     })
-    saveResult({ userId: req.body.userId, results: answersArr })
+    saveResult({
+      userId: req.body.userId,
+      results: answersArr,
+      testAt: Date.now(),
+      count: req.body.count,
+    })
     res.status(200).json(result)
   } catch (e) {
     res.status(500).json(e.message)

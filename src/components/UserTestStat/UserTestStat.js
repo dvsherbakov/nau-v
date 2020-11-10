@@ -6,6 +6,10 @@ export const UserTestStat = (props) => {
 
   console.log(props)
 
+  const shortData = (td) => {
+    return `${td.getDate()}-${td.getMonth()}-${td.getFullYear()}`
+  }
+
   const wrapperClick = () => {
     setCompact(!isCompact)
   }
@@ -18,6 +22,18 @@ export const UserTestStat = (props) => {
       </span>
     )
   } else {
-    return <div className={'test-stat__container'}></div>
+    const testRes = props.result.map((r, idx) => {
+      const dt = r.testAt
+        ? shortData(new Date(r.testAt))
+        : shortData(new Date())
+      return (
+        <div key={idx} className="test-stat__row">
+          <span>{idx}</span>
+          <span>{dt}</span>
+          <span>{r.results.length}</span>
+        </div>
+      )
+    })
+    return <div className="test-stat__container">{testRes}</div>
   }
 }
