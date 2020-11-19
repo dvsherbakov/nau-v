@@ -8,7 +8,9 @@
     font-size: 24px;
     line-height: 50px;
     padding-left:60px;
+    margin-bottom: 5px;
     font-family: 'Roboto Condensed', sans-serif;
+    
 }
 
 .links__chapter::before, 
@@ -19,6 +21,7 @@
     position: absolute;
     display: table-cell;
     border-radius: 48%;
+    cursor: pointer;
 }
 
 .links__chapter::before, 
@@ -85,4 +88,8 @@
 
 .links__subchapter-list a:hover{
     color: #303030;
+}
+
+#formulas.links__chapter::after{
+    content:"\e9a7"
 }
