@@ -25,6 +25,7 @@ async function start() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
+      useFindAndModify: false,
     })
     const server = createServer(app)
     server.listen(PORT, (err) => {
