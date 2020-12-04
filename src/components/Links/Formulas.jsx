@@ -82,6 +82,64 @@ export const Formulas = () => {
                   <MathJax math="М" />
                 </td>
               </tr>
+              <tr>
+                <td>
+                  <div>Вес тела</div>
+                  <div>Вес тела в жидкости</div>
+                </td>
+                <td>
+                  <MathJax math="`P=m\cdotg`" />
+                  <MathJax math="`P=F_m-F_a`" />
+                </td>
+                <td>
+                  <MathJax math="`P` - вес" />
+                  <MathJax math="`m` - масса" />
+                  <MathJax math="`g` - ускорение свободного падения" />
+                </td>
+                <td className="center__cell">
+                  <MathJax math="`Н`" />
+                  <MathJax math="кг" />
+                  <MathJax math="`Н/\text{кг}`" />
+                </td>
+              </tr>
+              <tr>
+                <td>Давление</td>
+                <td>
+                  <MathJax math="`p=F/S`" />
+                </td>
+                <td>
+                  <MathJax math="`p` - давление" />
+                  <div>F - сила</div>
+                  <div>S - площадь</div>
+                </td>
+                <td className="center__cell">
+                  <div>Па</div>
+                  <div>Н</div>
+                  <div>М</div>
+                </td>
+              </tr>
+              <tr>
+                <td>Давление в жидкости (газе)</td>
+                <td>
+                  <MathJax math="`p=\rho\cdotg\cdoth`" />
+                  <MathJax math="`p=p_0+\rho\cdotg\cdoth`" />
+                  <MathJax math="`p_a=10^5`Па" />
+                </td>
+                <td>
+                  <MathJax math="`p` - давление" />
+                  <MathJax math="`\rho` - плотность жидкости" />
+                  <MathJax math="`g` - ускорение свободного падения" />
+                  <MathJax math="`h` - высота столба жидкости" />
+                  <MathJax math="`p_a` - нормальное атмосферное давление" />
+                </td>
+                <td className="center__cell">
+                  <div>Па</div>
+                  <MathJax math="`\text{кг}/{м^3}`" />
+                  <MathJax math="`Н/\text{кг}`" />
+                  <div>м</div>
+                  <div>Па</div>
+                </td>
+              </tr>
             </table>
           </div>
         )}
