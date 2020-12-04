@@ -28,7 +28,7 @@ export const Formulas = () => {
                   <MathJax math="`S` - путь" />
                   <MathJax math="`t` - время" />
                 </td>
-                <td>
+                <td className="center__cell">
                   <MathJax math="`м/с`" />
                   <MathJax math="`м`" />
                   <MathJax math="`с`" />
@@ -44,7 +44,7 @@ export const Formulas = () => {
                   <MathJax math="`m` - масса" />
                   <MathJax math="`V` - объем" />
                 </td>
-                <td>
+                <td className="center__cell">
                   <MathJax math="`\text{кг}/{м^3}`" />
                   <MathJax math="`\text{кг}`" />
                   <MathJax math="`м^3`" />
@@ -60,10 +60,26 @@ export const Formulas = () => {
                   <MathJax math="`m` - масса" />
                   <MathJax math="`g` - ускорение свободного падения" />
                 </td>
-                <td>
+                <td className="center__cell">
                   <MathJax math="`Н`" />
                   <MathJax math="`\text{кг}`" />
                   <MathJax math="`Н/\text{кг}`" />
+                </td>
+              </tr>
+              <tr>
+                <td>Сила упругости</td>
+                <td>
+                  <MathJax math="`F_{упр}=k\cdotx`" />
+                </td>
+                <td>
+                  <MathJax math="`F_{упр}` - сила упругости" />
+                  <MathJax math="`k` - жёсткость тела" />
+                  <MathJax math="`x` - удлиннение тела" />
+                </td>
+                <td className="center__cell">
+                  <MathJax math="`Н`" />
+                  <MathJax math="`Н/м`" />
+                  <MathJax math="М" />
                 </td>
               </tr>
             </table>
