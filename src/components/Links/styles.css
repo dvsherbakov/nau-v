@@ -93,3 +93,27 @@
 #formulas.links__chapter::after{
     content:"\e9a7"
 }
+
+.formulas__table {
+    width:100%;
+    font-size: 18px;
+    border-collapse: collapse;
+}
+
+.formulas__table tr {
+    padding-bottom: 10px;
+}
+
+.formulas__table tr:hover{
+    background-color: #F4F4F4;
+}
+
+.formulas__table tr td {
+    border: 0px;
+    border-bottom: 2px solid #FFC222;
+}
+
+.formulas__cell{
+    padding: 5px;
+    padding-right: 20px;
+}

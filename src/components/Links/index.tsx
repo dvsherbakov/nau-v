@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Formulas } from './Formulas'
+import { Formulas } from './Formulas.jsx'
 import './styles.css'
 
 const Links: React.FC = () => {
