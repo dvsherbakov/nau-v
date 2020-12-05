@@ -140,6 +140,22 @@ export const Formulas = () => {
                   <div>Па</div>
                 </td>
               </tr>
+              <tr>
+                <td>Зависимость давления воздуха от высоты</td>
+                <td>
+                  <MathJax math="`p=p_a-h/12`" />
+                </td>
+                <td>
+                  <div>p - давление</div>
+                  <div>h - высота</div>
+                  <MathJax math="`p_a` - нормальное атмосферное давление" />
+                </td>
+                <td className="center__cell">
+                  <div>Па</div>
+                  <div>м</div>
+                  <div>Па</div>
+                </td>
+              </tr>
             </table>
           </div>
         )}
