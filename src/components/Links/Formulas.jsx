@@ -77,9 +77,9 @@ export const Formulas = () => {
                   <MathJax math="`x` - удлиннение тела" />
                 </td>
                 <td className="center__cell">
-                  <MathJax math="`Н`" />
+                  <div>H</div>
                   <MathJax math="`Н/м`" />
-                  <MathJax math="М" />
+                  <div>M</div>
                 </td>
               </tr>
               <tr>
@@ -154,6 +154,38 @@ export const Formulas = () => {
                   <div>Па</div>
                   <div>м</div>
                   <div>Па</div>
+                </td>
+              </tr>
+              <tr>
+                <td>Площадь</td>
+                <td>
+                  <MathJax math="`S=l\cdota`" />
+                </td>
+                <td>
+                  <div>S - площадь</div>
+                  <div>l - длинна</div>
+                  <div>a - ширина</div>
+                </td>
+                <td className="center__cell">
+                  <div>м</div>
+                  <div>м</div>
+                  <div>м</div>
+                </td>
+              </tr>
+              <tr>
+                <td>Оьъем</td>
+                <td>
+                  <MathJax math="`V=S\cdoth`" />
+                </td>
+                <td>
+                  <div>V - объем</div>
+                  <div>S - площадь</div>
+                  <div>h - высота</div>
+                </td>
+                <td className="center__cell">
+                  <MathJax math="`м^3`" />
+                  <MathJax math="`м^2`" />
+                  <div>м</div>
                 </td>
               </tr>
             </table>
