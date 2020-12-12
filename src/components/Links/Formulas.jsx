@@ -173,7 +173,7 @@ export const Formulas = () => {
                 </td>
               </tr>
               <tr>
-                <td>Оьъем</td>
+                <td>Объем</td>
                 <td>
                   <MathJax math="`V=S\cdoth`" />
                 </td>
