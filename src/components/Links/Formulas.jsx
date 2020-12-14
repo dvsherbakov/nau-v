@@ -319,6 +319,68 @@ export const Formulas = () => {
                   <MathJax math="`Н\cdotм`" />
                 </td>
               </tr>
+              <tr>
+                <td>Условие равновесия рычага</td>
+                <td>
+                  <MathJax math="`F_1/F_2=l_2/l_1`" />
+                </td>
+                <td>
+                  <MathJax math="`F_1 и F_2` - действующие на рычаг силы" />
+                  <MathJax math="`l_1 и l_2` - плечи сил" />
+                </td>
+                <td className="center__cell">
+                  <div>Н</div>
+                  <div>м</div>
+                </td>
+              </tr>
+              <tr>
+                <td>Формула гидравлической машины</td>
+                <td>
+                  <MathJax math="`F_2/F_1=S_2/S_1`" />
+                </td>
+                <td>
+                  <MathJax math="`F_1 и F_2` - действующие на поршни силы" />
+                  <MathJax math="`S_1 и S_2` - площади поршней" />
+                </td>
+                <td className="center__cell">
+                  <div>Н</div>
+                  <MathJax math="`м^2`" />
+                </td>
+              </tr>
+              <tr>
+                <td>Кинетическая энергия</td>
+                <td>
+                  <MathJax math="`E_к=\frac{mv^2}{2}`" />
+                </td>
+                <td>
+                  <MathJax math="`E_к` - кинетическая энергия" />
+                  <div>m - масса тела</div>
+                  <MathJax math="`v` - скорость тела" />
+                </td>
+                <td className="center__cell">
+                  <div>Дж</div>
+                  <div>кг</div>
+                  <div>м/с</div>
+                </td>
+              </tr>
+              <tr>
+                <td>Потенциальная энергия силы тяжести</td>
+                <td>
+                  <MathJax math="`E_п=mgh`" />
+                </td>
+                <td>
+                  <MathJax math="`E_п` - потенциальная энергия" />
+                  <div>m - масса</div>
+                  <div>h - высота</div>
+                  <div>g - ускорение свободного падения</div>
+                </td>
+                <td className="center__cell">
+                  <div>Дж</div>
+                  <div>кг</div>
+                  <div>м</div>
+                  <div>Н/кг</div>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
