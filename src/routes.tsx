@@ -8,6 +8,7 @@ import { MainPage } from './pages/MainPage'
 import { HomePage } from './pages/HomePage'
 import { LinksPage } from './pages/LinksPage'
 import { UsersPage } from './pages/UsersPage'
+import TestPage from './pages/TestPage'
 
 export const useRoutes = (isAuth: boolean) => {
   if (isAuth) {
@@ -42,6 +43,15 @@ export const useRoutes = (isAuth: boolean) => {
       </Route>
       <Route path="/register" exact>
         <RegisterPage />
+      </Route>
+      <Route path="/links" exact>
+        <LinksPage />
+      </Route>
+      <Route path="/check" exact>
+        <CheckPage />
+      </Route>
+      <Route path="/test" exact>
+        <TestPage />
       </Route>
       <Redirect to="/" />
     </Switch>
