@@ -1,10 +1,8 @@
-import React from 'react'
-
 export interface IFormula {
-  key: string;
+  keyId: string;
   fClass: number;
   name: string;
-  body: React.FC;
-  description: React.FC;
-  dimendions: React.FC;
+  body: JSX.Element;
+  description: JSX.Element;
+  dimendions: JSX.Element;
 }

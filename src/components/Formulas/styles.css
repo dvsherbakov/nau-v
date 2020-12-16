@@ -1,0 +1,46 @@
+.formula_container {
+    display:flex;
+    flex-direction: column;
+}
+
+.formula_item {
+    display:flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FFC222;
+    align-items: center;
+    justify-content: space-between;
+    align-content: stretch;
+}
+
+.formula_dimensions, 
+.formula_description, 
+.formula_body, 
+.formula_name {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2px;
+}
+
+.formula_dimensions {
+    align-items: center;
+    width: 8%;
+}
+.formula_dimensions div {
+    text-align: center;
+    align-self: stretch;
+}
+
+.formula_description {
+    align-self: stretch;
+    width: 35%;
+}
+
+.formula_body {
+    width: 25%;
+}
+
+.formula_name {
+    width: 30%;
+}
