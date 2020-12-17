@@ -3,4 +3,5 @@ import { Formula } from './Formula'
 import { IFormula } from './types'
 import FormulasList from './FormulasList'
 
-export { Formulas, Formula, IFormula, FormulasList }
+export { Formulas, Formula, FormulasList }
+export { IFormula }
