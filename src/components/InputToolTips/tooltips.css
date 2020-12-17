@@ -12,17 +12,18 @@
     border-radius: 8px;
     z-index: 2;
     box-shadow: 0 4px 16px rgb(88, 88, 88);
+    transition: .5s;
 }
 
 .tooltips__notfound{
     margin: 0 auto;
-    transition: .5ms;
 }
 
 .tooltips__toolitem{
     padding-top:10px;
     padding-bottom: 10px;
     cursor: pointer;
+    transition: .5s;
     
 }
 

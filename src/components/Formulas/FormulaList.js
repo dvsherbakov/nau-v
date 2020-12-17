@@ -107,4 +107,58 @@ export const FormulasList = [
       </>
     ),
   },
+  {
+    keyId: '1010106',
+    fClass: 7,
+    name: 'Давление',
+    body: (
+      <>
+        <MathJax math="`p=F/S`" />
+      </>
+    ),
+    description: (
+      <>
+        <MathJax math="`p` - давление" />
+        <div>F - сила</div>
+        <div>S - площадь</div>
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>Па</div>
+        <div>Н</div>
+        <div>М</div>
+      </>
+    ),
+  },
+  {
+    keyId: '1010107',
+    fClass: 7,
+    name: 'Давление в жидкости (газе)',
+    body: (
+      <>
+        <MathJax math="`p=\rho\cdotg\cdoth`" />
+        <MathJax math="`p=p_a+\rho\cdotg\cdoth`" />
+        <MathJax math="`p_a=10^5`Па" />
+      </>
+    ),
+    description: (
+      <>
+        <MathJax math="`p` - давление" />
+        <MathJax math="`\rho` - плотность жидкости" />
+        <MathJax math="`g` - ускорение свободного падения" />
+        <MathJax math="`h` - высота столба жидкости" />
+        <MathJax math="`p_a` - нормальное атмосферное давление" />
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>Па</div>
+        <MathJax math="`\text{кг}/{м^3}`" />
+        <MathJax math="`Н/\text{кг}`" />
+        <div>м</div>
+        <div>Па</div>
+      </>
+    ),
+  },
 ]
