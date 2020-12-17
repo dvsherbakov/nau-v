@@ -1,0 +1,10 @@
+.pageselector{
+    padding:3px;
+    display:flex;
+}
+
+.pageselector__item{
+    padding-right: 2px;
+    padding-left: 2px;
+    cursor: pointer;
+}

@@ -1,4 +1,5 @@
-.formula_container {
+.formula__container {
+    position:relative;
     display:flex;
     flex-direction: column;
 }
@@ -43,4 +44,62 @@
 
 .formula_name {
     width: 30%;
+}
+
+.formula__input_group{
+    display:flex;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    min-width: 200px;
+    max-width: 500px;
+    margin-left: auto;
+    justify-content: space-between;
+}
+
+.formula__input_group input,
+.formula__input_group button{
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 16px;
+    line-height: 18px;
+    background-color: transparent;
+}
+
+.formula__input_group input{
+    position:relative;
+    border:none;
+    min-width: 80%;
+}
+
+.formula__input_group input:focus {
+    border:none;
+    outline: none;
+}
+
+.formula__input_button{
+    border:none;
+    outline: none;
+    cursor: pointer;
+}
+
+.formula__input_button::before{
+     font-family: 'icomoon';
+  content: "\f002";
+  color: #1b1b1b;
+}
+
+.formulas__tooltips {
+    position: absolute;
+    min-height: 20vh;
+    max-height: 50hv;
+    min-width: 200px;
+    max-width: 500px;
+    margin-top: 25px;
+    padding:25px;
+    background-color: rgba(250,250,250,0.9);
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    z-index: 2;
 }

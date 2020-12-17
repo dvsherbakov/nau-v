@@ -28,6 +28,9 @@
 .icon-question:before {
   content: "\f128";
 }
+.icon-search:before {
+  content: "\f002";
+}
 .icon-envelope-o:before {
   content: "\f003";
 }
@@ -51,6 +54,9 @@
 }
 .icon-road:before {
   content: "\f018";
+}
+.icon-play-circle-o:before {
+  content: "\f01d";
 }
 .icon-book1:before {
   content: "\f02d";
@@ -118,6 +124,18 @@
 .icon-quote-right:before {
   content: "\f10e";
 }
+.icon-smile-o:before {
+  content: "\f118";
+}
+.icon-frown-o:before {
+  content: "\f119";
+}
+.icon-meh-o:before {
+  content: "\f11a";
+}
+.icon-keyboard-o:before {
+  content: "\f11c";
+}
 .icon-envelope-square:before {
   content: "\f199";
 }
@@ -136,6 +154,9 @@
 .icon-window-close-o:before {
   content: "\f2d4";
 }
+.icon-superpowers:before {
+  content: "\f2dd";
+}
 .icon-book:before {
   content: "\e91f";
 }
@@ -148,6 +169,9 @@
 .icon-stack:before {
   content: "\e92e";
 }
+.icon-database:before {
+  content: "\e964";
+}
 .icon-user:before {
   content: "\e971";
 }
@@ -156,6 +180,9 @@
 }
 .icon-equalizer:before {
   content: "\e992";
+}
+.icon-cog:before {
+  content: "\e994";
 }
 .icon-meter:before {
   content: "\e9a6";
@@ -178,6 +205,9 @@
 .icon-exit:before {
   content: "\ea14";
 }
+.icon-scissors:before {
+  content: "\ea5a";
+}
 .icon-page-break:before {
   content: "\ea68";
 }
@@ -189,4 +219,13 @@
 }
 .icon-joomla:before {
   content: "\eab5";
+}
+.icon-delicious:before {
+  content: "\eacd";
+}
+.icon-yelp:before {
+  content: "\ead7";
+}
+.icon-svg:before {
+  content: "\eae9";
 }
