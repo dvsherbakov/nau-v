@@ -233,7 +233,6 @@ export const Formulas = () => {
                   <div>A - работа</div>
                   <div>F - сила</div>
                   <div>s - путь</div>
-                  <MathJax math="`\mu` - коэффициент трения" />
                 </td>
                 <td className="center__cell">
                   <div>Дж</div>

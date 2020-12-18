@@ -3,6 +3,7 @@ import './tooltips.css'
 
 export interface IInputToolTips {
   tooltips: string[];
+  setFilter: (flte: string) => void;
 }
 
 const InputToolTips: FC<IInputToolTips> = (props) => {
@@ -11,7 +12,14 @@ const InputToolTips: FC<IInputToolTips> = (props) => {
       <div className="tooltips__notfound">Ничего не найдено</div>
     ) : (
       props.tooltips.map((item, index) => (
-        <div key={index.toString()} className="tooltips__toolitem">
+        <div
+          key={index.toString()}
+          onClick={() => {
+            console.log('click')
+            props.setFilter(item)
+          }}
+          className="tooltips__toolitem"
+        >
           {item}
         </div>
       ))
