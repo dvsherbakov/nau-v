@@ -355,4 +355,168 @@ export const FormulasList = [
       </>
     ),
   },
+  {
+    keyId: '1010116',
+    fClass: 7,
+    name: 'Коэффициент полезного действия',
+    body: (
+      <>
+        <MathJax math="`\eta=A_п/A_з\cdot100%`" />
+      </>
+    ),
+    description: (
+      <>
+        <MathJax math="`\eta` - КПД" />
+        <MathJax math="`A_п` - полезная работа" />
+        <MathJax math="`A_з` - затраченная работа" />
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>%</div>
+        <div>Дж</div>
+        <div>Дж</div>
+      </>
+    ),
+  },
+  {
+    keyId: '1010117',
+    fClass: 7,
+    name: 'Механическая мощность',
+    body: (
+      <>
+        <MathJax math="`N=F\cdot\vartheta`" />
+      </>
+    ),
+    description: (
+      <>
+        <div>N - мощность</div>
+        <div>F - сила</div>
+        <MathJax math="`\vartheta` - скорость" />
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>Вт</div>
+        <div>Н</div>
+        <div>м/с</div>
+      </>
+    ),
+  },
+  {
+    keyId: '1010118',
+    fClass: 7,
+    name: 'Правило моментов',
+    body: (
+      <>
+        <MathJax math="`M_1=M_2`" />
+      </>
+    ),
+    description: (
+      <>
+        <MathJax math="`M_1` - момент силы действующий по часовой стрелке" />
+        <MathJax math="`M_2` - момент силы действующий против часовой стрелки" />
+      </>
+    ),
+    dimendions: (
+      <>
+        <MathJax math="`Н\cdotм`" />
+        <MathJax math="`Н\cdotм`" />
+      </>
+    ),
+  },
+  {
+    keyId: '1010119',
+    fClass: 7,
+    name: 'Условие равновесия рычага',
+    body: (
+      <>
+        <MathJax math="`F_1/F_2=l_2/l_1`" />
+      </>
+    ),
+    description: (
+      <>
+        <MathJax math="`F_1 и F_2` - действующие на рычаг силы" />
+        <MathJax math="`l_1 и l_2` - плечи сил" />
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>Н</div>
+        <div>м</div>
+      </>
+    ),
+  },
+  {
+    keyId: '1010120',
+    fClass: 7,
+    name: 'Формула гидравлической машины',
+    body: (
+      <>
+        <MathJax math="`F_2/F_1=S_2/S_1`" />
+      </>
+    ),
+    description: (
+      <>
+        <MathJax math="`F_1 и F_2` - действующие на поршни силы" />
+        <MathJax math="`S_1 и S_2` - площади поршней" />
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>Н</div>
+        <MathJax math="`м^2`" />
+      </>
+    ),
+  },
+  {
+    keyId: '1010121',
+    fClass: 7,
+    name: 'Кинетическая энергия',
+    body: (
+      <>
+        <MathJax math="`E_к=\frac{mv^2}{2}`" />
+      </>
+    ),
+    description: (
+      <>
+        <MathJax math="`E_к` - кинетическая энергия" />
+        <div>m - масса тела</div>
+        <MathJax math="`v` - скорость тела" />
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>Дж</div>
+        <div>кг</div>
+        <div>м/с</div>
+      </>
+    ),
+  },
+  {
+    keyId: '1010122',
+    fClass: 7,
+    name: 'Потенциальная энергия силы тяжести',
+    body: (
+      <>
+        <MathJax math="`E_п=mgh`" />
+      </>
+    ),
+    description: (
+      <>
+        <MathJax math="`E_п` - потенциальная энергия" />
+        <div>m - масса</div>
+        <div>h - высота</div>
+        <div>g - ускорение свободного падения</div>
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>Дж</div>
+        <div>кг</div>
+        <div>м</div>
+        <div>Н/кг</div>
+      </>
+    ),
+  },
 ]

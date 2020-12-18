@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Formulas } from './Formulas.jsx'
+import { FormulasCont } from './FormulasCont.jsx'
 import './styles.css'
 
 const Links: React.FC = () => {
@@ -44,4 +44,4 @@ const Links: React.FC = () => {
   )
 }
 
-export { Formulas, Links }
+export { FormulasCont, Links }

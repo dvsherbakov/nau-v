@@ -43,6 +43,7 @@ const Formulas = () => {
   })
 
   const onSetFilterHandler = (fltr: string) => {
+    setPage(1)
     setFilter(fltr)
     setTooltipVisible(false)
   }
@@ -68,7 +69,7 @@ const Formulas = () => {
   }
 
   return (
-    <div className="container">
+    <div>
       <div className="formula__input_group">
         <input
           type="text"

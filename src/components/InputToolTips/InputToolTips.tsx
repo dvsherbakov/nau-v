@@ -15,7 +15,6 @@ const InputToolTips: FC<IInputToolTips> = (props) => {
         <div
           key={index.toString()}
           onClick={() => {
-            console.log('click')
             props.setFilter(item)
           }}
           className="tooltips__toolitem"
