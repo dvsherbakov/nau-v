@@ -25,6 +25,7 @@
 }
 
 .formula_dimensions {
+    align-self: stretch;
     align-items: center;
     width: 8%;
 }
@@ -40,6 +41,11 @@
 
 .formula_body {
     width: 25%;
+}
+
+.formula_body > div {
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .formula_name {

@@ -519,4 +519,181 @@ export const FormulasList = [
       </>
     ),
   },
+  {
+    keyId: '1020101',
+    fClass: 8,
+    name: 'Скорость в равноускоренном движении',
+    body: (
+      <>
+        <MathJax math="`v=a\cdott(v_0=0)`" />
+        <MathJax math="`v_0=a\cdott(v=0)`" />
+      </>
+    ),
+    description: (
+      <>
+        <div>a - ускорение</div>
+        <div>t - время</div>
+        <MathJax math="`v` - скорость конечная" />
+      </>
+    ),
+    dimendions: (
+      <>
+        <MathJax math="`м/с^2`" />
+        <div>c</div>
+        <div>м/с</div>
+      </>
+    ),
+  },
+  {
+    keyId: '1020102',
+    fClass: 8,
+    name: 'Путь в равномерном движении',
+    body: (
+      <>
+        <MathJax math="`S=v\cdott`" />
+      </>
+    ),
+    description: (
+      <>
+        <div>S - путь</div>
+        <MathJax math="`v` - скорость" />
+        <div>t - время</div>
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>м</div>
+        <div>м/с</div>
+        <div>c</div>
+      </>
+    ),
+  },
+  {
+    keyId: '1020103',
+    fClass: 8,
+    name: 'Скорость в равномерном движении',
+    body: (
+      <>
+        <MathJax math="`v=S/t`" />
+      </>
+    ),
+    description: (
+      <>
+        <div>S - путь</div>
+        <MathJax math="`v` - скорость" />
+        <div>t - время</div>
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>м</div>
+        <div>м/с</div>
+        <div>c</div>
+      </>
+    ),
+  },
+  {
+    keyId: '1020104',
+    fClass: 8,
+    name: 'Ускорение',
+    body: (
+      <>
+        <MathJax math="`a=v_0/t`" />
+        <MathJax math="`a=v/t`" />
+      </>
+    ),
+    description: (
+      <>
+        <MathJax math="`v_0` - начальная скорость" />
+        <MathJax math="`v` - конечная скорость" />
+        <div>t - время</div>
+        <div>a - ускорение</div>
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>м/c</div>
+        <div>м/с</div>
+        <div>c</div>
+        <MathJax math="`м/с^2`" />
+      </>
+    ),
+  },
+  {
+    keyId: '1020105',
+    fClass: 8,
+    name: 'Путь в ускоренном движении',
+    body: (
+      <>
+        <MathJax math="`S=\frac{a\cdott^2}{2}`" />
+        <MathJax math="`S=\frac{v_0\cdott}{2}`" />
+        <MathJax math="`v_0`=0" />
+      </>
+    ),
+    description: (
+      <>
+        <div>S - путь</div>
+        <div>a - ускорение</div>
+        <div>t - время</div>
+        <MathJax math="`v` - конечная скорость" />
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>м</div>
+        <MathJax math="`м/с^2`" />
+        <div>c</div>
+        <div>м/с</div>
+      </>
+    ),
+  },
+  {
+    keyId: '1020106',
+    fClass: 8,
+    name: 'Средняя скорость',
+    body: (
+      <>
+        <MathJax math="`v_\text{ср}=s/t`" />
+      </>
+    ),
+    description: (
+      <>
+        <div>S - весь путь</div>
+        <MathJax math="`v_\text{ср}` - средняя скорость" />
+        <div>t - время</div>
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>м</div>
+        <div>м/с</div>
+        <div>c</div>
+      </>
+    ),
+  },
+  {
+    keyId: '1020107',
+    fClass: 8,
+    name: 'Средняя скорость в ускоренном движении',
+    body: (
+      <>
+        <MathJax math="`v_\text{ср}=v/2 (v_0=0)`" />
+        <MathJax math="`v_\text{ср}=v_0/2 (v=0)`" />
+      </>
+    ),
+    description: (
+      <>
+        <MathJax math="`v_\text{ср}` - средняя скорость" />
+        <MathJax math="`v` - конечная скорость" />
+        <MathJax math="`v_0` - начальная скорость" />
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>м/с</div>
+        <div>м/с</div>
+        <div>м/с</div>
+      </>
+    ),
+  },
 ]
