@@ -12,6 +12,7 @@ const defaultState = {
   firstName: '',
   lastName: '',
   email: '',
+  passwd: '',
 }
 
 export const authReducer = (state = defaultState, action) => {
