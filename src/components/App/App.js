@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import Header from '../Header/Header'
+import Header from '../Header/Header.tsx'
 import { AuthContext } from '../AuthContext'
 import { useRoutes } from '../../routes.tsx'
 import { Navbar } from '../Navbar/Navbar'

@@ -3,7 +3,6 @@ import { AuthContext } from '../AuthContext'
 import './auth.css'
 
 export const AuthForm = () => {
-  const [loginPressed, setPressed] = useState(false)
   const [errorState, setError] = useState(false)
   const [email, setLogin] = useState('')
   const [password, setPasswd] = useState('')
@@ -11,12 +10,6 @@ export const AuthForm = () => {
   const rfPasswd = useRef(null)
   const { jwtApi, setToken } = useContext(AuthContext)
 
-  const onPress = (e) => {
-    setPressed(true)
-  }
-  const onUnPress = (e) => {
-    setPressed(false)
-  }
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('userData'))
     if (data && data.email && data.password) {
@@ -53,10 +46,6 @@ export const AuthForm = () => {
     }
   }
 
-  const btPressedClass = loginPressed
-    ? 'auth__button auth__pressed'
-    : 'auth__button'
-
   const errorClass = errorState ? 'auth auth__error' : 'auth'
 
   return (
@@ -90,12 +79,7 @@ export const AuthForm = () => {
         <label className="auth__label">password</label>
       </div>
 
-      <button
-        className={btPressedClass}
-        onClick={loginHandler}
-        onMouseDown={onPress}
-        onMouseUp={onUnPress}
-      >
+      <button className={'auth__button'} onClick={loginHandler}>
         Войти
       </button>
     </div>
