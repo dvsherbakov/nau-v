@@ -12,9 +12,9 @@ export default (state = initialState, action: AuthActionTypes) => {
     case LOGIN_AUTH:
       return { ...state, isAuth: true }
     case EMAIL_AUTH:
-      return { ...state, email: (<SetEmailAction>action).email }
+      return { ...state, email: (action as SetEmailAction).email }
     case PASSWD_AUTH:
-      return { ...state, passwd: (<SetPasswdAction>action).passwd }
+      return { ...state, passwd: (action as SetPasswdAction).passwd }
     case LOGOUT_AUTH:
       return { ...state, isAuth: false }
     default:
