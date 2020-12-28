@@ -51,7 +51,7 @@ export const RegisterForm = () => {
       <div className="register__group">
         <input
           className="register__input"
-          type="text"
+          type="email"
           placeholder=" "
           onChange={(e) => {
             setFName(e.target.value)

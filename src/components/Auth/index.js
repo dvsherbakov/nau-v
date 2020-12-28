@@ -55,7 +55,7 @@ export const AuthForm = () => {
       <div className="auth__group">
         <input
           className="auth__input"
-          type="text"
+          type="email"
           placeholder=" "
           onChange={(e) => {
             setLogin(e.target.value)
