@@ -696,4 +696,114 @@ export const FormulasList = [
       </>
     ),
   },
+  {
+    keyId: '1030101',
+    fClass: 9,
+    name: 'Ускорение',
+    body: (
+      <>
+        <MathJax math="`\veca = \frac{\vecv-\vec{v_0}}{t}`" />
+      </>
+    ),
+    description: (
+      <>
+        <div>a - ускорение</div>
+        <MathJax math="`v` - конечная скорость" />
+        <MathJax math="`v_0` - начальная скорость" />
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>
+          <MathJax math="`м/с^2`" />
+        </div>
+        <div>м/с</div>
+        <div>м/с</div>
+      </>
+    ),
+  },
+  {
+    keyId: '1030102',
+    fClass: 9,
+    name: 'Перемещение',
+    body: (
+      <>
+        <MathJax math="`\vecS = \vec{v_0}\cdott+\frac{veca\cdott^2}2`" />
+      </>
+    ),
+    description: (
+      <>
+        <div>S - перемещение</div>
+        <div>a - ускорение</div>
+        <MathJax math="`v` - конечная скорость" />
+        <MathJax math="`v_0` - начальная скорость" />
+        <div>t - время</div>
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>м</div>
+        <div>
+          <MathJax math="`м/с^2`" />
+        </div>
+        <div>м/с</div>
+        <div>м/с</div>
+        <div>с</div>
+      </>
+    ),
+  },
+  {
+    keyId: '1030103',
+    fClass: 9,
+    name: 'Сила',
+    body: (
+      <>
+        <MathJax math="`\vecF = m\cdot\veca`" />
+      </>
+    ),
+    description: (
+      <>
+        <div>F - сила</div>
+        <div>m - масса</div>
+        <div>a - ускорение</div>
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>Н</div>
+        <div>кг</div>
+        <div>
+          <MathJax math="`м/с^2`" />
+        </div>
+      </>
+    ),
+  },
+  {
+    keyId: '1030103',
+    fClass: 9,
+    name: 'Сила гравитационного притяжения',
+    body: (
+      <>
+        <MathJax math="`F = G\cdot\frac{m_1\cdotm_2}R^2`" />
+      </>
+    ),
+    description: (
+      <>
+        <div>F - сила</div>
+        <div>G - гравитационная постоянна</div>
+        <div>m (1,2) - масса тел</div>
+        <div>R - расстояние между телами</div>
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>Н</div>
+        <div>
+          <MathJax math="`\frac{Н\cdotм^2}\{\text{кг}^2}`" />
+        </div>
+        <div>кг</div>
+        <div>м</div>
+      </>
+    ),
+  },
 ]
