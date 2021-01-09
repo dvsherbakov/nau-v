@@ -779,12 +779,13 @@ export const FormulasList = [
     ),
   },
   {
-    keyId: '1030103',
+    keyId: '1030104',
     fClass: 9,
     name: 'Сила гравитационного притяжения',
     body: (
       <>
-        <MathJax math="`F = G\cdot\frac{m_1\cdotm_2}R^2`" />
+        <MathJax math="`F = G\cdot\frac{m_1\cdotm_2}{R^2}`" />
+        <MathJax math="`G = 6.67\cdot10^{-11}`" />
       </>
     ),
     description: (
@@ -803,6 +804,172 @@ export const FormulasList = [
         </div>
         <div>кг</div>
         <div>м</div>
+      </>
+    ),
+  },
+  {
+    keyId: '1030105',
+    fClass: 9,
+    name: 'Импульс',
+    body: (
+      <>
+        <MathJax math="`\vecp=m\cdot\vecv`" />
+      </>
+    ),
+    description: (
+      <>
+        <MathJax math="`\vecp` - импульс" />
+        <div>m - масса</div>
+        <MathJax math="`\vecv` - скорость" />
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>кг м/с</div>
+        <div>кг</div>
+        <div>м/с</div>
+      </>
+    ),
+  },
+  {
+    keyId: '1030106',
+    fClass: 9,
+    name: 'Импульс силы',
+    body: (
+      <>
+        <MathJax math="`\Delta\vecp=\vecF\cdot\Deltat`" />
+      </>
+    ),
+    description: (
+      <>
+        <MathJax math="`\vecp` - импульс" />
+        <div>F - сила</div>
+        <MathJax math="`\Deltat` - время" />
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>кг м/с</div>
+        <div>Н</div>
+        <div>с</div>
+      </>
+    ),
+  },
+  {
+    keyId: '1030107',
+    fClass: 9,
+    name: 'Закон сохранения импульса',
+    body: (
+      <>
+        <MathJax math="`m_1\cdot\vecv_1+m_2\cdot\vecv_2=`" />
+        <MathJax math="`m_1\cdot\vecv_1'+m_2\cdot\vecv_2'`" />
+      </>
+    ),
+    description: (
+      <>
+        <div>m - масса</div>
+        <MathJax math="`v` - скорость" />
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>кг</div>
+        <div>м/с</div>
+      </>
+    ),
+  },
+  {
+    keyId: '1030108',
+    fClass: 9,
+    name: 'Период колебаний',
+    body: (
+      <>
+        <MathJax math="`T=t/N`" />
+      </>
+    ),
+    description: (
+      <>
+        <div>T - период</div>
+        <div>t - время колебаний</div>
+        <div>N - число колебаний</div>
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>с</div>
+        <div>с</div>
+        <div>-</div>
+      </>
+    ),
+  },
+  {
+    keyId: '1030109',
+    fClass: 9,
+    name: 'Частота колебаний',
+    body: (
+      <>
+        <MathJax math="`\nu=N/T`" />
+      </>
+    ),
+    description: (
+      <>
+        <MathJax math="`\nu` - частота" />
+        <div>T - период</div>
+        <div>N - число колебаний</div>
+      </>
+    ),
+    dimendions: (
+      <>
+        <MathJax math="Гц; `c^{-1}; 1/c`" />
+        <div>с</div>
+        <div>-</div>
+      </>
+    ),
+  },
+  {
+    keyId: '1030110',
+    fClass: 9,
+    name: 'Период колебаний математического маятника',
+    body: (
+      <>
+        <MathJax math="`T=2\cdot\pi\sqrt\frac lg`" />
+        <MathJax math="`\pi\approx3.14`" />
+      </>
+    ),
+    description: (
+      <>
+        <div>T - период</div>
+        <div>l - длинна нити маятника</div>
+      </>
+    ),
+    dimendions: (
+      <>
+        <MathJax math="Гц; `c^{-1}; 1/c`" />
+        <div>м</div>
+      </>
+    ),
+  },
+  {
+    keyId: '1030111',
+    fClass: 9,
+    name: 'Период колебаний пружинного маятника',
+    body: (
+      <>
+        <MathJax math="`T=2\cdot\pi\sqrt\frac mk`" />
+      </>
+    ),
+    description: (
+      <>
+        <div>T - период</div>
+        <div>m - масса</div>
+        <div>k - коэффициент жесткости пружины</div>
+      </>
+    ),
+    dimendions: (
+      <>
+        <MathJax math="Гц; `c^{-1}; 1/c`" />
+        <div>кг</div>
+        <div>Н/м</div>
       </>
     ),
   },
