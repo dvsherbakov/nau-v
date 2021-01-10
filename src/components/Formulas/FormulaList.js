@@ -973,4 +973,31 @@ export const FormulasList = [
       </>
     ),
   },
+  {
+    keyId: '1030112',
+    fClass: 9,
+    name: 'Угловая скорость (циклическая частота)',
+    body: (
+      <>
+        <MathJax math="`\omega=\frac{2\cdot\pi}T`" />
+        <MathJax math="`\omega=2\cdot\pi\cdot\nu`" />
+        <MathJax math="`\omega=\sqrt{\frackm}`" />
+        <MathJax math="`\omega=\sqrt{\fracgl}`" />
+      </>
+    ),
+    description: (
+      <>
+        <MathJax math="`\omega` - циклическая частота" />
+        <div>T - период</div>
+        <div>k - коэффициент жесткости пружины</div>
+      </>
+    ),
+    dimendions: (
+      <>
+        <div>рад/с</div>
+        <MathJax math="Гц; `c^{-1}; 1/c`" />
+        <div>Н/м</div>
+      </>
+    ),
+  },
 ]
