@@ -1,4 +1,5 @@
 import { combineReducers, createStore } from 'redux'
+import { reducer as formReducer } from 'redux-form'
 import { devToolsEnhancer } from 'redux-devtools-extension'
 import { CounterReducer } from './features/counter'
 import { AuthReducer } from './features/auth'
@@ -7,6 +8,7 @@ import { AuthReducer } from './features/auth'
 const rootReducer = combineReducers({
   count: CounterReducer,
   auth: AuthReducer,
+  form: formReducer,
 })
 
 const store = createStore(

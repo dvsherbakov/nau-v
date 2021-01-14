@@ -9,6 +9,7 @@ import { HomePage } from './pages/HomePage'
 import { LinksPage } from './pages/LinksPage'
 import { UsersPage } from './pages/UsersPage'
 import TestPage from './pages/TestPage'
+import TestAuth from './pages/TestAuth'
 
 export const useRoutes = (isAuth: boolean) => {
   if (isAuth) {
@@ -52,6 +53,9 @@ export const useRoutes = (isAuth: boolean) => {
       </Route>
       <Route path="/test" exact>
         <TestPage />
+      </Route>
+      <Route path="/tst" exact>
+        <TestAuth />
       </Route>
       <Redirect to="/" />
     </Switch>
