@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
-import { AuthContext } from '../AuthContext'
+import { AuthContext } from '../AuthContext.ts'
 
 import './Navbar.css'
 
@@ -33,6 +33,11 @@ export const Navbar = (props) => {
           <li>
             <NavLink to="/check" activeClassName="active-link">
               Проверочные вопросы
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/pr" activeClassName="active-link">
+              Профиль
             </NavLink>
           </li>
           <li>

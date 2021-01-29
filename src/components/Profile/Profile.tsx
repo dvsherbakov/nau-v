@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import gravatar from 'gravatar'
+import { AuthContext } from '../AuthContext'
 
 export const Profile = () => {
+  const { jwtApi } = useContext<any>(AuthContext)
   const url = gravatar.url(
-    'dvsherbakov@gmail.com',
+    jwtApi.email,
     { s: '100', r: 'x', d: 'retro' },
     false
   )

@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect, useRef } from 'react'
-import { AuthContext } from '../AuthContext'
+import { AuthContext } from '../AuthContext.ts'
 import './auth.css'
 
 export const AuthForm = () => {

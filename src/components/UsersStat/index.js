@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { AuthContext } from '../AuthContext'
+import { AuthContext } from '../AuthContext.ts'
 import { UserTestStat } from '../UserTestStat/UserTestStat'
 import './styles.css'
 

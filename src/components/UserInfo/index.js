@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Logout } from '../Logout'
-import { AuthContext } from '../AuthContext'
+import { AuthContext } from '../AuthContext.ts'
 
 import './styles.css'
 
