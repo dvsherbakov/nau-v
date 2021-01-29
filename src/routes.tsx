@@ -10,11 +10,16 @@ import { LinksPage } from './pages/LinksPage'
 import { UsersPage } from './pages/UsersPage'
 import TestPage from './pages/TestPage'
 import TestAuth from './pages/TestAuth'
+import { ProfilePage } from './pages/ProfilePage'
 
 export const useRoutes = (isAuth: boolean) => {
+  console.log('useroutes')
   if (isAuth) {
     return (
       <Switch>
+        <Route path="/pr" exact>
+          <ProfilePage />
+        </Route>
         <Route path="/test" exact>
           <QuizPage />
         </Route>
@@ -27,10 +32,10 @@ export const useRoutes = (isAuth: boolean) => {
         <Route path="/users" exact>
           <UsersPage />
         </Route>
-        <Route path="/home">
+        <Route path="/home" exact>
           <HomePage />
         </Route>
-        <Route path="/">
+        <Route path="/" exaxt>
           <MainPage />
         </Route>
         <Redirect to="/auth"></Redirect>
@@ -56,6 +61,9 @@ export const useRoutes = (isAuth: boolean) => {
       </Route>
       <Route path="/tst" exact>
         <TestAuth />
+      </Route>
+      <Route path="/pr" exact>
+        <ProfilePage />
       </Route>
       <Redirect to="/" />
     </Switch>
