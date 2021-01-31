@@ -17,12 +17,11 @@ export const useRoutes = (isAuth: boolean) => {
   if (isAuth) {
     return (
       <Switch>
-        <Route path="/pr" exact>
+        <Route path="/pr" component={ProfilePage} exact>
           <ProfilePage />
         </Route>
-        <Route path="/test" exact>
-          <QuizPage />
-        </Route>
+        <Route path="/test" component={QuizPage} exact />
+
         <Route path="/check" exact>
           <CheckPage />
         </Route>
@@ -61,9 +60,6 @@ export const useRoutes = (isAuth: boolean) => {
       </Route>
       <Route path="/tst" exact>
         <TestAuth />
-      </Route>
-      <Route path="/pr" exact>
-        <ProfilePage />
       </Route>
       <Redirect to="/" />
     </Switch>
