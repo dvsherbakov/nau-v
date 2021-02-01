@@ -13,7 +13,6 @@ import TestAuth from './pages/TestAuth'
 import { ProfilePage } from './pages/ProfilePage'
 
 export const useRoutes = (isAuth: boolean) => {
-  console.log('useroutes')
   if (isAuth) {
     return (
       <Switch>
