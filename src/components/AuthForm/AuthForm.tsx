@@ -1,7 +1,8 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import * as Yup from 'yup'
 import { withFormik, FormikProps, Form, Field } from 'formik'
-
+import { selectors, emailAction, passwdAction } from '../../features/auth'
 import './auth.css'
 
 // Shape of form values
@@ -12,6 +13,9 @@ interface FormValues {
 
 const InnerForm = (props: FormikProps<FormValues>) => {
   const { touched, errors, isSubmitting } = props
+  const dispatch = useDispatch()
+  const email = useSelector(selectors.getEmail)
+  const passwd = useSelector(selectors.getPasswd)
   const authClassName =
     errors.email || errors.password ? 'auth auth__error' : 'auth'
   return (
@@ -40,7 +44,7 @@ const InnerForm = (props: FormikProps<FormValues>) => {
             name="password"
             id="password"
           />
-          <label className="auth__label" htmlFor="passwd-input">
+          <label className="auth__label" htmlFor="password">
             password
           </label>
           {touched.password && errors.password && <div>{errors.password}</div>}
@@ -71,10 +75,9 @@ const goodPersonSchema: Yup.SchemaOf<ValSchema> = Yup.object({
 
 // Wrap our form with the withFormik HoC
 export const AuthForm = withFormik<MyFormProps, FormValues>({
-  // Transform outer props into form values
   mapPropsToValues: (props) => {
     return {
-      email: props.initialEmail || 'example@email.com',
+      email: props.initialEmail || '',
       password: '',
     }
   },
