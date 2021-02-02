@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Gravatar from 'react-gravatar'
-import { AuthContext } from '../AuthContext'
+import { useSelector } from 'react-redux'
+import { selectors } from '../../features/auth/index'
 
 import './Profile.css'
 type defGav =
@@ -14,7 +15,8 @@ type defGav =
   | undefined
 
 export const Profile = () => {
-  const { jwtApi } = useContext<any>(AuthContext)
+  const email = useSelector(selectors.getEmail)
+  const { firstName, lastName } = useSelector(selectors.getName)
   const defAvatars: Array<defGav> = [
     'identicon',
     'monsterid',
@@ -27,14 +29,14 @@ export const Profile = () => {
   return (
     <div className="profile__personal-group">
       <Gravatar
-        email={jwtApi.email}
+        email={email}
         className="profile__gravatar"
         size={100}
         default={defAvatar}
       />
-      <div>
-        <h2>{jwtApi.firstName}</h2>
-        <h2>{jwtApi.lastName}</h2>
+      <div className="profile__name-group">
+        <div>{firstName}</div>
+        <div>{lastName}</div>
       </div>
     </div>
   )

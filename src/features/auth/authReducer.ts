@@ -13,7 +13,6 @@ const initialState = {
 export default (state = initialState, action: AuthActionTypes) => {
   switch (action.type) {
     case LOGIN_AUTH:
-      debugger
       return { ...state, isAuth: true, firstName:(action as LoginAction).payload.firstName, lastName:(action as LoginAction).payload.lastName, email: (action as LoginAction).payload.email, accepted:(action as LoginAction).payload.accepted }
     case EMAIL_AUTH:
       return { ...state, email: (action as SetEmailAction).email }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { UserInfo } from '../UserInfo/UserInfo'
 
 export default function Header() {
   return (
@@ -16,6 +17,9 @@ export default function Header() {
               vacheslavnaumenko@mail.com
             </a>
           </div>
+        </div>
+        <div className="container">
+          <UserInfo />
         </div>
       </div>
     </header>

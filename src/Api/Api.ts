@@ -120,7 +120,6 @@ export default class Api {
   }
 
   async getUserInfo(userId: string) {
-    debugger
     const resp = await this.client.post(`/users/${userId}`)
     if (resp.status === 200) {
       return resp.data

@@ -72,6 +72,9 @@ export interface AuthState {
     email: string
     passwd: string
     isAuth: boolean
+    firstName: string
+    lastName: string
+    accepted: number
   }
 }
 
