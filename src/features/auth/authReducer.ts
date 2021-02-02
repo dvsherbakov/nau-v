@@ -16,6 +16,7 @@ export default (state = initialState, action: AuthActionTypes) => {
     case PASSWD_AUTH:
       return { ...state, passwd: (action as SetPasswdAction).passwd }
     case LOGOUT_AUTH:
+      debugger
       return { ...state, isAuth: false }
     default:
       return state

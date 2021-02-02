@@ -1,6 +1,7 @@
-import { combineReducers, createStore } from 'redux'
+import { combineReducers, createStore, applyMiddleware } from 'redux'
 import { reducer as formReducer } from 'redux-form'
-import { devToolsEnhancer } from 'redux-devtools-extension'
+import thunk from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension'
 import { CounterReducer } from './features/counter'
 import { AuthReducer } from './features/auth'
 
@@ -13,8 +14,7 @@ const rootReducer = combineReducers({
 
 const store = createStore(
   rootReducer,
-
-  /* preloadedState, */ devToolsEnhancer({})
+  composeWithDevTools(applyMiddleware(thunk))
 )
 
 export default store

@@ -1,90 +1,83 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import * as Yup from 'yup'
-import { withFormik, FormikProps, Form, Field } from 'formik'
-import { selectors, emailAction, passwdAction } from '../../features/auth'
-import './auth.css'
+import { useFormik } from 'formik'
+import { useDispatch } from 'react-redux'
 
-// Shape of form values
-interface FormValues {
+import './auth.css'
+import { authThunk } from '../../features/auth/actions'
+
+export interface IAuth {
   email: string;
   password: string;
 }
 
-const InnerForm = (props: FormikProps<FormValues>) => {
-  const { touched, errors, isSubmitting } = props
+export const AuthForm = () => {
   const dispatch = useDispatch()
-  const email = useSelector(selectors.getEmail)
-  const passwd = useSelector(selectors.getPasswd)
+  const val = localStorage.getItem('userData')
+  const startVal: IAuth = val ? JSON.parse(val) : { password: '', email: '' }
+
+  const formik = useFormik<IAuth>({
+    initialValues: startVal,
+    onSubmit: (values: IAuth) => {
+      localStorage.setItem('userData', JSON.stringify(values, null, 2))
+      dispatch(authThunk(values))
+    },
+    validationSchema: Yup.object().shape({
+      email: Yup.string()
+        .email('Некорректный email')
+        .required('Поле не может быть путым'),
+      password: Yup.string()
+        .min(3, 'Сликом короткий пароль')
+        .max(20, 'Слишком длинный пароль')
+        .required('Поле не может быть пустым'),
+    }),
+  })
+
   const authClassName =
-    errors.email || errors.password ? 'auth auth__error' : 'auth'
+    formik.errors.email || formik.errors.password ? 'auth auth__error' : 'auth'
+
   return (
     <div className={authClassName}>
       <h4 className="auth__header">Авторизуйтесь:</h4>
-      <Form>
+      <form onSubmit={formik.handleSubmit}>
         <div className="auth__group">
-          <Field
+          <input
             className="auth__input"
-            type="email"
+            id="email"
             name="email"
-            id="email-input"
-            placeholder=" "
+            type="email"
+            onChange={formik.handleChange}
+            value={formik.values.email}
           />
           <label htmlFor="email" className="auth__label">
-            email
+            Email:
           </label>
-          {touched.email && errors.email && <div>{errors.email}</div>}
+          {formik.errors.email ? (
+            <div id="email-error">{formik.errors.email}</div>
+          ) : null}
         </div>
 
         <div className="auth__group">
-          <Field
+          <input
             className="auth__input"
-            placeholder=" "
-            type="password"
-            name="password"
             id="password"
+            name="password"
+            type="password"
+            onChange={formik.handleChange}
+            value={formik.values.password}
           />
-          <label className="auth__label" htmlFor="password">
-            password
+          <label htmlFor="lastName" className="auth__label">
+            Password:
           </label>
-          {touched.password && errors.password && <div>{errors.password}</div>}
+          {formik.errors.password && formik.touched.password ? (
+            <div>{formik.errors.password}</div>
+          ) : null}
         </div>
-        <button type="submit" disabled={isSubmitting} className="auth__button">
-          Вход
+
+        <button type="submit" className="auth__button">
+          Войти
         </button>
-      </Form>
+      </form>
     </div>
   )
 }
-
-// The type of props MyForm receives
-interface MyFormProps {
-  initialEmail?: string;
-  initialPassword?: string;
-}
-
-type ValSchema = {
-  email: string,
-  password: string,
-}
-
-const goodPersonSchema: Yup.SchemaOf<ValSchema> = Yup.object({
-  email: Yup.string().email().defined(),
-  password: Yup.string().required().min(3, 'Password to short'),
-}).defined()
-
-// Wrap our form with the withFormik HoC
-export const AuthForm = withFormik<MyFormProps, FormValues>({
-  mapPropsToValues: (props) => {
-    return {
-      email: props.initialEmail || '',
-      password: '',
-    }
-  },
-
-  validationSchema: goodPersonSchema,
-
-  handleSubmit: (values) => {
-    console.dir(values)
-  },
-})(InnerForm)
