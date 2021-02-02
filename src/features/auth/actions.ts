@@ -11,6 +11,7 @@ import {
   AuthActionTypes,
   LoginFailAuth,
   LoginAction,
+  IFullUserInfo,
 } from './types'
 import Api from '../../Api/Api'
 
@@ -24,8 +25,9 @@ export const passwdAction = (passwd: string) => ({
   passwd,
 })
 
-export const authSuccessAction = (): LoginAction => ({
+export const authSuccessAction = (payload: IFullUserInfo): LoginAction => ({
   type: LOGIN_AUTH,
+  payload,
 })
 
 export const authFailAction = (): LoginFailAuth => ({
@@ -42,16 +44,14 @@ export const authThunk = (data: IAuthThunk) => async (
   dispatch: Dispatch<AuthActionTypes>
 ) => {
   try {
-    debugger
     const api = new Api()
-    const resp = await api.login(data)
-    console.log(resp)
-    if (resp === 200) {
+    const { status, userInfo } = await api.login(data)
+    if (status === 200) {
       localStorage.setItem(
         'tokens',
         JSON.stringify({ token: api.token, refresh: api.refreshToken })
       )
-      dispatch(authSuccessAction())
+      dispatch(authSuccessAction(userInfo))
     } else {
       dispatch(authFailAction())
     }

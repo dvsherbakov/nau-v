@@ -30,3 +30,10 @@ export interface IAuthRequestConfig {
   email: string
   password: string
 }
+
+export interface IFullUserInfo {
+  firstName: string;
+  lastName: string;
+  email: string;
+  accepted: number;
+}

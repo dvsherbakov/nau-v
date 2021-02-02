@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import Header from '../Header/Header.tsx'
 import { AuthContext } from '../AuthContext.ts'
 import { useRoutes } from '../../routes.tsx'
 import { Navbar } from '../Navbar/Navbar'
+import { selectors } from '../../features/auth/index'
 import Api from '../../Api'
 
 import { UserInfo } from '../UserInfo'
@@ -19,11 +21,13 @@ function App() {
     accepted: 0,
   })
 
+  const isAuth = useSelector(selectors.isAuthenticate)
+
   useEffect(() => {
     jwtApi.changeUserInfo = setUserInfo
   }, [])
 
-  const routes = useRoutes(!!token)
+  const routes = useRoutes(isAuth)
 
   return (
     <AuthContext.Provider value={{ jwtApi, token, setToken }}>

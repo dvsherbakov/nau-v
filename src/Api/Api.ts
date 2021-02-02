@@ -90,8 +90,8 @@ export default class Api {
     this.token = data.accessToken
     this.refreshToken = data.refreshToken
     this.userId = data.userId
-    // this.userInfo = this.getUserInfo(data.userId)
-    return status
+    const userInfo = await this.getUserInfo(data.userId)
+    return { status, userInfo }
   }
 
   async register({
@@ -117,5 +117,13 @@ export default class Api {
 
   async my() {
     return this.client.post('/my')
+  }
+
+  async getUserInfo(userId: string) {
+    debugger
+    const resp = await this.client.post(`/users/${userId}`)
+    if (resp.status === 200) {
+      return resp.data
+    } else return false
   }
 }
