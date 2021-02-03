@@ -25,7 +25,15 @@ const signIn = (req, res) => {
       }
       const isValid = bCrypt.compareSync(password, user.password)
       if (isValid) {
-        updateToken(user._id).then((tokens) => res.json(tokens))
+        updateToken(user._id).then((tokens) =>
+          res.json({
+            ...tokens,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            email: user.email,
+            accepted: user.accepted,
+          })
+        )
       } else {
         res.status(401).json({ message: 'Invalid credetials!' })
       }

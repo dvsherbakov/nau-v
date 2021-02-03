@@ -44,18 +44,18 @@ export const passwdAndEnailAction = (passwd: string, email: string) => ({
   email,
 })
 
-export const authThunk = (data: IAuthThunk) => async (
+export const authThunk = (auth: IAuthThunk) => async (
   dispatch: Dispatch<AuthActionTypes>
 ) => {
   try {
     const api = new Api()
-    const { status, userInfo } = await api.login(data)
+    const { status, data } = await api.login(auth)
     if (status === 200) {
       localStorage.setItem(
         'tokens',
         JSON.stringify({ token: api.token, refresh: api.refreshToken })
       )
-      dispatch(authSuccessAction(userInfo))
+      dispatch(authSuccessAction(data))
     } else {
       dispatch(authFailAction())
     }

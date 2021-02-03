@@ -90,8 +90,8 @@ export default class Api {
     this.token = data.accessToken
     this.refreshToken = data.refreshToken
     this.userId = data.userId
-    const userInfo = await this.getUserInfo(data.userId)
-    return { status, userInfo }
+    //const userInfo = await this.getUserInfo(data.userId)
+    return { status, data }
   }
 
   async register({
