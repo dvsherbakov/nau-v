@@ -70,7 +70,6 @@ export default class Api {
         this.token = data.accessToken
         this.refreshToken = data.refreshToken
         if (this.token && this.refreshToken) {
-          console.info('update tokens:', data)
           localStorage.setItem(
             'tokens',
             JSON.stringify({
@@ -149,5 +148,6 @@ export default class Api {
     } catch (e) {
       console.log(e)
     }
+    return { data: 'error' }
   }
 }

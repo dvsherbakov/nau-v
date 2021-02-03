@@ -72,10 +72,10 @@ const register = async (req, res) => {
 const refreshTokens = (req, res) => {
   const { refreshToken } = req.body
   let payload
-
   try {
+    console.log(1)
     payload = jwt.verify(refreshToken, secret)
-
+    console.log(2, payload)
     if (payload.type !== 'refresh') {
       res.status(400).json({ message: 'Invalid token!', payload })
       return

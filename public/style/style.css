@@ -39,7 +39,7 @@ font-family: 'Roboto Condensed', sans-serif;*/
 }
 header {
   font-family: 'Roboto', sans-serif;
-  width: 100vw;
+  min-width: 98vw;
 }
 
 .menu li {

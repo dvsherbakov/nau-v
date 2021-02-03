@@ -15,18 +15,16 @@ const jwtApi = new Api()
 
 function App() {
   const [token, setToken] = useState('')
-
-  const isAuth = useSelector(selectors.isAuthenticate)
   const dispath = useDispatch()
 
   useEffect(() => {
     const api = new Api()
     api.isauth().then((ia) => {
-      console.log('is auth: ', ia)
       dispath(myThunk())
     })
-  }, [])
+  }, [dispath])
 
+  const isAuth = useSelector(selectors.isAuthenticate)
   const routes = useRoutes(isAuth)
 
   return (
