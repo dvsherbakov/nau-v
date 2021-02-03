@@ -1,4 +1,5 @@
 import React from 'react'
+import { Logout } from '../Logout/Logout'
 import { UserInfo } from '../UserInfo/UserInfo'
 
 import './header.css'
@@ -19,8 +20,9 @@ export default function Header() {
               vacheslavnaumenko@mail.com
             </a>
           </div>
-          <div>
+          <div className="header__flex-container">
             <UserInfo />
+            <Logout />
           </div>
         </div>
       </div>

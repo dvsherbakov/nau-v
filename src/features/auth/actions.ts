@@ -5,6 +5,7 @@ import {
   PASSWD_AUTH,
   FAIL_AUTH,
   LOGIN_AUTH,
+  LOGOUT_AUTH,
 } from './actionTypes'
 import {
   IAuthThunk,
@@ -12,6 +13,7 @@ import {
   LoginFailAuth,
   LoginAction,
   IFullUserInfo,
+  LogoutAction,
 } from './types'
 import Api from '../../Api/Api'
 
@@ -33,6 +35,8 @@ export const authSuccessAction = (payload: IFullUserInfo): LoginAction => ({
 export const authFailAction = (): LoginFailAuth => ({
   type: FAIL_AUTH,
 })
+
+export const logoutAction = (): LogoutAction => ({ type: LOGOUT_AUTH })
 
 export const passwdAndEnailAction = (passwd: string, email: string) => ({
   type: PASSWD_AND_EMAIL,
