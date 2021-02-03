@@ -1,0 +1,48 @@
+.user-info {
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.user-info__gravatar {
+  border-radius: 50%;
+  padding: 1px;
+  border: 2px solid #7b7672;
+}
+
+.user-info__gravatar:hover {
+  border: 2px solid #ffc222;
+  cursor: pointer;
+}
+
+.user-info #username:before,
+.user-info #email::before {
+  position: absolute;
+  left: 10px;
+  color: #ffc222;
+  font-family: 'icomoon';
+  font-size: 20px;
+}
+.user-info #username:before {
+  content: '\e975';
+}
+
+.user-info #email::before {
+  content: '\ea86';
+}
+
+.user-info__main {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 30px;
+  height: 45px;
+}
+
+.user-info__item {
+  padding-left: 15px;
+  color: #cbcacb;
+  letter-spacing: 0.25px;
+  line-height: 43px;
+}

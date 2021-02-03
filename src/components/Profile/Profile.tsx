@@ -2,28 +2,20 @@ import React from 'react'
 import Gravatar from 'react-gravatar'
 import { useSelector } from 'react-redux'
 import { selectors } from '../../features/auth/index'
+import { defGravatar } from '../types'
 
 import './Profile.css'
-type defGav =
-  | 'identicon'
-  | 'monsterid'
-  | 'wavatar'
-  | 'retro'
-  | '404'
-  | 'mm'
-  | 'blank'
-  | undefined
 
 export const Profile = () => {
   const email = useSelector(selectors.getEmail)
   const { firstName, lastName } = useSelector(selectors.getName)
-  const defAvatars: Array<defGav> = [
+  const defAvatars: Array<defGravatar> = [
     'identicon',
     'monsterid',
     'wavatar',
     'retro',
   ]
-  const defAvatar: defGav =
+  const defAvatar: defGravatar =
     defAvatars[Math.floor(Math.random() * defAvatars.length)]
 
   return (

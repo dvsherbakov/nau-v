@@ -1,0 +1,66 @@
+.header__top {
+  background-color: #303030;
+}
+.header__btn {
+  float: right;
+  font-family: 'Roboto', sans-serif;
+  line-height: 36px;
+  font-size: 16px;
+  color: #1b1b1b;
+  background-color: #ffc222;
+  padding: 5px 20px 4px 50px;
+  position: relative;
+}
+
+.header__contacts:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.header__phone,
+.header__email {
+  color: #cbcacb;
+  letter-spacing: 0.25px;
+  line-height: 45px;
+  position: relative;
+}
+.header__phone {
+  padding-left: 20px;
+  padding-right: 30px;
+}
+
+.header__phone::before,
+.header__btn:before,
+.header__email::before {
+  font-family: 'icomoon';
+  position: absolute;
+  left: 0px;
+  color: #ffc222;
+}
+
+.header__btn:before {
+  content: '\f0b1';
+  left: 22px;
+  color: #1b1b1b;
+}
+
+.header__phone::before {
+  content: '\f095';
+}
+
+.header__email {
+  padding-left: 24px;
+}
+.header__email::before {
+  content: '\f003';
+}
+.header__content {
+  padding: 34px 0px 23px;
+}
+
+.header__content-inner {
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+}
