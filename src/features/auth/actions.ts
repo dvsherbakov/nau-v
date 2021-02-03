@@ -63,3 +63,13 @@ export const authThunk = (auth: IAuthThunk) => async (
     dispatch(authFailAction())
   }
 }
+
+export const myThunk = () => async (dispatch: Dispatch<AuthActionTypes>) => {
+  try {
+    const api = new Api()
+    const res = await api.my()
+    console.log(res)
+  } catch (e) {
+    dispatch(authFailAction())
+  }
+}

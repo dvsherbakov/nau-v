@@ -9,7 +9,7 @@
         "token": {
             "access": {
                 "type": "access",
-                "expiresIn": "59m"
+                "expiresIn": "20s"
             },
             "refresh": {
                 "type": "refresh",

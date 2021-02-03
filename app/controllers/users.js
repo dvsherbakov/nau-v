@@ -2,6 +2,7 @@ const User = require('../models/user')
 const TestResults = require('../models/testResult')
 const config = require('config')
 const jwt = require('jsonwebtoken')
+const jwt_decode = require('jwt-decode')
 
 const secret = config.get('jwt').secret
 
@@ -49,4 +50,26 @@ const getUsers = async (req, res) => {
   res.status(200).json(result)
 }
 
-module.exports = { getById, getUsers }
+const isAuth = (_req, res) => {
+  res.status(200).json({ message: 'Ok auth now' })
+}
+
+const my = async (req, res) => {
+  const token = req.get('Authorization').replace('Bearer', '')
+  try {
+    const { userId } = jwt_decode(token)
+    const user = await User.findById(userId)
+    res.status(200).json({
+      message: 'my controller say ok',
+      id: user._id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      accepted: user.accepted,
+    })
+  } catch (e) {
+    res.status(201).json({ message: e.message })
+  }
+}
+
+module.exports = { getById, getUsers, isAuth, my }

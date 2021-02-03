@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
+import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import {
   ITokensInterface,
   IApiOptions,
@@ -15,7 +15,7 @@ export default class Api {
 
   refreshToken: string | undefined
 
-  refreshRequest: AxiosResponse<ITokensInterface> | null
+  refreshRequest: any // AxiosResponse<ITokensInterface> | null
 
   constructor(options: IApiOptions = {}) {
     const startConfig: AxiosRequestConfig = {
@@ -24,10 +24,15 @@ export default class Api {
       baseURL: 'api/',
     }
 
+    const tokensStr = localStorage.getItem('tokens')
+    const tokens = tokensStr
+      ? this.rebuildToken(tokensStr)
+      : { accessToken: '', refreshToken: '' }
+
     this.client = options.client || axios.create(startConfig)
-    this.token = options.token || undefined
+    this.token = options.token || tokens.accessToken
     this.userId = options.userId || null
-    this.refreshToken = options.refreshToken || undefined
+    this.refreshToken = options.refreshToken || tokens.refreshToken
 
     this.refreshRequest = null
 
@@ -54,32 +59,36 @@ export default class Api {
           error.response.status !== 401 ||
           error.config.retry
         ) {
+          console.error('all token expired')
           throw error
         }
         if (!this.refreshRequest) {
-          this.refreshRequest = await this.client.post<ITokensInterface>(
-            `refresh-tokens`,
-            {
-              refreshToken: this.refreshToken,
-            }
-          )
+          this.refreshRequest = this.test
         }
 
-        const { data } = this.refreshRequest
-        this.token = data.accessToken?.id
-        this.refreshToken = data.refreshToken?.id
-        localStorage.setItem(
-          'tokens',
-          JSON.stringify({
-            token: this.token,
-            refresh: this.refreshToken,
-          })
-        )
+        const { data } = await this.refreshRequest()
+        this.token = data.accessToken
+        this.refreshToken = data.refreshToken
+        if (this.token && this.refreshToken) {
+          console.info('update tokens:', data)
+          localStorage.setItem(
+            'tokens',
+            JSON.stringify({
+              token: this.token,
+              refresh: this.refreshToken,
+            })
+          )
+        }
         const newRequest = { ...error.config, retry: true }
         this.refreshRequest = null
         return this.client(newRequest)
       }
     )
+  }
+
+  rebuildToken(tokensStr: string) {
+    const { token, refresh } = JSON.parse(tokensStr)
+    return { accessToken: token, refreshToken: refresh }
   }
 
   async login({ email, password }: IAuthRequestConfig) {
@@ -119,10 +128,26 @@ export default class Api {
     return this.client.post('/my')
   }
 
+  async isauth() {
+    const res = await this.client.post('isauth')
+    return res.status === 200
+  }
+
   async getUserInfo(userId: string) {
     const resp = await this.client.post(`/users/${userId}`)
     if (resp.status === 200) {
       return resp.data
     } else return false
+  }
+
+  async test() {
+    try {
+      const resp = await this.client.post(`/refresh-tokens`, {
+        refreshToken: this.refreshToken,
+      })
+      return resp
+    } catch (e) {
+      console.log(e)
+    }
   }
 }
