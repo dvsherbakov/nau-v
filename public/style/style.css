@@ -34,12 +34,10 @@ body {
   line-height: 18px;
   color: #5e5e5e;
   list-style: none;
-  /*font-family: 'Roboto', sans-serif;
-font-family: 'Roboto Condensed', sans-serif;*/
 }
 header {
   font-family: 'Roboto', sans-serif;
-  min-width: 98vw;
+  min-width: 100vw;
 }
 
 .menu li {
