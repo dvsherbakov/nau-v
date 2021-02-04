@@ -7,6 +7,8 @@ import {
   LOGIN_AUTH,
   LOGOUT_AUTH,
   MY_AUTH,
+  FAIL_REGISTER,
+  REGISTER_AUTH,
 } from './actionTypes'
 import {
   IAuthThunk,
@@ -16,6 +18,10 @@ import {
   IFullUserInfo,
   LogoutAction,
   MyAction,
+  IRegisterThunk,
+  RegisterFailAction,
+  RegisterAction,
+  RegisterUserPayload,
 } from './types'
 import Api from '../../Api/Api'
 
@@ -43,6 +49,17 @@ export const authFailAction = (): LoginFailAuth => ({
   type: FAIL_AUTH,
 })
 
+export const registerSuccessAction = (
+  payload: RegisterUserPayload
+): RegisterAction => ({
+  type: REGISTER_AUTH,
+  payload,
+})
+
+export const registerFailAction = (): RegisterFailAction => ({
+  type: FAIL_REGISTER,
+})
+
 export const logoutAction = (): LogoutAction => ({ type: LOGOUT_AUTH })
 
 export const passwdAndEnailAction = (passwd: string, email: string) => ({
@@ -50,6 +67,20 @@ export const passwdAndEnailAction = (passwd: string, email: string) => ({
   passwd,
   email,
 })
+
+export const registerThunk = (reg: IRegisterThunk) => async (
+  dispatch: Dispatch<AuthActionTypes>
+) => {
+  try {
+    const api = new Api()
+    const { status } = await api.register(reg)
+    if (status === 0) {
+      dispatch(registerSuccessAction(reg))
+    }
+  } catch (e) {
+    dispatch(registerFailAction())
+  }
+}
 
 export const authThunk = (auth: IAuthThunk) => async (
   dispatch: Dispatch<AuthActionTypes>
@@ -75,7 +106,6 @@ export const myThunk = () => async (dispatch: Dispatch<AuthActionTypes>) => {
   try {
     const api = new Api()
     const { data } = await api.my()
-    console.log(data)
     dispatch(authSuccessMy(data))
   } catch (e) {
     dispatch(authFailAction())

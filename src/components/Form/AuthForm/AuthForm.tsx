@@ -2,9 +2,9 @@ import React from 'react'
 import * as Yup from 'yup'
 import { useFormik } from 'formik'
 import { useDispatch } from 'react-redux'
-import { authThunk } from '../../features/auth/actions'
+import { authThunk } from '../../../features/auth/actions'
 
-import './auth.css'
+import '../styles/auth.css'
 
 export interface IAuth {
   email: string;

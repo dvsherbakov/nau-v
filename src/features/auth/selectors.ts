@@ -8,3 +8,4 @@ export const getName = (state: AuthState) => ({
   firstName: state.auth.firstName,
   lastName: state.auth.lastName,
 })
+export const isRegister = (state: AuthState) => state.auth.isRegistred

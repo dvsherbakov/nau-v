@@ -12,6 +12,7 @@ export const Logout = () => {
 
   const clickHandler = () => {
     localStorage.removeItem('userData')
+    localStorage.removeItem('tokens')
     dispatch(logoutAction())
   }
 

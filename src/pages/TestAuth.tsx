@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
-import AuthForm from '../components/AuthForm'
+import { RegisterForm } from '../components/Form/RegisterForm/RegisterForm'
 
 export default () => {
   return (
     <Fragment>
-      <AuthForm />
+      <RegisterForm />
     </Fragment>
   )
 }

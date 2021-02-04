@@ -1,4 +1,4 @@
-import { EMAIL_AUTH, LOGIN_AUTH, LOGOUT_AUTH, PASSWD_AND_EMAIL, PASSWD_AUTH, FAIL_AUTH, MY_SUCCESS, FIRST_NAME_AUTH, LAST_NAME_AUTH } from './actionTypes'
+import { EMAIL_AUTH, LOGIN_AUTH, LOGOUT_AUTH, PASSWD_AND_EMAIL, PASSWD_AUTH, FAIL_AUTH, MY_SUCCESS, FIRST_NAME_AUTH, LAST_NAME_AUTH, REGISTER_AUTH, FAIL_REGISTER } from './actionTypes'
 
 export interface IFullUserInfo {
   firstName: string;
@@ -31,8 +31,14 @@ export interface SetPasswdAndEmail {
 export type ComplexUserPayload = {
   firstName: string
   lastName: string
-  middleName?: string
   email: string
+}
+
+export type RegisterUserPayload={
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
 }
 
 export interface LogoutAction {
@@ -41,6 +47,15 @@ export interface LogoutAction {
 
 export type LoginFailAuth = {
   type: typeof FAIL_AUTH
+}
+
+export type RegisterAction = {
+  type: typeof REGISTER_AUTH
+  payload: RegisterUserPayload
+}
+
+export type RegisterFailAction ={
+  type: typeof FAIL_REGISTER
 }
 
 export type SetFirstNameAction = {
@@ -66,12 +81,14 @@ export type AuthActionTypes =
   | SetPasswdAction
   | SetFirstNameAction
   | SetLastNameAction
+  | RegisterAction
 
 export interface AuthState {
   auth: {
     email: string
     passwd: string
     isAuth: boolean
+    isRegistred?: boolean
     firstName: string
     lastName: string
     accepted: number
@@ -81,4 +98,11 @@ export interface AuthState {
 export interface IAuthThunk {
   email: string;
   password: string;
+}
+
+export interface IRegisterThunk {
+  email: string;
+  password: string;
+  firstName: string;
+  lastName: string;
 }

@@ -28,7 +28,7 @@ export const RegisterForm = () => {
         firstName,
         lastName,
       })
-      console.log(data)
+      //console.log(data)
       setRedirect(true)
       if (data === 200) {
         setToken(jwtApi.token)

@@ -21,7 +21,7 @@ const signIn = (req, res) => {
     .exec()
     .then((user) => {
       if (!user) {
-        res.status(401).json({ message: 'User does not exists!' })
+        res.status(401).json({ message: 'User does not exists!', status: -2 })
       }
       const isValid = bCrypt.compareSync(password, user.password)
       if (isValid) {
@@ -35,10 +35,10 @@ const signIn = (req, res) => {
           })
         )
       } else {
-        res.status(401).json({ message: 'Invalid credetials!' })
+        res.status(401).json({ message: 'Invalid credetials!', status: -1 })
       }
     })
-    .catch((err) => res.status(500).json({ message: err.message }))
+    .catch((err) => res.status(500).json({ status: -1, message: err.message }))
 }
 
 const register = async (req, res) => {
@@ -46,7 +46,9 @@ const register = async (req, res) => {
     const { email, password, firstName, lastName } = req.body
     const candidate = await User.findOne({ email })
     if (candidate) {
-      res.status(400).json({ message: 'Такой пользователь уже существует' })
+      res
+        .status(400)
+        .json({ message: 'Такой пользователь уже существует', status: 1 })
       return
     }
 
@@ -60,11 +62,12 @@ const register = async (req, res) => {
 
     await user.save()
 
-    res.status(201).json({ message: 'Пользователь создан' })
+    res.status(201).json({ message: 'Пользователь создан', status: 0 })
   } catch (e) {
     return res.status(500).json({
       message: 'Что-то пошло не так, попробуйте снова',
       message: e.message,
+      status: -1,
     })
   }
 }
@@ -73,14 +76,14 @@ const refreshTokens = (req, res) => {
   const { refreshToken } = req.body
   let payload
   try {
-    console.log(1)
     payload = jwt.verify(refreshToken, secret)
-    console.log(2, payload)
+    console.log(payload)
     if (payload.type !== 'refresh') {
       res.status(400).json({ message: 'Invalid token!', payload })
       return
     }
   } catch (e) {
+    console.error(e)
     if (e instanceof jwt.TokenExpiredError) {
       res.status(400).json({
         message: 'Token expired!',
