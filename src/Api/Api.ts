@@ -1,6 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import {
-  ITokensInterface,
   IApiOptions,
   IRegisterRequestConfig,
   IAuthRequestConfig,
@@ -98,7 +97,6 @@ export default class Api {
     this.token = data.accessToken
     this.refreshToken = data.refreshToken
     this.userId = data.userId
-    //const userInfo = await this.getUserInfo(data.userId)
     return { status, data }
   }
 
@@ -117,10 +115,13 @@ export default class Api {
     return data
   }
 
-  async refresh() {
-    return this.client.post<ITokensInterface>(`refresh-tokens`, {
-      refreshToken: this.refreshToken,
+  async checkTest(answers: any, count: number) {
+    const { data, status } = await this.client.post('/checktest', {
+      answers,
+      count,
     })
+    if (status === 200) return data
+    else return {}
   }
 
   async my() {

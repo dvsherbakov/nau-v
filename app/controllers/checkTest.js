@@ -1,5 +1,6 @@
 const TestResult = require('../models/testResult')
 const Answers = require('../models/initials/TestAnswers')
+const jwt_decode = require('jwt-decode')
 
 const compareArray = (id, dest_obj) => {
   if (!(id in Answers)) return 0
@@ -35,8 +36,10 @@ const checkTest = (req, res) => {
         quality: res,
       })
     })
+    const token = req.get('Authorization').replace('Bearer', '')
+    const { userId } = jwt_decode(token)
     saveResult({
-      userId: req.body.userId,
+      userId,
       results: answersArr,
       testAt: Date.now(),
       count: req.body.count,

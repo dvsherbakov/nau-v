@@ -1,11 +1,10 @@
-import React, { useState, useContext, useRef } from 'react'
-import { AuthContext } from '../AuthContext.ts'
+import React, { useState, useRef } from 'react'
+import Api from '../../Api/Api.ts'
 import { ScrollButtons } from '../ScrollButtons/index.tsx'
 import { Phisics } from './Phisics'
 import './Questions.css'
 
 export default function TestQuiz() {
-  const { jwtApi } = useContext(AuthContext)
   const [qRes, setqRes] = useState({})
   const answers = useRef({})
 
@@ -31,7 +30,11 @@ export default function TestQuiz() {
   })
 
   const clickHandler = () => {
-    jwtApi.checkTest(answers.current, quests.length).then((res) => setqRes(res))
+    const api = new Api()
+    api.checkTest(answers.current, quests.length).then((res) => {
+      console.log(res)
+      setqRes(res)
+    })
   }
 
   return (

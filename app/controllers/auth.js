@@ -77,7 +77,6 @@ const refreshTokens = (req, res) => {
   let payload
   try {
     payload = jwt.verify(refreshToken, secret)
-    console.log(payload)
     if (payload.type !== 'refresh') {
       res.status(400).json({ message: 'Invalid token!', payload })
       return
