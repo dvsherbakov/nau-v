@@ -5,9 +5,10 @@ import { useDispatch } from 'react-redux'
 import { registerThunk } from '../../../features/auth/actions'
 import { useSelector } from 'react-redux'
 import { selectors } from '../../../features/auth/index'
+import { Redirect } from 'react-router-dom'
 
 import '../styles/register.css'
-import { Redirect } from 'react-router-dom'
+import '../styles/forms.css'
 
 export interface IRegister {
   email: string;
@@ -44,7 +45,7 @@ export const RegisterForm = () => {
         .min(2, 'Слишком короткое имя')
         .required('Поле не может быть пустым'),
       lastName: Yup.string()
-        .min(2, 'Слишком короткое имя')
+        .min(2, 'Слишком короткая фамилия')
         .required('Поле не может быть пустым'),
     }),
   })
@@ -57,7 +58,11 @@ export const RegisterForm = () => {
       <form onSubmit={formik.handleSubmit}>
         <div className="register__group">
           <input
-            className="register__input"
+            className={
+              formik.errors.firstName && formik.touched.firstName
+                ? 'register__input field__error'
+                : 'register__input'
+            }
             id="firstName"
             name="firstName"
             type="text"
@@ -75,7 +80,11 @@ export const RegisterForm = () => {
 
         <div className="register__group">
           <input
-            className="register__input"
+            className={
+              formik.errors.lastName && formik.touched.lastName
+                ? 'register__input field__error'
+                : 'register__input'
+            }
             id="lastName"
             name="lastName"
             type="text"
@@ -93,7 +102,11 @@ export const RegisterForm = () => {
 
         <div className="register__group">
           <input
-            className="register__input"
+            className={
+              formik.errors.email && formik.touched.email
+                ? 'register__input field__error'
+                : 'register__input'
+            }
             id="email"
             name="email"
             type="email"
@@ -111,7 +124,11 @@ export const RegisterForm = () => {
 
         <div className="register__group">
           <input
-            className="register__input"
+            className={
+              formik.errors.password && formik.touched.password
+                ? 'register__input field__error'
+                : 'register__input'
+            }
             id="password"
             name="password"
             type="password"
