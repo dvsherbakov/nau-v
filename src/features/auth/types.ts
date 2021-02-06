@@ -28,16 +28,13 @@ export interface SetPasswdAndEmail {
   email:string
 }
 
-export type ComplexUserPayload = {
+export interface ComplexUserPayload  {
   firstName: string
   lastName: string
   email: string
 }
 
-export type RegisterUserPayload={
-  firstName: string;
-  lastName: string;
-  email: string;
+export interface RegisterUserPayload extends ComplexUserPayload{
   password: string;
 }
 
