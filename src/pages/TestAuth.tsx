@@ -1,10 +1,12 @@
 import React, { Fragment } from 'react'
-import { RegisterForm } from '../components/Form/RegisterForm/RegisterForm'
+import { TstArticle } from '../components/Articles/TstArticle'
 
 export default () => {
   return (
     <Fragment>
-      <RegisterForm />
+      <div className="container">
+        <TstArticle />
+      </div>
     </Fragment>
   )
 }

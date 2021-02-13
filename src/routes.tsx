@@ -8,7 +8,6 @@ import { MainPage } from './pages/MainPage'
 import { HomePage } from './pages/HomePage'
 import { LinksPage } from './pages/LinksPage'
 import { UsersPage } from './pages/UsersPage'
-import TestPage from './pages/TestPage'
 import TestAuth from './pages/TestAuth'
 import { ProfilePage } from './pages/ProfilePage'
 
@@ -42,9 +41,6 @@ export const useRoutes = (isAuth: boolean) => {
   }
   return (
     <Switch>
-      <Route path="/" exact>
-        <AuthPage />
-      </Route>
       <Route path="/register" exact>
         <RegisterPage />
       </Route>
@@ -54,13 +50,13 @@ export const useRoutes = (isAuth: boolean) => {
       <Route path="/check" exact>
         <CheckPage />
       </Route>
-      <Route path="/test" exact>
-        <TestPage />
-      </Route>
+
       <Route path="/tst" exact>
         <TestAuth />
       </Route>
-      <Redirect to="/" />
+      <Route path="/" exact>
+        <AuthPage />
+      </Route>
     </Switch>
   )
 }
