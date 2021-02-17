@@ -3,6 +3,7 @@ import Gravatar from 'react-gravatar'
 import { useSelector } from 'react-redux'
 import { selectors } from '../../features/auth/index'
 import { defGravatar } from '../types'
+import { UserList } from '../UserList/UserList'
 
 import './Profile.css'
 
@@ -30,6 +31,7 @@ export const Profile = () => {
         <div>{firstName}</div>
         <div>{lastName}</div>
       </div>
+      <UserList />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import { QuizPage } from './pages/QuizPage'
 import { CheckPage } from './pages/CheckPage'
 import { AuthPage } from './pages/AuthPage'
@@ -35,7 +35,6 @@ export const useRoutes = (isAuth: boolean) => {
         <Route path="/" exaxt>
           <MainPage />
         </Route>
-        <Redirect to="/auth"></Redirect>
       </Switch>
     )
   }
@@ -47,14 +46,14 @@ export const useRoutes = (isAuth: boolean) => {
       <Route path="/links" exact>
         <LinksPage />
       </Route>
-      <Route path="/check" exact>
-        <CheckPage />
-      </Route>
 
       <Route path="/tst" exact>
         <TestAuth />
       </Route>
       <Route path="/" exact>
+        <AuthPage />
+      </Route>
+      <Route path="/auth" exact>
         <AuthPage />
       </Route>
     </Switch>

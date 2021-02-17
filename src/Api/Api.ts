@@ -151,4 +151,12 @@ export default class Api {
     }
     return { data: 'error' }
   }
+
+  async GetUsers() {
+    const { data, status } = await this.client.get('/users')
+    if (status === 200) {
+      return data
+    }
+    return false
+  }
 }
