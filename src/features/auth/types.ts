@@ -1,6 +1,7 @@
 import { EMAIL_AUTH, LOGIN_AUTH, LOGOUT_AUTH, PASSWD_AND_EMAIL, PASSWD_AUTH, FAIL_AUTH, MY_SUCCESS, FIRST_NAME_AUTH, LAST_NAME_AUTH, REGISTER_AUTH, FAIL_REGISTER } from './actionTypes'
 
 export interface IFullUserInfo {
+  id?: string;
   firstName: string;
   lastName: string;
   email: string;

@@ -4,17 +4,7 @@ import { useSelector } from 'react-redux'
 import { selectors } from '../../features/auth/index'
 
 export const Navbar = () => {
-  const accepted = useSelector(selectors.getAccepted)
   const isAuth = useSelector(selectors.isAuthenticate)
-
-  const userNav =
-    accepted > 50 ? (
-      <li>
-        <NavLink to="/users" activeClassName="active-link">
-          Управление пользователями
-        </NavLink>
-      </li>
-    ) : null
 
   if (isAuth)
     return (
@@ -45,8 +35,6 @@ export const Navbar = () => {
               Ссылки и справочники
             </NavLink>
           </li>
-
-          {userNav}
         </ul>
       </nav>
     )

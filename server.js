@@ -5,7 +5,6 @@ const compression = require('compression')
 const morgan = require('morgan')
 const path = require('path')
 const mongoose = require('mongoose')
-require('./app/models/product')
 
 const MONGOURI = config.get('mongoUri')
 const normalizePort = (port) => parseInt(port, 10)

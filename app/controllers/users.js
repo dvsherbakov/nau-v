@@ -23,8 +23,8 @@ const getById = async (req, res) => {
 
 const getUsers = async (req, res) => {
   const token = req.headers.authorization.replace('Bearer ', '')
-  const payload = jwt.verify(token, secret)
-  const user = await User.findById(payload.userId)
+  const { userId } = jwt_decode(token)
+  const user = await User.findById(userId)
   if (!user) {
     res.status(500).json({ message: 'User does not exists!' })
   } else if (user.accepted < 30) {
@@ -44,7 +44,7 @@ const getUsers = async (req, res) => {
       firstName: user.firstName,
       lastName: user.lastName,
       accepted: user.accepted,
-      tResult: testRes.filter((r) => r.userId === user._id.toString()),
+      //tResult: testRes.filter((r) => r.userId === user._id.toString()),
     }
   })
   res.status(200).json(result)
