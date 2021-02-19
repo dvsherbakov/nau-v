@@ -9,6 +9,7 @@ import {
   MY_AUTH,
   FAIL_REGISTER,
   REGISTER_AUTH,
+  FIRST_NAME_AUTH,
 } from './actionTypes'
 import {
   IAuthThunk,
@@ -22,6 +23,7 @@ import {
   RegisterFailAction,
   RegisterAction,
   RegisterUserPayload,
+  FirstnameAction,
 } from './types'
 import Api from '../../Api/Api'
 
@@ -47,6 +49,11 @@ export const authSuccessMy = (payload: IFullUserInfo): MyAction => ({
 
 export const authFailAction = (): LoginFailAuth => ({
   type: FAIL_AUTH,
+})
+
+export const authFirstNameAction = (payload: string): FirstnameAction => ({
+  type: FIRST_NAME_AUTH,
+  payload,
 })
 
 export const registerSuccessAction = (

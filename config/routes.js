@@ -22,6 +22,7 @@ module.exports = (app) => {
   app.post('/api/users/:id', authMiddleware, users.getById)
   app.post('/api/isauth', authMiddleware, users.isAuth)
   app.post('/api/my', authMiddleware, users.my)
+  app.put('/api/users/updatefname', authMiddleware, users.updateFirstName)
   //auth
   app.post('/api/auth', auth.signIn)
   app.post('/api/register', auth.register)

@@ -1,5 +1,5 @@
-import { EMAIL_AUTH, FAIL_AUTH, FAIL_REGISTER, LOGIN_AUTH, LOGOUT_AUTH, MY_AUTH, PASSWD_AUTH, REGISTER_AUTH } from './actionTypes'
-import { SetEmailAction, AuthActionTypes, SetPasswdAction, LoginAction } from './types'
+import { EMAIL_AUTH, FAIL_AUTH, FAIL_REGISTER, FIRST_NAME_AUTH, LOGIN_AUTH, LOGOUT_AUTH, MY_AUTH, PASSWD_AUTH, REGISTER_AUTH } from './actionTypes'
+import { SetEmailAction, AuthActionTypes, SetPasswdAction, LoginAction, FirstnameAction } from './types'
 
 const initialState = {
   email: '',
@@ -27,7 +27,10 @@ export default (state = initialState, action: AuthActionTypes) => {
        return {...state, isRegistred: false}
     case REGISTER_AUTH: 
       return {...state, isRegistred: true, firstName:(action as LoginAction).payload.firstName, lastName:(action as LoginAction).payload.lastName, email: (action as LoginAction).payload.email}  
-    default:
+    
+    case FIRST_NAME_AUTH: 
+    return {...state, firstName: (action as FirstnameAction).payload}
+      default:
       return state
   }
 }

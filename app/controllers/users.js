@@ -1,10 +1,6 @@
 const User = require('../models/user')
 const TestResults = require('../models/testResult')
-const config = require('config')
-const jwt = require('jsonwebtoken')
 const jwt_decode = require('jwt-decode')
-
-const secret = config.get('jwt').secret
 
 const getById = async (req, res) => {
   const userId = req.params.id
@@ -34,8 +30,8 @@ const getUsers = async (req, res) => {
   if (!users) {
     res.status(500).json({ message: 'Users does not exists!' })
   }
-  const usersIds = users.map((user) => user.id)
-  const testRes = await TestResults.find({ userId: usersIds })
+  //const usersIds = users.map((user) => user.id)
+  //const testRes = await TestResults.find({ userId: usersIds })
 
   const result = users.map((user) => {
     return {
@@ -48,6 +44,19 @@ const getUsers = async (req, res) => {
     }
   })
   res.status(200).json(result)
+}
+
+const updateFirstName = async (req, res) => {
+  const token = req.get('Authorization').replace('Bearer', '')
+  try {
+    const { userId } = jwt_decode(token)
+    const user = await User.findByIdAndUpdate(userId, req.body)
+    console.log(user)
+    console.log(req.body)
+    res.status(200).json({ message: 'user was updated' })
+  } catch (e) {
+    res.status(201).json({ message: e.message })
+  }
 }
 
 const isAuth = (_req, res) => {
@@ -72,4 +81,4 @@ const my = async (req, res) => {
   }
 }
 
-module.exports = { getById, getUsers, isAuth, my }
+module.exports = { getById, getUsers, isAuth, my, updateFirstName }

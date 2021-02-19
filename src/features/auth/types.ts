@@ -71,6 +71,11 @@ export type MyAction = {
   payload: ComplexUserPayload
 }
 
+export type FirstnameAction = {
+  type: typeof FIRST_NAME_AUTH
+  payload: string
+}
+
 export type AuthActionTypes =
   | LoginAction
   | LoginFailAuth
@@ -80,6 +85,7 @@ export type AuthActionTypes =
   | SetFirstNameAction
   | SetLastNameAction
   | RegisterAction
+  | FirstnameAction
 
 export interface AuthState {
   auth: {

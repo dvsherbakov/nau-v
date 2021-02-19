@@ -159,4 +159,11 @@ export default class Api {
     }
     return false
   }
+
+  async ChangeFirstName(fName: string) {
+    const { status } = await this.client.put('/users/updatefname', {
+      firstName: fName,
+    })
+    return status === 200
+  }
 }

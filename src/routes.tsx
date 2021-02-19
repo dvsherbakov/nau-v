@@ -7,7 +7,6 @@ import { RegisterPage } from './pages/RegisterPage'
 import { MainPage } from './pages/MainPage'
 import { HomePage } from './pages/HomePage'
 import { LinksPage } from './pages/LinksPage'
-import { UsersPage } from './pages/UsersPage'
 import TestAuth from './pages/TestAuth'
 import { ProfilePage } from './pages/ProfilePage'
 
@@ -15,23 +14,16 @@ export const useRoutes = (isAuth: boolean) => {
   if (isAuth) {
     return (
       <Switch>
-        <Route path="/pr" component={ProfilePage} exact>
-          <ProfilePage />
-        </Route>
+        <Route path="/pr" component={ProfilePage} exact />
+
         <Route path="/test" component={QuizPage} exact />
 
-        <Route path="/check" exact>
-          <CheckPage />
-        </Route>
-        <Route path="/links" exact>
-          <LinksPage />
-        </Route>
-        <Route path="/users" exact>
-          <UsersPage />
-        </Route>
-        <Route path="/home" exact>
-          <HomePage />
-        </Route>
+        <Route path="/check" component={CheckPage} exact />
+
+        <Route path="/links" component={LinksPage} exact />
+
+        <Route path="/home" component={HomePage} exact />
+
         <Route path="/" exaxt>
           <MainPage />
         </Route>
