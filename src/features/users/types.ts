@@ -1,4 +1,3 @@
-import { type } from 'os'
 import { IFullUserInfo } from '../auth/types'
 import { FAIL_USERS, SET_USERS } from './actionTypes'
 
@@ -20,4 +19,9 @@ export interface IUsersState {
 
 export interface UsersState {
   users: IUsersState;
+}
+
+export interface IUpdateUser {
+  fistName?: string
+  lastName?: string
 }

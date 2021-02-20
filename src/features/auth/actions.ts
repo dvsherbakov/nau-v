@@ -10,6 +10,7 @@ import {
   FAIL_REGISTER,
   REGISTER_AUTH,
   FIRST_NAME_AUTH,
+  LAST_NAME_AUTH,
 } from './actionTypes'
 import {
   IAuthThunk,
@@ -24,6 +25,7 @@ import {
   RegisterAction,
   RegisterUserPayload,
   FirstnameAction,
+  LastNameAction,
 } from './types'
 import Api from '../../Api/Api'
 
@@ -53,6 +55,11 @@ export const authFailAction = (): LoginFailAuth => ({
 
 export const authFirstNameAction = (payload: string): FirstnameAction => ({
   type: FIRST_NAME_AUTH,
+  payload,
+})
+
+export const authLastNameAction = (payload: string): LastNameAction => ({
+  type: LAST_NAME_AUTH,
   payload,
 })
 

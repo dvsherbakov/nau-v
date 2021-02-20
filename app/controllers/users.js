@@ -46,7 +46,7 @@ const getUsers = async (req, res) => {
   res.status(200).json(result)
 }
 
-const updateFirstName = async (req, res) => {
+const updateUser = async (req, res) => {
   const token = req.get('Authorization').replace('Bearer', '')
   try {
     const { userId } = jwt_decode(token)
@@ -81,4 +81,4 @@ const my = async (req, res) => {
   }
 }
 
-module.exports = { getById, getUsers, isAuth, my, updateFirstName }
+module.exports = { getById, getUsers, isAuth, my, updateUser }

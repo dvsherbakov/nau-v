@@ -1,4 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
+import { IUpdateUser } from '../features/users/types'
 import {
   IApiOptions,
   IRegisterRequestConfig,
@@ -160,10 +161,8 @@ export default class Api {
     return false
   }
 
-  async ChangeFirstName(fName: string) {
-    const { status } = await this.client.put('/users/updatefname', {
-      firstName: fName,
-    })
+  async updateUser(data: IUpdateUser) {
+    const { status } = await this.client.put('/users/updatefname', { ...data })
     return status === 200
   }
 }

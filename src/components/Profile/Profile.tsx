@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react'
 import Gravatar from 'react-gravatar'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectors } from '../../features/auth/index'
-import { getUsersThunk, updateFirstName } from '../../features/users/actions'
+import { getUsersThunk, updateUser } from '../../features/users/actions'
 import { defGravatar } from '../types'
 import { UserList } from '../UserList/UserList'
 import { isFetched } from '../../features/users/selectors'
 
 import './Profile.css'
+import { IUpdateUser } from '../../features/users/types'
 
 const FirstNameChanger = () => {
   const [nameEditing, setNameEditing] = useState(false)
@@ -34,7 +35,8 @@ const FirstNameChanger = () => {
           onChange={onChange}
           onBlur={() => {
             setNameEditing(false)
-            dispatch(updateFirstName(name))
+            const updates: IUpdateUser = { fistName: name }
+            dispatch(updateUser(updates))
           }}
         />
       ) : (

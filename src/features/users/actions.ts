@@ -1,7 +1,12 @@
 import { Dispatch } from 'react'
 import { AuthActionTypes, IFullUserInfo } from '../auth/types'
 import { FAIL_USERS, SET_USERS } from './actionTypes'
-import { IFailUserAction, ISetUsersAction, UsersActionTypes } from './types'
+import {
+  IFailUserAction,
+  ISetUsersAction,
+  IUpdateUser,
+  UsersActionTypes,
+} from './types'
 import Api from '../../Api/Api'
 import { authFirstNameAction } from '../auth/actions'
 
@@ -26,13 +31,15 @@ export const getUsersThunk = () => async (
   }
 }
 
-export const updateFirstName = (fName: string) => async (
+export const updateUser = (data: IUpdateUser) => async (
   dispatch: Dispatch<AuthActionTypes>
 ) => {
   try {
     const api = new Api()
-    const res = await api.ChangeFirstName(fName)
-    if (res) dispatch(authFirstNameAction(fName))
+    const res = await api.updateUser(data)
+    if (res) {
+      if (data.fistName) dispatch(authFirstNameAction(data.fistName))
+    }
   } catch (e) {
     console.log('error update name', e)
   }
