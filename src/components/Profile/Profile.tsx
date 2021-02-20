@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import Gravatar from 'react-gravatar'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectors } from '../../features/auth/index'
@@ -6,13 +6,22 @@ import { getUsersThunk, updateUser } from '../../features/users/actions'
 import { defGravatar } from '../types'
 import { UserList } from '../UserList/UserList'
 import { isFetched } from '../../features/users/selectors'
-
-import './Profile.css'
 import { IUpdateUser } from '../../features/users/types'
 
-const FirstNameChanger = () => {
+import './Profile.css'
+
+enum TName  {
+  firstName=1,
+  lastName =2
+}
+
+type NameProps ={
+  nType: TName
+}
+
+const NameChanger: FC<NameProps> = ({nType}:NameProps) => {
   const [nameEditing, setNameEditing] = useState(false)
-  const firstName = useSelector(selectors.getFirstName)
+  const firstName = useSelector(nType===TName.firstName ? selectors.getFirstName: selectors.getLastName)
   const [name, setName] = useState(firstName)
   const dispatch = useDispatch()
 
@@ -35,7 +44,7 @@ const FirstNameChanger = () => {
           onChange={onChange}
           onBlur={() => {
             setNameEditing(false)
-            const updates: IUpdateUser = { fistName: name }
+            const updates: IUpdateUser = nType===TName.firstName ? { fistName: name }: {lastName: name} 
             dispatch(updateUser(updates))
           }}
         />
@@ -50,7 +59,6 @@ export const Profile = () => {
   const email = useSelector(selectors.getEmail)
   const fetched = useSelector(isFetched)
 
-  const { lastName } = useSelector(selectors.getName)
   const defAvatars: Array<defGravatar> = [
     'identicon',
     'monsterid',
@@ -76,8 +84,8 @@ export const Profile = () => {
         default={defAvatar}
       />
       <div className="profile__name-group">
-        <FirstNameChanger />
-        <div>{lastName}</div>
+        <NameChanger nType={TName.firstName} />
+        <NameChanger nType={TName.lastName} />
       </div>
       {fetched && <UserList />}
     </div>

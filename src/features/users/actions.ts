@@ -8,7 +8,7 @@ import {
   UsersActionTypes,
 } from './types'
 import Api from '../../Api/Api'
-import { authFirstNameAction } from '../auth/actions'
+import { authFirstNameAction, authLastNameAction } from '../auth/actions'
 
 export const SetUsersAction = (payload: IFullUserInfo[]): ISetUsersAction => ({
   type: SET_USERS,
@@ -39,6 +39,7 @@ export const updateUser = (data: IUpdateUser) => async (
     const res = await api.updateUser(data)
     if (res) {
       if (data.fistName) dispatch(authFirstNameAction(data.fistName))
+      if (data.lastName) dispatch(authLastNameAction(data.lastName))
     }
   } catch (e) {
     console.log('error update name', e)

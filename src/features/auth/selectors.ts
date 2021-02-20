@@ -9,4 +9,5 @@ export const getName = (state: AuthState) => ({
   lastName: state.auth.lastName,
 })
 export const getFirstName = (state: AuthState) => state.auth.firstName
+export const getLastName = (state: AuthState) => state.auth.lastName
 export const isRegister = (state: AuthState) => state.auth.isRegistred
