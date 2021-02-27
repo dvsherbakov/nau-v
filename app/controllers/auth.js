@@ -2,6 +2,7 @@
 const bCrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const User = require('../models/user')
+const Log = require('../models/log')
 const Token = require('../models/token')
 const config = require('config')
 const secret = config.get('jwt').secret
@@ -25,6 +26,12 @@ const signIn = (req, res) => {
       }
       const isValid = bCrypt.compareSync(password, user.password)
       if (isValid) {
+        const logRecord = new Log({
+          user: user.email,
+          message: 'Log in',
+          eventTime: Date.now(),
+        })
+        logRecord.save()
         updateToken(user._id).then((tokens) =>
           res.json({
             ...tokens,
