@@ -1,41 +1,45 @@
-.exersizes__unit{
-    padding: 15px 5px 20px;
-    margin-bottom: 30px;
-    border-radius: 5px;
-    border-bottom: 1px solid  rgba(123, 118, 114, 0.3);
-    box-shadow: 0 10px 30px 5px rgba(123, 118, 114, 0.2);
+.exersizes__unit {
+  padding: 15px 5px 20px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  border-bottom: 1px solid rgba(123, 118, 114, 0.3);
+  box-shadow: 0 10px 30px 5px rgba(123, 118, 114, 0.2);
 }
 
-.exersizes__header-container{
-    display: flex;
-    justify-content: space-between;
+.exersizes__header-container {
+  display: flex;
+  justify-content: space-between;
 }
 
-.exersizes__header-head{
-    display:flex;
+.exersizes__header-head {
+  display: flex;
 }
 
 .exersizes__header-item {
-    padding-right:10px;
+  padding-right: 10px;
 }
 
 .exersizes__body {
-    text-align: justify;
-    padding: 15px 0 25px 0;
+  text-align: justify;
+  padding: 15px 0 25px 0;
 }
 
 .exersizes__code-div {
-    line-height: 1.6em;
+  line-height: 1.6em;
 }
 
 .exersizes__red-span {
-    font-family: 'Roboto Condensed', serif;
-    font-size:18px;
-    text-decoration: underline;
-    color:red;
+  font-family: 'Roboto Condensed', serif;
+  font-size: 18px;
+  text-decoration: underline;
+  color: red;
 }
 
 .exersizes__green-span {
-    color: green;
-    font-family: 'Roboto Condensed', serif;
+  color: green;
+  font-family: 'Roboto Condensed', serif;
+}
+
+.exersise {
+  border: 2px solid #e0e0e0;
 }
