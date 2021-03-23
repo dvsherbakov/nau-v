@@ -4,9 +4,10 @@ import { exersises } from './ExersisesList'
 
 export const Exersizes: FC = () => {
   return (
-    <>
-      <h1>Пробные задачи</h1>
-      <Exersise {...exersises[0]} />
-    </>
+    <div className="exersises">
+      {exersises.map((exersise) => (
+        <Exersise {...exersise} />
+      ))}
+    </div>
   )
 }

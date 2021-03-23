@@ -40,6 +40,47 @@
   font-family: 'Roboto Condensed', serif;
 }
 
+.exersises {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .exersise {
-  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+
+  padding: 15px;
+}
+
+.exersise__cont {
+  flex-grow: 1;
+  width: 33%;
+  height: 100%;
+  display: flex;
+}
+
+.exersise__header {
+  background-color: #303030;
+  color: #ffc222;
+  padding: 10px 30px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.exersise__body {
+  padding: 10px 30px;
+  background-color: #c5c5c5;
+  color: #303030;
+  font-family: 'Roboto Condensed', serif;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+
+.exersise__footer {
+  display: flex;
+  background-color: #303030;
+  color: #ffc222;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.exersise__footer span {
+  padding: 10px 30px;
 }
