@@ -217,4 +217,5 @@ export const exersizes = [
       </div>
     ),
   },
+  { tags: ['Электромагнитные колебания и волны'], klass: 11 },
 ]
