@@ -24,6 +24,10 @@ export const useRoutes = (isAuth: boolean) => {
 
         <Route path="/home" component={HomePage} exact />
 
+        <Route path="/probe" exact>
+          <TestPage />
+        </Route>
+
         <Route path="/" exaxt>
           <MainPage />
         </Route>
