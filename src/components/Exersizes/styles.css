@@ -47,8 +47,10 @@
 
 .exersise {
   border-radius: 10px;
-
+  flex: 3 1 100px;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 .exersise__cont {
@@ -67,6 +69,7 @@
 
 .exersise__body {
   padding: 10px 30px;
+  height: 100%;
   background-color: #c5c5c5;
   color: #303030;
   font-family: 'Roboto Condensed', serif;
