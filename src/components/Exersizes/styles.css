@@ -87,3 +87,7 @@
 .exersise__footer span {
   padding: 10px 30px;
 }
+
+.ex-form__flex {
+  display: flex;
+}
