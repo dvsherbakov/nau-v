@@ -91,3 +91,41 @@
 .ex-form__flex {
   display: flex;
 }
+
+.ex-form__flex select,
+.ex-form__flex div {
+  margin-right: 1rem;
+}
+
+.filter-buttons__button-up,
+.filter-buttons__button-down {
+  margin: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: #ffc222;
+  border-radius: 48%;
+  cursor: pointer;
+}
+.filter-buttons__button-up::before,
+.filter-buttons__button-down::before {
+  position: relative;
+  display: table-cell;
+  text-align: center;
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  font-family: 'icomoon';
+  font-size: 10px;
+  padding: 7px;
+  border-radius: 48%;
+  color: #ffc222;
+  background-color: #303030;
+}
+
+.filter-buttons__button-up::before {
+  content: '\f102';
+}
+
+.filter-buttons__button-down::before {
+  content: '\f103';
+}

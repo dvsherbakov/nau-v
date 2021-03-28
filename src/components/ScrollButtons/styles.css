@@ -1,44 +1,40 @@
-.scroll-buttons__container{
-    position: fixed;
-    right: 4%;
-    bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    
+.scroll-buttons__container {
+  position: fixed;
+  right: 4%;
+  bottom: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
-.scroll-buttons__button-up, 
-.scroll-buttons__button-down{
-    margin: 2px;
-    width: 40px;
-    height: 40px;
-    background-color: #FFC222;
-    border-radius: 48%;
-    cursor: pointer;
+.scroll-buttons__up,
+.scroll-buttons__down {
+  margin: 2px;
+  width: 40px;
+  height: 40px;
+  background-color: #ffc222;
+  border-radius: 48%;
+  cursor: pointer;
 }
-.scroll-buttons__button-up::before, 
-.scroll-buttons__button-down::before{
-    position:relative;
-    display: table-cell;
-    text-align: center;
-    top:4px;
-    left:4px;
-    width:18px;
-    font-family: 'icomoon';
-    font-size: 20px;
-    padding:7px;
-    border-radius: 48%;
-    color: #FFC222;
-    background-color: #303030;
-}
-
-.scroll-buttons__button-up::before{
-    
-    content: "\f102";
-    
+.scroll-buttons__up::before,
+.scroll-buttons__down::before {
+  position: relative;
+  display: table-cell;
+  text-align: center;
+  top: 4px;
+  left: 4px;
+  width: 18px;
+  font-family: 'icomoon';
+  font-size: 20px;
+  padding: 7px;
+  border-radius: 48%;
+  color: #ffc222;
+  background-color: #303030;
 }
 
-.scroll-buttons__button-down::before{
-   
-    content: "\f103";
+.scroll-buttons__up::before {
+  content: '\f102';
+}
+
+.scroll-buttons__down::before {
+  content: '\f103';
 }
