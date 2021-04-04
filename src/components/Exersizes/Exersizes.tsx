@@ -1,10 +1,21 @@
 import React, { FC, useState } from 'react'
 import { Exersise } from './Exersise'
 import { exersises } from './ExersisesList'
+import ReactPaginate from 'react-paginate'
+
 //import { IExersise } from './types'
 
 export const Exersizes: FC = () => {
+  const [curEx, setCurEx] = useState(exersises.slice(0, 50))
+  const [pageNumber, setPageNumber] = useState(0)
   const [showFilter, setShowFilter] = useState(false)
+
+  const exPerPage = 12
+  const pagesVisited = pageNumber * exPerPage
+
+  const dispEx = curEx
+    .slice(pagesVisited, pagesVisited + exPerPage)
+    .map((exersise) => <Exersise {...exersise} key={exersise.id} />)
 
   function onlyUnique<T>(value: T, index: number, self: T[]) {
     return self.indexOf(value) === index
@@ -49,11 +60,7 @@ export const Exersizes: FC = () => {
           </div>
         )}
       </div>
-      <div className="exersises">
-        {exersises.map((exersise) => (
-          <Exersise {...exersise} key={exersise.id} />
-        ))}
-      </div>
+      <div className="exersises">{dispEx}</div>
     </div>
   )
 }
