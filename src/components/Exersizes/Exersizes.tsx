@@ -5,6 +5,10 @@ import ReactPaginate from 'react-paginate'
 
 //import { IExersise } from './types'
 
+type chPageType = {
+  selected: number,
+}
+
 export const Exersizes: FC = () => {
   const [curEx, setCurEx] = useState(exersises.slice(0, 50))
   const [pageNumber, setPageNumber] = useState(0)
@@ -34,6 +38,11 @@ export const Exersizes: FC = () => {
     setShowFilter(!showFilter)
   }
 
+  const changePage = (data: chPageType) => {
+    setPageNumber(data.selected)
+  }
+
+  const pageCount = Math.ceil(curEx.length / exPerPage)
   return (
     <div className="ex-form">
       <div className="ex-form__flex container">
@@ -61,6 +70,17 @@ export const Exersizes: FC = () => {
         )}
       </div>
       <div className="exersises">{dispEx}</div>
+      <ReactPaginate
+        previousLabel={'Пред'}
+        nextLabel={'След'}
+        onPageChange={changePage}
+        pageCount={pageCount}
+        pageRangeDisplayed={5}
+        marginPagesDisplayed={5}
+        breakLabel={'...'}
+        containerClassName={'pagination'}
+        activeClassName={'active'}
+      />
     </div>
   )
 }
