@@ -71,15 +71,18 @@ export const Exersizes: FC = () => {
       </div>
       <div className="exersises">{dispEx}</div>
       <ReactPaginate
-        previousLabel={'Пред'}
-        nextLabel={'След'}
+        previousLabel={'<'}
+        nextLabel={'>'}
         onPageChange={changePage}
         pageCount={pageCount}
         pageRangeDisplayed={5}
         marginPagesDisplayed={5}
         breakLabel={'...'}
-        containerClassName={'pagination'}
-        activeClassName={'active'}
+        containerClassName={'paginationBttns'}
+        previousClassName={'previousBttn'}
+        nextLinkClassName={'nextBttn'}
+        disabledClassName={'paginationDisabled'}
+        activeClassName={'pagnationActive'}
       />
     </div>
   )
