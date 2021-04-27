@@ -2,6 +2,7 @@ import React, { FC, useState, useEffect } from 'react'
 import { Exersise } from './Exersise'
 import { exersises } from './ExersisesList'
 import ReactPaginate from 'react-paginate'
+import './styles.css'
 
 //import { IExersise } from './types'
 
