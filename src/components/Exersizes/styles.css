@@ -147,9 +147,12 @@
 
 .pagnationActive {
   background-color: #c0c0c0;
+  border-radius: 5px;
+  color: #fdfdfd;
 }
 
 .pagnationActive > * {
   outline: none;
+
   border: none;
 }
