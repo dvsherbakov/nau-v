@@ -1,11 +1,6 @@
 import React from 'react'
-import { Exersizes } from '../components/Exersizes/Exersizes'
+import { TestDragDrop } from '../components/DragNDrop/DragDrop'
 
 export default () => {
-  return (
-    <div className="container">
-      <h1>Test Page</h1>
-      <Exersizes />
-    </div>
-  )
+  return <TestDragDrop />
 }
