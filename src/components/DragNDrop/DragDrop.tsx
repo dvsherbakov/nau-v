@@ -14,37 +14,52 @@ export const TestDragDrop = () => {
     { id: 3, order: 2, text: 'Карточка 2' },
     { id: 4, order: 4, text: 'Карточка 4' },
   ])
+  const [currentCard, setCurrentCard] = useState<TCard>(cardList[0])
+
   // Drag events
   const dragStartHandler = (
     e: React.DragEvent<HTMLDivElement>,
     card: TCard
   ) => {
-    console.log(card, e)
+    setCurrentCard(card)
   }
 
   const dragEndHandler = (e: React.DragEvent<HTMLDivElement>) => {
     console.log('endHandler', e)
+    const t = e.target as HTMLDivElement;
+    t.style.background = '#FFFFFF'
   }
 
   const dragLleaveHandler = (e: React.DragEvent<HTMLDivElement>) => {
-    console.log('leave', e)
+    const t = e.target as HTMLDivElement;
+    t.style.background = '#FFFFFF'
   }
 
   const dragOverHandler = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault()
-    //console.log('over', e)
+    const t = e.target as HTMLDivElement;
+    t.style.background = '#CFCFCF'
   }
 
   const dropHandler = (e: React.DragEvent<HTMLDivElement>, card: TCard) => {
     e.preventDefault()
-    console.log('drop', e, card)
+    const t = e.target as HTMLDivElement;
+    t.style.background = '#FFFFFF'
+    setCardList(cardList.map((c):TCard=>{
+      if (c.id===card.id) return {...c, order: currentCard.order}
+      if (c.id===currentCard.id) return {...c, order: card.order}
+      return c
+    })
+    )
   }
+
+  const sortCard = (a:TCard, b: TCard) => a.order-b.order
 
   return (
     <div className={'container'}>
       <h1>Test Drag and Drop</h1>
       <div className={'drag-drop__list'}>
-        {cardList.map((card) => (
+        {cardList.sort(sortCard).map((card) => (
           <div
             key={card.id}
             className={'drag-drop__card'}
