@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import './styles.css'
+import { TestAnswers } from './TestAnswers'
+import { IAnswProps } from './types'
 
 type TCard = {
   id: number,
@@ -25,7 +27,6 @@ export const TestDragDrop = () => {
   }
 
   const dragEndHandler = (e: React.DragEvent<HTMLDivElement>) => {
-    console.log('endHandler', e)
     const t = e.target as HTMLDivElement;
     t.style.background = '#FFFFFF'
   }
@@ -54,6 +55,11 @@ export const TestDragDrop = () => {
   }
 
   const sortCard = (a:TCard, b: TCard) => a.order-b.order
+
+  const answ:IAnswProps = {answCandidates: [{id:1, text:'Ответ 1'}, 
+      {id:2, text: 'Этот ответ будет подлиннее'}, 
+      {id:3, text:'Это наверное самый длинный ответ, который не хочет помещатся во всю длинну блока'},
+      {id:4, text:'Еще ответ'}, {id:5, text:'Ответ 5'} ]}
 
   return (
     <div className={'container'}>
@@ -84,6 +90,7 @@ export const TestDragDrop = () => {
           </div>
         ))}
       </div>
+      <TestAnswers {...answ}/>
     </div>
   )
 }

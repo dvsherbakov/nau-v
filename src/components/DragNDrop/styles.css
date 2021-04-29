@@ -11,7 +11,35 @@
   padding: 10px;
   border: 5px solid #cfcfcf;
   margin: 20px;
-  border-radius: 10px;
+  border-radius: 15px;
   height: 12rem;
+  cursor: grab;
+}
+
+.drag-drop__anwes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 10px;
+}
+
+.drag-drop__anwer {
+  padding: 10px;
+  margin: 5px 15px;
+  border: 3px solid #282c34;
+  flex: 4 2 0;
+  border-radius: 10px;
+}
+
+.drag-drop__ac {
+  display: flex;
+  flex: 4 2 0;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #282c34;
+  border-radius: 15px;
+  min-width: 100px;
+  padding: 10px 20px;
+  margin: 10px 5px;
   cursor: grab;
 }
