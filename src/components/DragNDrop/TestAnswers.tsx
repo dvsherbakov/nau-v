@@ -33,7 +33,7 @@ export const TestAnswers: FC<IAnswProps> = ({ answCandidates }) => {
         {ans.map((el, index) => (
           <div
             key={index.toString()}
-            draggable={true}
+            
             
             className={'drag-drop__anwer'}
             onDrop={(e: React.DragEvent<HTMLDivElement>) => {
