@@ -5,7 +5,7 @@ export type TAnswer = {
 }
 
 export interface IAnswProps {
-  answCount: number;
   answCandidates: TAnswer[];
   answInitials: TAnswer[];
+  setRes(results: number[]): number[];
 }

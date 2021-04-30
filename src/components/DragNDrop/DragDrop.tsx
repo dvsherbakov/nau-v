@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './styles.css'
 import { TestAnswers } from './TestAnswers'
 import { IAnswProps } from './types'
@@ -17,6 +17,7 @@ export const TestDragDrop = () => {
     { id: 4, order: 4, text: 'Карточка 4' },
   ])
   const [currentCard, setCurrentCard] = useState<TCard>(cardList[0])
+  const answers = useRef<number[]>([])
 
   // Drag events
   const dragStartHandler = (
@@ -60,8 +61,8 @@ export const TestDragDrop = () => {
       {id:2, text: 'Этот ответ будет подлиннее'}, 
       {id:3, text:'Это наверное самый длинный ответ, который не хочет помещатся во всю длинну блока'},
       {id:4, text:'Еще ответ'}, {id:5, text:'Ответ 5'} ], 
-      answCount:3,
-      answInitials: [{id:1, text:'Перетяните ответ', comment:'Утверждение А'}, {id:2, text:'Перетяните ответ', comment:'Утверждение Б'},  {id:3, text:'Перетяните ответ', comment:'Утверждение В'},]
+      answInitials: [{id:0, text:'Перетяните ответ', comment:'Утверждение А'}, {id:0, text:'Перетяните ответ', comment:'Утверждение Б'},  {id:0, text:'Перетяните ответ', comment:'Утверждение В'},],
+      setRes:  (res: number[])=>answers.current=[...res]
     }
 
   return (
@@ -94,6 +95,7 @@ export const TestDragDrop = () => {
         ))}
       </div>
       <TestAnswers {...answ}/>
+      <div>{answers.current.join('|')}</div>
     </div>
   )
 }

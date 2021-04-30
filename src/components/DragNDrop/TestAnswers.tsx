@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { IAnswProps, TAnswer } from './types'
 
-export const TestAnswers: FC<IAnswProps> = ({ answCandidates, answCount, answInitials }) => {
+export const TestAnswers: FC<IAnswProps> = ({ answCandidates, setRes, answInitials }) => {
   const [ans, setAns] = useState<TAnswer[]>(answInitials)//(new Array(4).fill('Вставте ответ')) 
   //Array.from(Array(answCount).keys()).map((x)=>({id:x, text:'Вставте ответ'}))
   const [currAnsw, setCurAnsw] = useState<TAnswer>(answCandidates[0])
@@ -18,9 +18,10 @@ export const TestAnswers: FC<IAnswProps> = ({ answCandidates, answCount, answIni
 
   const dropHandler = (e: React.DragEvent<HTMLDivElement>, idx: number) => {
     e.preventDefault() 
-    setAns(ans.map((a, idm)=> idx===idm?{...currAnsw, comment: a.comment}:a))
+    setAns((ans)=>ans.map((a, idm)=> idx===idm?{...currAnsw, comment: a.comment}:a))
+    setRes(ans.map((a, idm)=> idx===idm?currAnsw.id:a.id))
     const t = e.target as HTMLDivElement;
-   t.style.background = 'transparent'
+    t.style.background = 'transparent'
   }
 
   const dragEndHandler = (e: React.DragEvent<HTMLDivElement>) => {
