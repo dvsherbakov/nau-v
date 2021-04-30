@@ -59,7 +59,10 @@ export const TestDragDrop = () => {
   const answ:IAnswProps = {answCandidates: [{id:1, text:'Ответ 1'}, 
       {id:2, text: 'Этот ответ будет подлиннее'}, 
       {id:3, text:'Это наверное самый длинный ответ, который не хочет помещатся во всю длинну блока'},
-      {id:4, text:'Еще ответ'}, {id:5, text:'Ответ 5'} ], answCount:3}
+      {id:4, text:'Еще ответ'}, {id:5, text:'Ответ 5'} ], 
+      answCount:3,
+      answInitials: [{id:1, text:'Перетяните ответ', comment:'Утверждение А'}, {id:2, text:'Перетяните ответ', comment:'Утверждение Б'},  {id:3, text:'Перетяните ответ', comment:'Утверждение В'},]
+    }
 
   return (
     <div className={'container'}>

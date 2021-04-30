@@ -1,8 +1,9 @@
 import React, { FC, useState } from 'react'
 import { IAnswProps, TAnswer } from './types'
 
-export const TestAnswers: FC<IAnswProps> = ({ answCandidates, answCount }) => {
-  const [ans, setAns] = useState<TAnswer[]>(Array.from(Array(answCount).keys()).map((x)=>({id:x, text:'Вставте ответ'})))//(new Array(4).fill('Вставте ответ'))
+export const TestAnswers: FC<IAnswProps> = ({ answCandidates, answCount, answInitials }) => {
+  const [ans, setAns] = useState<TAnswer[]>(answInitials)//(new Array(4).fill('Вставте ответ')) 
+  //Array.from(Array(answCount).keys()).map((x)=>({id:x, text:'Вставте ответ'}))
   const [currAnsw, setCurAnsw] = useState<TAnswer>(answCandidates[0])
 
   const dragStartHandler = (e: React.DragEvent<HTMLDivElement>, a: TAnswer) => {
@@ -16,29 +17,25 @@ export const TestAnswers: FC<IAnswProps> = ({ answCandidates, answCount }) => {
   }
 
   const dropHandler = (e: React.DragEvent<HTMLDivElement>, idx: number) => {
-    e.preventDefault()
-    const tmp = ans.map((a, idm)=>{
-      if (idx===idm) 
-      { 
-        return currAnsw
-      } 
-      else return a})
-    setAns(tmp)
+    e.preventDefault() 
+    setAns(ans.map((a, idm)=> idx===idm?{...currAnsw, comment: a.comment}:a))
+    const t = e.target as HTMLDivElement;
+   t.style.background = 'transparent'
   }
 
   const dragEndHandler = (e: React.DragEvent<HTMLDivElement>) => {
     const t = e.target as HTMLDivElement;
-    t.style.background = '#FFFFFF'
+   t.style.background = 'transparent'
   }
 
   return (
     <div className={'container'}>
-      <div>Тут долджен быть текст вопроса, и если надо, рисунок, под ним - области для перетаскивания ответа, под которыми собственно варианты ответов, варианты нужно перетащить в соответствующие области</div>
       <div className={'drag-drop__anwes'}>
         {ans.map((el, idx) => (
-          <div
-            key={idx.toString()}            
-            className={'drag-drop__anwer'}
+          <div key={idx.toString()} 
+          className={'drag-drop__anwer'}>
+            {el.comment&&<div className={'drag-drop__comment'}>{el.comment}</div>}
+          <div  className={'drag-drop__ans-text'}
             onDrop={(e: React.DragEvent<HTMLDivElement>) => {
               dropHandler(e, idx)
             }}
@@ -50,6 +47,7 @@ export const TestAnswers: FC<IAnswProps> = ({ answCandidates, answCount }) => {
             }}
           >
             {el.text}
+          </div>
           </div>
         ))}
       </div>
