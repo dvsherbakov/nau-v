@@ -4,5 +4,6 @@ export type TAnswer = {
 }
 
 export interface IAnswProps {
+  answCount: number;
   answCandidates: TAnswer[];
 }

@@ -1,13 +1,12 @@
 import React, { FC, useState } from 'react'
 import { IAnswProps, TAnswer } from './types'
 
-export const TestAnswers: FC<IAnswProps> = ({ answCandidates }) => {
-  const [ans, setAns] = useState<string[]>(new Array(4).fill('Вставте ответ'))
+export const TestAnswers: FC<IAnswProps> = ({ answCandidates, answCount }) => {
+  const [ans, setAns] = useState<TAnswer[]>(Array.from(Array(answCount).keys()).map((x)=>({id:x, text:'Вставте ответ'})))//(new Array(4).fill('Вставте ответ'))
   const [currAnsw, setCurAnsw] = useState<TAnswer>(answCandidates[0])
 
   const dragStartHandler = (e: React.DragEvent<HTMLDivElement>, a: TAnswer) => {
     setCurAnsw(a)
-    console.log(a)
   }
 
   const dragOverHandler = (e: React.DragEvent<HTMLDivElement>) => {
@@ -18,7 +17,13 @@ export const TestAnswers: FC<IAnswProps> = ({ answCandidates }) => {
 
   const dropHandler = (e: React.DragEvent<HTMLDivElement>, idx: number) => {
     e.preventDefault()
-    setAns(ans.map((a, x)=>idx===x?currAnsw.text:a))
+    const tmp = ans.map((a, idm)=>{
+      if (idx===idm) 
+      { 
+        return currAnsw
+      } 
+      else return a})
+    setAns(tmp)
   }
 
   const dragEndHandler = (e: React.DragEvent<HTMLDivElement>) => {
@@ -30,14 +35,12 @@ export const TestAnswers: FC<IAnswProps> = ({ answCandidates }) => {
     <div className={'container'}>
       <div>Тут долджен быть текст вопроса, и если надо, рисунок, под ним - области для перетаскивания ответа, под которыми собственно варианты ответов, варианты нужно перетащить в соответствующие области</div>
       <div className={'drag-drop__anwes'}>
-        {ans.map((el, index) => (
+        {ans.map((el, idx) => (
           <div
-            key={index.toString()}
-            
-            
+            key={idx.toString()}            
             className={'drag-drop__anwer'}
             onDrop={(e: React.DragEvent<HTMLDivElement>) => {
-              dropHandler(e, index)
+              dropHandler(e, idx)
             }}
             onDragOver={(e: React.DragEvent<HTMLDivElement>) => {
               dragOverHandler(e)
@@ -46,7 +49,7 @@ export const TestAnswers: FC<IAnswProps> = ({ answCandidates }) => {
               dragEndHandler(e)
             }}
           >
-            {el}
+            {el.text}
           </div>
         ))}
       </div>
