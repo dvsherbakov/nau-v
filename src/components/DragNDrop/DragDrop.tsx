@@ -1,4 +1,6 @@
 import React, { useRef, useState } from 'react'
+import { TQuestion } from '../Questions/types'
+import { QBody } from './qBody'
 import './styles.css'
 import { TestAnswers } from './TestAnswers'
 import { IAnswProps } from './types'
@@ -57,6 +59,8 @@ export const TestDragDrop = () => {
 
   const sortCard = (a:TCard, b: TCard) => a.order-b.order
 
+  
+
   const answ:IAnswProps = {answCandidates: [{id:1, text:'Ответ 1'}, 
       {id:2, text: 'Этот ответ будет подлиннее'}, 
       {id:3, text:'Это наверное самый длинный ответ, который не хочет помещатся во всю длинну блока'},
@@ -94,6 +98,7 @@ export const TestDragDrop = () => {
           </div>
         ))}
       </div>
+      
       <TestAnswers {...answ}/>
       <div>{answers.current.join('|')}</div>
     </div>
