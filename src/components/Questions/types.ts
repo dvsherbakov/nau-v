@@ -1,5 +1,6 @@
+type CallbackFunction = (id: string, res: number[]) => void
+
 export type TQuestion = {
   key: string,
-  body: HTMLElement,
-  image?: HTMLImageElement,
+  Body(SetRes: CallbackFunction): JSX.Element,
 }
