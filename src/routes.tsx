@@ -28,7 +28,7 @@ export const useRoutes = (isAuth: boolean) => {
           <TestPage />
         </Route>
 
-        <Route path="/" exaxt>
+        <Route path="/" exact>
           <MainPage />
         </Route>
       </Switch>
